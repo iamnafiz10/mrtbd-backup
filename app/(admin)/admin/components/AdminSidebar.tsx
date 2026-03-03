@@ -1,0 +1,231 @@
+"use client";
+
+import React, {useEffect, useState} from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {usePathname} from "next/navigation";
+import {
+    FiHome,
+    FiShoppingCart,
+    FiChevronLeft,
+    FiChevronRight,
+    FiMenu,
+    FiX,
+    FiChevronDown,
+    FiSettings,
+    FiUserCheck,
+} from "react-icons/fi";
+
+import logoImg from "../../../../public/assets/images/new-logo.png";
+
+/* ---------------- TYPES ---------------- */
+interface MenuItemUI {
+    id: number;
+    title: string;
+    icon: React.ReactNode;
+    path: string;
+    subItems?: { id: number; title: string; path: string }[];
+}
+
+/* ---------------- STATIC MENU ---------------- */
+const menuItems: MenuItemUI[] = [
+    {
+        id: 1,
+        title: "Dashboard",
+        icon: <FiHome className="h-5 w-5"/>,
+        path: "/admin/dashboard",
+    },
+    {
+        id: 2,
+        title: "Basic Modules",
+        icon: <FiSettings className="h-5 w-5"/>,
+        path: "/admin/basic",
+        subItems: [
+            {id: 21, title: "Company", path: "/admin/dashboard/company"},
+            {id: 22, title: "Category", path: "/admin/dashboard/categories"},
+            {id: 23, title: "Color", path: "/admin/dashboard/colors"},
+            {id: 24, title: "Product", path: "/admin/dashboard/products"},
+            {id: 25, title: "Bank", path: "/admin/dashboard/banks"},
+        ],
+    },
+    {
+        id: 3,
+        title: "Users",
+        icon: <FiUserCheck className="h-5 w-5"/>,
+        path: "/admin/users",
+    },
+    {
+        id: 4,
+        title: "Settings",
+        icon: <FiSettings className="h-5 w-5"/>,
+        path: "/admin/settings",
+    },
+];
+
+/* ---------------- HELPERS ---------------- */
+const findOpenId = (
+    items: MenuItemUI[],
+    isActive: (path: string) => boolean
+): number | null => {
+    for (const it of items) {
+        if (
+            it.subItems?.some((s) => isActive(s.path)) ||
+            (it.subItems && isActive(it.path))
+        ) {
+            return it.id;
+        }
+    }
+    return null;
+};
+
+/* ---------------- COMPONENT ---------------- */
+const AdminSidebar = () => {
+    const pathname = usePathname();
+
+    const isActive = (path: string) =>
+        pathname === path || pathname.startsWith(path + "/");
+
+    const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [openMenuId, setOpenMenuId] = useState<number | null>(null);
+
+    /* Detect mobile */
+    useEffect(() => {
+        const check = () => {
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+
+            if (mobile) {
+                setIsCollapsed(true);
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
+
+    return (
+        <>
+            {/* Mobile menu button */}
+            {isMobile && !isMobileMenuOpen && (
+                <button
+                    onClick={() => setIsMobileMenuOpen(true)}
+                    className="fixed top-[6px] left-4 z-50 p-2 cursor-pointer rounded-md bg-primary text-white shadow-lg"
+                >
+                    <FiMenu size={18}/>
+                </button>
+            )}
+
+            {/* Sidebar */}
+            <aside
+                className={`h-ful bg-white border-r border-gray-200 transition-all duration-300
+        ${
+                    isMobile
+                        ? `fixed top-0 left-0 z-30 h-full w-[240px] ${
+                            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+                        }`
+                        : `${isCollapsed ? "w-fit" : "w-[240px]"}`
+                }`}
+            >
+                {/* Header */}
+                <div className="flex items-center h-[48px] justify-between px-4 border-b border-gray-300">
+                    {(!isCollapsed || isMobile) && (
+                        <h2 className="font-bold text-[15px]">
+                            MR Trade International
+                        </h2>
+                    )}
+
+                    {!isMobile && (
+                        <button onClick={() => setIsCollapsed(!isCollapsed)}>
+                            {isCollapsed ? <FiChevronRight/> : <FiChevronLeft/>}
+                        </button>
+                    )}
+
+                    {isMobile && (
+                        <button className="cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                            <FiX size={20}/>
+                        </button>
+                    )}
+                </div>
+
+                {/* Menu */}
+                <div className="p-4 space-y-2">
+                    {menuItems.map((item) => {
+                        const active =
+                            isActive(item.path) ||
+                            item.subItems?.some((s) => isActive(s.path));
+                        const isOpen = openMenuId === item.id;
+
+                        return (
+                            <div key={item.id}>
+                                {/* Main */}
+                                {item.subItems ? (
+                                    <div
+                                        onClick={() =>
+                                            setOpenMenuId(isOpen ? null : item.id)
+                                        }
+                                        className={`flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer
+                    ${
+                                            active
+                                                ? "bg-primary text-white"
+                                                : "hover:bg-gray-100"
+                                        }`}
+                                    >
+                                        <div className="flex gap-2 items-center">
+                                            {item.icon}
+                                            {(!isCollapsed || isMobile) && item.title}
+                                        </div>
+                                        {(!isCollapsed || isMobile) && (
+                                            <FiChevronDown
+                                                className={isOpen ? "rotate-180" : ""}
+                                            />
+                                        )}
+                                    </div>
+                                ) : (
+                                    <Link href={item.path}>
+                                        <div
+                                            className={`px-3 py-2 rounded-lg flex gap-2 items-center
+                      ${
+                                                active
+                                                    ? "bg-primary text-white"
+                                                    : "hover:bg-gray-100"
+                                            }`}
+                                        >
+                                            {item.icon}
+                                            {(!isCollapsed || isMobile) && item.title}
+                                        </div>
+                                    </Link>
+                                )}
+
+                                {/* Submenu */}
+                                {item.subItems && isOpen && (!isCollapsed || isMobile) && (
+                                    <div className="pl-6 mt-1 space-y-1">
+                                        {item.subItems.map((sub) => (
+                                            <Link key={sub.id} href={sub.path}>
+                                                <div
+                                                    className={`p-2 rounded-md text-sm
+                          ${
+                                                        isActive(sub.path)
+                                                            ? "bg-primary/10 text-primary"
+                                                            : "hover:bg-gray-100"
+                                                    }`}
+                                                >
+                                                    {sub.title}
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
+            </aside>
+        </>
+    );
+};
+
+export default AdminSidebar;
