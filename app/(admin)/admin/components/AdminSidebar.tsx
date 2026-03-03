@@ -2,21 +2,17 @@
 
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {usePathname} from "next/navigation";
 import {
     FiHome,
-    FiShoppingCart,
     FiChevronLeft,
     FiChevronRight,
     FiMenu,
     FiX,
     FiChevronDown,
     FiSettings,
-    FiUserCheck,
 } from "react-icons/fi";
-
-import logoImg from "../../../../public/assets/images/new-logo.png";
+import {FaUsers} from "react-icons/fa";
 
 /* ---------------- TYPES ---------------- */
 interface MenuItemUI {
@@ -46,13 +42,21 @@ const menuItems: MenuItemUI[] = [
             {id: 23, title: "Color", path: "/admin/dashboard/colors"},
             {id: 24, title: "Product", path: "/admin/dashboard/products"},
             {id: 25, title: "Bank", path: "/admin/dashboard/banks"},
+            {id: 26, title: "Department", path: "/admin/dashboard/departments"},
+            {id: 27, title: "Holiday", path: "/admin/dashboard/holiday"},
+            {id: 28, title: "Godown", path: "/admin/dashboard/godowns"},
+            {id: 29, title: "Capacity", path: "/admin/dashboard/capacity"},
+            {id: 299, title: "Payment", path: "/admin/dashboard/payment"},
         ],
     },
     {
         id: 3,
-        title: "Users",
-        icon: <FiUserCheck className="h-5 w-5"/>,
-        path: "/admin/users",
+        title: "Staff",
+        icon: <FaUsers className="h-5 w-5"/>,
+        path: "/admin/basic",
+        subItems: [
+            {id: 31, title: "Employees", path: "/admin/dashboard/employees"},
+        ],
     },
     {
         id: 4,

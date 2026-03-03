@@ -141,7 +141,7 @@ function Page() {
                                         />
                                         <div className="relative w-full mt-4 md:mt-0">
                                             <select
-                                                className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:ring-0 focus:border-primary">
+                                                className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary">
                                                 <option value="option2">Month(s)</option>
                                                 <option value="option1">Years(s)</option>
                                             </select>
