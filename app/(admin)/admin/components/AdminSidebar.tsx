@@ -13,6 +13,7 @@ import {
     FiSettings,
 } from "react-icons/fi";
 import {FaUsers} from "react-icons/fa";
+import {MdOutlineInventory2} from "react-icons/md";
 
 /* ---------------- TYPES ---------------- */
 interface MenuItemUI {
@@ -60,6 +61,16 @@ const menuItems: MenuItemUI[] = [
     },
     {
         id: 4,
+        title: "Customers & Suppliers",
+        icon: <MdOutlineInventory2 className="h-5 w-5"/>,
+        path: "/admin/basic",
+        subItems: [
+            {id: 41, title: "Customer", path: "/admin/dashboard/customers"},
+            {id: 42, title: "Supplier", path: "/admin/dashboard/suppliers"},
+        ],
+    },
+    {
+        id: 5,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",
@@ -125,7 +136,7 @@ const AdminSidebar = () => {
 
             {/* Sidebar */}
             <aside
-                className={`h-ful bg-white border-r border-gray-200 transition-all duration-300
+                className={`text-[14px] bg-white border-r border-gray-200 transition-all duration-300
         ${
                     isMobile
                         ? `fixed top-0 left-0 z-30 h-full w-[240px] ${
