@@ -14,6 +14,7 @@ import {
 } from "react-icons/fi";
 import {FaUsers} from "react-icons/fa";
 import {MdOutlineInventory2} from "react-icons/md";
+import {CgCalculator} from "react-icons/cg";
 
 /* ---------------- TYPES ---------------- */
 interface MenuItemUI {
@@ -71,6 +72,16 @@ const menuItems: MenuItemUI[] = [
     },
     {
         id: 5,
+        title: "Inventory Management",
+        icon: <CgCalculator className="h-5 w-5"/>,
+        path: "/admin/basic",
+        subItems: [
+            {id: 51, title: "Purchase Orders", path: "/admin/dashboard/purchase-orders"},
+            {id: 52, title: "Retail Sales", path: "/admin/dashboard/retail-sales"},
+        ],
+    },
+    {
+        id: 6,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",
