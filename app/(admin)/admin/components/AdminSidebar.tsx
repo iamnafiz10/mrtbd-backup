@@ -78,6 +78,10 @@ const menuItems: MenuItemUI[] = [
         subItems: [
             {id: 51, title: "Purchase Orders", path: "/admin/dashboard/purchase-orders"},
             {id: 52, title: "Retail Sales", path: "/admin/dashboard/retail-sales"},
+            {id: 53, title: "Hire Sales", path: "/admin/dashboard/hire-sales"},
+            {id: 54, title: "Dealer Sales", path: "/admin/dashboard/dealer-sales"},
+            {id: 55, title: "Sales Return", path: "/admin/dashboard/sales-return"},
+            {id: 56, title: "Purchase Return", path: "/admin/dashboard/purchase-return"},
         ],
     },
     {

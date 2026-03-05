@@ -72,7 +72,7 @@ function Page() {
                 <div className="container">
                     <div
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
-                        <h2>Existing Sales Orders</h2>
+                        <h2>Existing Dealer sales orders</h2>
                     </div>
 
                     <div className="w-full bg-white rounded border border-gray-200 p-6 mt-4">
@@ -91,7 +91,7 @@ function Page() {
 
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
-                                        Order Name
+                                        Customer Name
                                     </label>
                                     <input
                                         type="text"
@@ -151,7 +151,7 @@ function Page() {
                         </div>
 
                         <button
-                                className="flex items-center mt-4 gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
+                            className="flex items-center mt-4 gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
                             Search
                         </button>
                     </div>
@@ -159,7 +159,7 @@ function Page() {
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
 
                         <div className="flex items-center justify-end">
-                            <Link href='/admin/dashboard/retail-sales/create'
+                            <Link href='/admin/dashboard/dealer-sales/create'
                                   className="mt-4 md:mt-0 flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
                                 <FaPlus/> Create Order
                             </Link>
@@ -332,7 +332,7 @@ function Page() {
                                         </td>
                                         <td className="p-3 border border-gray-200">
                                             <div className="flex justify-center gap-2">
-                                                <Link href='/admin/dashboard/retail-sales/edit'
+                                                <Link href='/admin/dashboard/dealer-sales/edit'
                                                       className="bg-blue-500 p-2 rounded text-white cursor-pointer hover:bg-blue-600 transition">
                                                     <FaPencil size={12}/>
                                                 </Link>
