@@ -128,7 +128,7 @@ function Page() {
                 <div className="container">
                     <div
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
-                        <h2>Create Sales Order</h2>
+                        <h2>Edit Sales Order</h2>
                     </div>
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

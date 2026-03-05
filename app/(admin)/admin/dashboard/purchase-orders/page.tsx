@@ -1,13 +1,11 @@
 "use client";
 import React, {useMemo, useState} from 'react';
 import CustomCheckbox from "@/app/(admin)/admin/dashboard/helper/CustomCheckbox";
-import {FaPlus, FaTrashAlt} from "react-icons/fa";
+import {FaTrashAlt} from "react-icons/fa";
 import {TfiReload} from "react-icons/tfi";
 import {RiShareForward2Fill} from "react-icons/ri";
-import {FaPencil} from "react-icons/fa6";
 import {RxCross1} from "react-icons/rx";
 import toast from "react-hot-toast";
-import Link from "next/link";
 
 type Stock = {
     id: number;
@@ -62,20 +60,20 @@ function Page() {
     // ---------- Delete Product ---------- //
     const [openDeleteProductModal, setOpenDeleteProductModal] = useState(false);
     const handleProductDelete = () => {
-        toast.success('Order deleted successfully!');
+        toast.success('Purchase order deleted successfully!');
         setOpenDeleteProductModal(false);
     };
 
     return (
         <>
-            <section id="Product-section" className="mt-10">
+            <section id="Purchase order-section" className="mt-10">
                 <div className="container">
                     <div
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
-                        <h2>Existing Sales Orders</h2>
+                        <h2>Existing purchase orders</h2>
                     </div>
 
-                    <div className="w-full bg-white rounded border border-gray-200 p-6 mt-4">
+                    <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
                         <div className="block md:flex items-center gap-4">
                             <div className="input_box block md:flex items-center gap-2">
                                 <div className="w-full">
@@ -91,32 +89,6 @@ function Page() {
 
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
-                                        Order Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Invoice No
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="block md:flex items-center gap-4 mt-4">
-                            <div className="input_box block md:flex items-center gap-2">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
                                         To Date
                                     </label>
                                     <input
@@ -126,45 +98,17 @@ function Page() {
                                     />
                                 </div>
 
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Contact No
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Account No
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
+                                <div className="w-full mt-6">
+                                    <button
+                                        className="px-4 py-2 cursor-pointer rounded bg-yellow-400 text-white hover:bg-yellow-600 transition">
+                                        Search
+                                    </button>
                                 </div>
                             </div>
                         </div>
-
-                        <button
-                                className="flex items-center mt-4 gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
-                            Search
-                        </button>
                     </div>
 
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
-
-                        <div className="flex items-center justify-end">
-                            <Link href='/admin/dashboard/retail-sales/create'
-                                  className="mt-4 md:mt-0 flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
-                                <FaPlus/> Create Order
-                            </Link>
-                        </div>
-
                         {/* Top Controls */}
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4 my-4">
                             {/* Show Entries */}
@@ -247,7 +191,7 @@ function Page() {
                                                                     console.log(option);
                                                                     setIsOpen(false);
                                                                 }}
-                                                                className="px-4 py-2 text-[12px] text-black hover:bg-primary hover:text-white cursor-pointer transition-sales-orders"
+                                                                className="px-4 py-2 text-[12px] text-black hover:bg-primary hover:text-white cursor-pointer transition-Purchase orders"
                                                             >
                                                                 {option}
                                                             </li>
@@ -270,14 +214,13 @@ function Page() {
                                         <CustomCheckbox/>
                                     </th>
                                     <th className="p-3 border border-gray-200 text-center">SI</th>
-                                    <th className="p-3 border border-gray-200 text-left">Invoice No</th>
-                                    <th className="p-3 border border-gray-200 text-left">Sales Date</th>
-                                    <th className="p-3 border border-gray-200 text-left">A/C</th>
-                                    <th className="p-3 border border-gray-200 text-left">Order</th>
+                                    <th className="p-3 border border-gray-200 text-left">Challan No</th>
+                                    <th className="p-3 border border-gray-200 text-left">Order Date</th>
+                                    <th className="p-3 border border-gray-200 text-left">Supplier</th>
+                                    <th className="p-3 border border-gray-200 text-left">Company</th>
                                     <th className="p-3 border border-gray-200 text-left">Contact No</th>
-                                    <th className="p-3 border border-gray-200 text-left">Inv. Amt</th>
-                                    <th className="p-3 border border-gray-200 text-left">Due Amount</th>
                                     <th className="p-3 border border-gray-200 text-left">Status</th>
+                                    <th className="p-3 border border-gray-200 text-left">WF Status</th>
                                     <th className="p-3 border border-gray-200 text-center">Action</th>
                                 </tr>
                                 </thead>
@@ -285,7 +228,7 @@ function Page() {
                                 {paginatedData.length === 0 && (
                                     <tr>
                                         <td
-                                            colSpan={11}
+                                            colSpan={12}
                                             className="text-center p-4 text-gray-500"
                                         >
                                             No Data Found
@@ -322,20 +265,13 @@ function Page() {
                                             {item.name}
                                         </td>
                                         <td className="p-3 border border-gray-200">
-                                            {item.name}
-                                        </td>
-                                        <td className="p-3 border border-gray-200">
-                                            <span
-                                                className="px-3 py-1 bg-green-500 rounded text-white text-[12px] cursor-pointer inline-block transition select-none">
+                                                <span
+                                                    className="px-3 py-1 bg-green-500 rounded text-white text-[12px] cursor-pointer inline-block transition select-none">
                                                 Active
                                             </span>
                                         </td>
                                         <td className="p-3 border border-gray-200">
                                             <div className="flex justify-center gap-2">
-                                                <Link href='/admin/dashboard/retail-sales/edit'
-                                                      className="bg-blue-500 p-2 rounded text-white cursor-pointer hover:bg-blue-600 transition">
-                                                    <FaPencil size={12}/>
-                                                </Link>
                                                 <button onClick={() => setOpenDeleteProductModal(true)}
                                                         className="bg-red-500 p-2 rounded text-white cursor-pointer hover:bg-red-600 transition">
                                                     <FaTrashAlt size={12}/>
@@ -414,7 +350,7 @@ function Page() {
                             </h3>
                             <div className="body_text py-4 border-b border-t border-gray-200">
                                 <p className="text-gray-500 text-[14px]">
-                                    You are going to delete this Order.<br/>
+                                    You are going to delete this Purchase order.<br/>
                                     You want to delete it?
                                 </p>
                             </div>
