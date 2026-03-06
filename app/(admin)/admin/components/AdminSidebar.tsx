@@ -13,7 +13,7 @@ import {
     FiSettings,
 } from "react-icons/fi";
 import {FaUsers} from "react-icons/fa";
-import {MdOutlineInventory2} from "react-icons/md";
+import {MdOutlineInventory2, MdWork} from "react-icons/md";
 import {CgCalculator} from "react-icons/cg";
 
 /* ---------------- TYPES ---------------- */
@@ -90,6 +90,16 @@ const menuItems: MenuItemUI[] = [
     },
     {
         id: 6,
+        title: "Account Management",
+        icon: <MdWork className="h-5 w-5"/>,
+        path: "/admin/basic",
+        subItems: [
+            {id: 61, title: "Expense/Income Head", path: "/admin/dashboard/expense-income"},
+            {id: 62, title: "Expense", path: "/admin/dashboard/expense"},
+        ],
+    },
+    {
+        id: 7,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",

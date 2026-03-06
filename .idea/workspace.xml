@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cab406-5a62-43ed-b061-f76082749093" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/replacement-orders/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/replacement-orders/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/replacement-orders/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-details/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stocks/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/transfer/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/transfer/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/transfer/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/expense-income/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/expense/create/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/expense/edit/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/expense/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/purchase-return/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/purchase-return/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +38,7 @@
     "javascript.preferred.runtime.type.id": "node",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "E:/2026/mrtbd/app/(admin)/admin/dashboard/transfer",
+    "last_opened_file_path": "E:/2026/mrtbd/app/(admin)/admin/dashboard/expense",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -55,11 +49,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\2026\mrtbd\app\(admin)\admin\dashboard\expense" />
       <recent name="E:\2026\mrtbd\app\(admin)\admin\dashboard\transfer" />
       <recent name="E:\2026\mrtbd\app\(admin)\admin\dashboard\replacement-orders" />
       <recent name="E:\2026\mrtbd\app\(admin)\admin\dashboard\purchase-return" />
       <recent name="E:\2026\mrtbd\app\(admin)\admin\dashboard\sales-return" />
-      <recent name="E:\2026\mrtbd\app\(admin)\admin\dashboard\dealer-sales" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\2026\mrtbd\app\(admin)\admin\dashboard" />
@@ -111,6 +105,7 @@
       <workItem from="1772633830036" duration="5312000" />
       <workItem from="1772678809946" duration="5216000" />
       <workItem from="1772766863289" duration="7521000" />
+      <workItem from="1772784904456" duration="1591000" />
     </task>
     <servers />
   </component>
