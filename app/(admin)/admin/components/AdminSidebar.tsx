@@ -82,6 +82,10 @@ const menuItems: MenuItemUI[] = [
             {id: 54, title: "Dealer Sales", path: "/admin/dashboard/dealer-sales"},
             {id: 55, title: "Sales Return", path: "/admin/dashboard/sales-return"},
             {id: 56, title: "Purchase Return", path: "/admin/dashboard/purchase-return"},
+            {id: 57, title: "Replacement Order", path: "/admin/dashboard/replacement-orders"},
+            {id: 58, title: "Stock", path: "/admin/dashboard/stocks"},
+            {id: 59, title: "Stock Details", path: "/admin/dashboard/stock-details"},
+            {id: 591, title: "Transfer", path: "/admin/dashboard/transfer"},
         ],
     },
     {

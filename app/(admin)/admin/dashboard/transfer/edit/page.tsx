@@ -2,8 +2,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {FiPlusSquare} from "react-icons/fi";
 import {RxCross1} from "react-icons/rx";
-import {FaCartPlus, FaTrashAlt} from "react-icons/fa";
-import {BsEraser} from "react-icons/bs";
+import {FaCartPlus, FaCheck, FaTrashAlt} from "react-icons/fa";
 import CustomCheckbox from "@/app/(admin)/admin/dashboard/helper/CustomCheckbox";
 
 type Stock = {
@@ -90,7 +89,7 @@ function Page() {
                 <div className="container">
                     <div
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
-                        <h2>Create PO Return</h2>
+                        <h2>Edit Transfer</h2>
                     </div>
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -99,17 +98,17 @@ function Page() {
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Challan
+                                                Transfer No
                                             </label>
                                             <input
                                                 type="text"
                                                 placeholder="00001"
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Pur. Date
+                                                Transfer Date
                                             </label>
                                             <input
                                                 type="date"
@@ -122,7 +121,21 @@ function Page() {
                                     <div className="input_box mt-4 flex items-center gap-2">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Supplier
+                                                To Concern
+                                            </label>
+                                            <select
+                                                className="block w-full rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary"
+                                            >
+                                                <option value="">--- Select Concern---</option>
+                                                <option value="value1">Object Canvas Technology</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 flex items-center gap-2">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Godown
                                             </label>
                                             <input
                                                 type="text"
@@ -138,21 +151,6 @@ function Page() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div className="input_box mt-4 block md:flex items-end gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Prev. Due
-                                            </label>
-                                            <input
-                                                type="text"
-                                                disabled
-                                                placeholder=""
-                                                className="w-full text-[14px] border bg-gray-100 border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0"></div>
-                                    </div>
                                 </form>
                             </div>
 
@@ -164,9 +162,8 @@ function Page() {
                                             <thead className="bg-gray-50">
                                             <tr className="border border-gray-200">
                                                 <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                <th className="p-3 border border-gray-200 text-left">Name</th>
-                                                <th className="p-3 border border-gray-200 text-left">IMEI/Barcode</th>
-                                                <th className="p-3 border border-gray-200 text-left">P. Rate</th>
+                                                <th className="p-3 border border-gray-200 text-left">Product</th>
+                                                <th className="p-3 border border-gray-200 text-left">IMEI</th>
                                                 <th className="p-3 border border-gray-200 text-center">Action</th>
                                             </tr>
                                             </thead>
@@ -192,9 +189,6 @@ function Page() {
                                                         {item.name}
                                                     </td>
                                                     <td className="p-3 border border-gray-200">
-                                                        {item.GodownName}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
                                                         {item.name}
                                                     </td>
                                                     <td className="p-3 border border-gray-200">
@@ -216,10 +210,21 @@ function Page() {
                             <div className="col">
                                 <form action="" method="" className="border border-gray-300 rounded p-4">
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <label className="flex items-center gap-2 cursor-pointer select-none">
+                                            <input type="checkbox" className="peer hidden"/>
+                                            <div
+                                                className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                <FaCheck className="text-white text-[10px]"/>
+                                            </div>
+                                            <span>Manual</span>
+                                        </label>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <input
                                                 type="text"
-                                                placeholder=""
+                                                placeholder="Enter IMEI"
                                                 className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
@@ -248,11 +253,34 @@ function Page() {
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
+                                                PRate
+                                            </label>
+                                            <input
+                                                type="number"
+                                                placeholder="0.00"
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
                                                 IMEI
                                             </label>
                                             <input
+                                                type="number"
+                                                placeholder="0.00"
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Total Amt
+                                            </label>
+                                            <input
                                                 type="text"
-                                                placeholder=""
+                                                placeholder="0.00"
                                                 className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
@@ -261,7 +289,7 @@ function Page() {
                                                 Quantity
                                             </label>
                                             <input
-                                                type="text"
+                                                type="number"
                                                 placeholder="0.00"
                                                 className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
@@ -275,10 +303,71 @@ function Page() {
                                             className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
                                             <FaCartPlus size={15}/> Add to order
                                         </button>
-                                        <button
-                                            className="flex items-center gap-1 py-2 px-4 bg-yellow-400 hover:bg-yellow-600 text-white rounded text-[13px] cursor-pointer">
-                                            <BsEraser size={15}/> Clear
-                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col">
+                                <div className="border border-gray-300 rounded p-4">
+                                    {/* Table */}
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full border-collapse">
+                                            <thead className="bg-green-600 text-white text-[12px]">
+                                            <tr className="border border-gray-200">
+                                                <th className="p-2 border border-gray-200 text-center">SI</th>
+                                                <th className="p-2 border border-gray-200 text-left">Product</th>
+                                                <th className="p-2 border border-gray-200 text-left">IMEI</th>
+                                                <th className="p-2 border border-gray-200 text-left">Quantity</th>
+                                                <th className="p-2 border border-gray-200 text-left">PRate</th>
+                                                <th className="p-2 border border-gray-200 text-left">Total Amt</th>
+                                                <th className="p-2 border border-gray-200 text-center">Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {paginatedData.length === 0 && (
+                                                <tr>
+                                                    <td
+                                                        colSpan={8}
+                                                        className="text-center p-4 text-gray-500"
+                                                    >
+                                                        No Data Found
+                                                    </td>
+                                                </tr>
+                                            )}
+
+                                            {paginatedData.map((item, index) => (
+                                                <tr key={item.id} className="border border-gray-200 hover:bg-gray-50">
+                                                    <td className="p-3 border border-gray-200 text-center">
+                                                        {(page - 1) * entries + index + 1}
+                                                    </td>
+
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        <div className="flex justify-center gap-2">
+                                                            <button
+                                                                className="bg-red-500 p-2 rounded text-white cursor-pointer hover:bg-red-600 transition">
+                                                                <FaTrashAlt size={12}/>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -288,45 +377,22 @@ function Page() {
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Net Total
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Return Amount
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Payment Due
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
                                                 Remarks
                                             </label>
                                             <input
-                                                type="number"
+                                                type="text"
                                                 placeholder=""
                                                 className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Total Amount
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="0.00"
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                     </div>
@@ -335,12 +401,8 @@ function Page() {
                                 <div className="border border-gray-300 rounded p-4 mt-4">
                                     <div className="flex items-center gap-4">
                                         <button
-                                            className="flex items-center gap-1 py-2 px-4 bg-gray-800 text-white rounded text-[13px] cursor-pointer">
-                                            Preview
-                                        </button>
-                                        <button
-                                            className="flex items-center gap-1 py-2 px-4 bg-yellow-400 hover:bg-yellow-600 text-white rounded text-[13px] cursor-pointer">
-                                            Save Order
+                                            className="flex items-center gap-1 py-2 px-4 bg-blue-400 hover:bg-blue-600 text-white rounded text-[13px] cursor-pointer">
+                                            Save Transfer
                                         </button>
                                     </div>
                                 </div>
@@ -361,7 +423,7 @@ function Page() {
                                 <RxCross1 size={18}/>
                             </button>
                             <h3 className="text-[16px] font-semibold pb-4 border-b border-gray-300">
-                                Existing Suppliers
+                                Existing Godowns
                             </h3>
 
                             {/*Data Table One */}
@@ -397,7 +459,7 @@ function Page() {
                                     <div>
                                         <input
                                             type="text"
-                                            placeholder="Product Name..."
+                                            placeholder="Search..."
                                             value={search}
                                             onChange={(e) => setSearch(e.target.value)}
                                             className="border border-primary
@@ -422,19 +484,13 @@ function Page() {
                                             <th className="p-3 border border-gray-200 text-left">SI</th>
                                             <th className="p-3 border border-gray-200 text-left">Code</th>
                                             <th className="p-3 border border-gray-200 text-left">Name</th>
-                                            <th className="p-3 border border-gray-200 text-center">Contact No.</th>
-                                            <th className="p-3 border border-gray-200 text-center">Address</th>
-                                            <th className="p-3 border border-gray-200 text-center">Sales Due</th>
-                                            <th className="p-3 border border-gray-200 text-center">Hire Due</th>
-                                            <th className="p-3 border border-gray-200 text-center">Total Due</th>
-                                            <th className="p-3 border border-gray-200 text-center">DMS Code</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         {paginatedData.length === 0 && (
                                             <tr>
                                                 <td
-                                                    colSpan={10}
+                                                    colSpan={4}
                                                     className="text-center p-4 text-gray-500"
                                                 >
                                                     No Data Found
@@ -452,24 +508,6 @@ function Page() {
                                                     {(page - 1) * entries + index + 1}
                                                 </td>
 
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.name}
-                                                </td>
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.GodownName}
-                                                </td>
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.Company}
-                                                </td>
-                                                <td className="p-3 border border-gray-200 font-medium">
-                                                    {item.Category}
-                                                </td>
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.Color}
-                                                </td>
-                                                <td className="p-3 border border-gray-200 text-center">
-                                                    {item.MRPRate}
-                                                </td>
                                                 <td className="p-3 border border-gray-200">
                                                     {item.name}
                                                 </td>

@@ -90,7 +90,7 @@ function Page() {
                 <div className="container">
                     <div
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
-                        <h2>Create PO Return</h2>
+                        <h2>Create Replacement Order</h2>
                     </div>
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -99,7 +99,7 @@ function Page() {
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Challan
+                                                Inv. No.
                                             </label>
                                             <input
                                                 type="text"
@@ -109,7 +109,7 @@ function Page() {
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Pur. Date
+                                                Rep.Date
                                             </label>
                                             <input
                                                 type="date"
@@ -122,7 +122,7 @@ function Page() {
                                     <div className="input_box mt-4 flex items-center gap-2">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Supplier
+                                                Customer
                                             </label>
                                             <input
                                                 type="text"
@@ -164,9 +164,9 @@ function Page() {
                                             <thead className="bg-gray-50">
                                             <tr className="border border-gray-200">
                                                 <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                <th className="p-3 border border-gray-200 text-left">Name</th>
-                                                <th className="p-3 border border-gray-200 text-left">IMEI/Barcode</th>
-                                                <th className="p-3 border border-gray-200 text-left">P. Rate</th>
+                                                <th className="p-3 border border-gray-200 text-left">Product</th>
+                                                <th className="p-3 border border-gray-200 text-left">Replace IMEI</th>
+                                                <th className="p-3 border border-gray-200 text-left">New IMEI</th>
                                                 <th className="p-3 border border-gray-200 text-center">Action</th>
                                             </tr>
                                             </thead>
@@ -219,7 +219,7 @@ function Page() {
                                         <div className="w-full">
                                             <input
                                                 type="text"
-                                                placeholder=""
+                                                placeholder="Enter Damage IMEI"
                                                 className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
@@ -228,7 +228,7 @@ function Page() {
                                     <div className="input_box mt-4 flex items-center gap-2">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Product
+                                                Replace Product
                                             </label>
                                             <input
                                                 type="text"
@@ -248,7 +248,7 @@ function Page() {
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                IMEI
+                                                Color
                                             </label>
                                             <input
                                                 type="text"
@@ -258,13 +258,118 @@ function Page() {
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Quantity
+                                                Replace IMEI
                                             </label>
                                             <input
                                                 type="text"
-                                                placeholder="0.00"
+                                                placeholder=""
                                                 className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Sales Rate
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <form action="" method="" className="border border-gray-300 rounded p-4 mt-4">
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <input
+                                                type="text"
+                                                placeholder="Enter Replacement IMEI"
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 flex items-center gap-2">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                New Product
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="mt-4">
+                                            <div onClick={() => setOpenProductPickModal(true)}
+                                                 className="icon_box flex items-center gap-1 bg-primary p-1 text-white rounded cursor-pointer">
+                                                <FiPlusSquare size={20}/>
+                                                Pick
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Color
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                New IMEI
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Sales Rate
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <input
+                                                type="text"
+                                                placeholder="Remarks"
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Replace Type
+                                            </label>
+                                            <select
+                                                className="block w-full rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary"
+                                            >
+                                                <option value="">--- Select type---</option>
+                                                <option value="ShowRoomSales">Damage</option>
+                                                <option value="OthersSales">No Dagame</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </form>
@@ -288,6 +393,16 @@ function Page() {
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
+                                                Replace Total
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
                                                 Net Total
                                             </label>
                                             <input
@@ -296,22 +411,12 @@ function Page() {
                                                 className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Return Amount
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
                                     </div>
 
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Payment Due
+                                                New Total
                                             </label>
                                             <input
                                                 type="text"
@@ -321,7 +426,7 @@ function Page() {
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Remarks
+                                                Pay Amount
                                             </label>
                                             <input
                                                 type="number"
@@ -330,17 +435,39 @@ function Page() {
                                             />
                                         </div>
                                     </div>
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Adjust. Amt
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Payment Due
+                                            </label>
+                                            <input
+                                                type="number"
+                                                placeholder=""
+                                                className="w-full text-[14px] border bg-gray-100 border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
                                 </form>
 
                                 <div className="border border-gray-300 rounded p-4 mt-4">
                                     <div className="flex items-center gap-4">
                                         <button
-                                            className="flex items-center gap-1 py-2 px-4 bg-gray-800 text-white rounded text-[13px] cursor-pointer">
-                                            Preview
+                                            className="flex items-center gap-1 py-2 px-4 bg-blue-400 hover:bg-blue-600 text-white rounded text-[13px] cursor-pointer">
+                                            Replace
                                         </button>
                                         <button
                                             className="flex items-center gap-1 py-2 px-4 bg-yellow-400 hover:bg-yellow-600 text-white rounded text-[13px] cursor-pointer">
-                                            Save Order
+                                            <BsEraser size={15}/> Clear
                                         </button>
                                     </div>
                                 </div>
@@ -361,7 +488,7 @@ function Page() {
                                 <RxCross1 size={18}/>
                             </button>
                             <h3 className="text-[16px] font-semibold pb-4 border-b border-gray-300">
-                                Existing Suppliers
+                                Existing Customers
                             </h3>
 
                             {/*Data Table One */}
