@@ -96,6 +96,10 @@ const menuItems: MenuItemUI[] = [
         subItems: [
             {id: 61, title: "Expense/Income Head", path: "/admin/dashboard/expense-income"},
             {id: 62, title: "Expense", path: "/admin/dashboard/expense"},
+            {id: 63, title: "Cash Collection", path: "/admin/dashboard/cash-collection"},
+            {id: 64, title: "Cash Delivery", path: "/admin/dashboard/cash-delivery"},
+            {id: 65, title: "Income", path: "/admin/dashboard/income"},
+            {id: 66, title: "Bank Transaction", path: "/admin/dashboard/bank-transaction"},
         ],
     },
     {
