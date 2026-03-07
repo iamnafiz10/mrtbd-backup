@@ -1157,7 +1157,7 @@ function Page() {
                                     <div>
                                         <input
                                             type="text"
-                                            placeholder="Product Name..."
+                                            placeholder="Search..."
                                             value={search}
                                             onChange={(e) => setSearch(e.target.value)}
                                             className="border border-primary
