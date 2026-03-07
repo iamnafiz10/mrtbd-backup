@@ -1,10 +1,9 @@
 "use client";
 import React, {useMemo, useState} from 'react';
 import CustomCheckbox from "@/app/(admin)/admin/dashboard/helper/CustomCheckbox";
-import {FaPlus, FaTrashAlt} from "react-icons/fa";
+import {FaPlus} from "react-icons/fa";
 import {TfiReload} from "react-icons/tfi";
 import {RiShareForward2Fill} from "react-icons/ri";
-import {FaPencil} from "react-icons/fa6";
 import {RxCross1} from "react-icons/rx";
 import toast from "react-hot-toast";
 import Link from "next/link";
