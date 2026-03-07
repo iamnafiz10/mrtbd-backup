@@ -69,7 +69,7 @@ function Page() {
                 <div className="container">
                     <div
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
-                        <h2>Existing customers</h2>
+                        <h2>Existing Stock Details</h2>
                     </div>
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
 

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cab406-5a62-43ed-b061-f76082749093" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/send-bulk-sms/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sms-report/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sms-service-setting/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/suppliers/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/suppliers/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-details/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-details/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,23 +106,11 @@
       <workItem from="1772766863289" duration="7521000" />
       <workItem from="1772784904456" duration="1591000" />
       <workItem from="1772797306957" duration="5336000" />
-      <workItem from="1772850731378" duration="9681000" />
+      <workItem from="1772850731378" duration="11490000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx</url>
-          <line>71</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
