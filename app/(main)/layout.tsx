@@ -1,7 +1,3 @@
-import Header from "@/app/(main)/components/Header";
-import Footer from "@/app/(main)/components/Footer";
-import BackToTop from '@/app/(main)/components/BackToTop';
-
 export default function MainLayout({
                                        children,
                                    }: {
@@ -9,10 +5,7 @@ export default function MainLayout({
 }) {
     return (
         <>
-            <Header/>
             <main>{children}</main>
-            <Footer/>
-            <BackToTop/>
         </>
     );
 }
