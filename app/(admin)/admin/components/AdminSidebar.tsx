@@ -3,6 +3,7 @@
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
+
 import {
     FiHome,
     FiChevronLeft,
@@ -12,20 +13,37 @@ import {
     FiChevronDown,
     FiSettings,
 } from "react-icons/fi";
-import {FaUsers} from "react-icons/fa";
+
+import {FaRegFlag, FaUsers} from "react-icons/fa";
 import {MdOutlineInventory2, MdSms, MdWork} from "react-icons/md";
 import {CgCalculator} from "react-icons/cg";
+import {LuChartColumnIncreasing} from "react-icons/lu";
 
 /* ---------------- TYPES ---------------- */
+
+interface SubSubItem {
+    id: number;
+    title: string;
+    path: string;
+}
+
+interface SubItem {
+    id: number;
+    title: string;
+    path?: string;
+    children?: SubSubItem[];
+}
+
 interface MenuItemUI {
     id: number;
     title: string;
     icon: React.ReactNode;
-    path: string;
-    subItems?: { id: number; title: string; path: string }[];
+    path?: string;
+    subItems?: SubItem[];
 }
 
-/* ---------------- STATIC MENU ---------------- */
+/* ---------------- MENU ---------------- */
+
 const menuItems: MenuItemUI[] = [
     {
         id: 1,
@@ -116,43 +134,61 @@ const menuItems: MenuItemUI[] = [
     //         {id: 76, title: "Send Bulk SMS", path: "/admin/dashboard/send-bulk-sms"},
     //     ],
     // },
+    // {
+    //     id: 8,
+    //     title: "Accounting Report",
+    //     icon: <LuChartColumnIncreasing className="h-5 w-5"/>,
+    //     path: "/admin/basic",
+    //     subItems: [
+    //         {id: 81, title: "Cash In Hand", path: "/admin/dashboard/cash-in-hand"},
+    //         {id: 82, title: "Trail Balance", path: "/admin/dashboard/trial-balance"},
+    //         {id: 83, title: "Profit And Loss Account", path: "/admin/dashboard/profit-and-loss-account"},
+    //         {id: 84, title: "Balance Sheet", path: "/admin/dashboard/balance-sheet"},
+    //     ],
+    // },
+    // {
+    //     id: 9,
+    //     title: "MIS Report",
+    //     icon: <FaRegFlag className="h-5 w-5"/>,
+    //     subItems: [
+    //         {
+    //             id: 91,
+    //             title: "Basic Report",
+    //             children: [
+    //                 {id: 911, title: "Employee Information", path: "/admin/dashboard/employee-information"},
+    //                 {id: 912, title: "Product Information", path: "#"},
+    //             ],
+    //         },
+    //     ],
+    // },
+
     {
-        id: 8,
+        id: 10,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",
     },
 ];
 
-/* ---------------- HELPERS ---------------- */
-const findOpenId = (
-    items: MenuItemUI[],
-    isActive: (path: string) => boolean
-): number | null => {
-    for (const it of items) {
-        if (
-            it.subItems?.some((s) => isActive(s.path)) ||
-            (it.subItems && isActive(it.path))
-        ) {
-            return it.id;
-        }
-    }
-    return null;
-};
-
 /* ---------------- COMPONENT ---------------- */
+
 const AdminSidebar = () => {
     const pathname = usePathname();
 
-    const isActive = (path: string) =>
-        pathname === path || pathname.startsWith(path + "/");
+    const isActive = (path?: string) => {
+        if (!path) return false;
+        return pathname === path || pathname.startsWith(path + "/");
+    };
 
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const [openMenuId, setOpenMenuId] = useState<number | null>(null);
 
-    /* Detect mobile */
+    const [openMenuId, setOpenMenuId] = useState<number | null>(null);
+    const [openSubMenuId, setOpenSubMenuId] = useState<number | null>(null);
+
+    /* Detect Mobile */
+
     useEffect(() => {
         const check = () => {
             const mobile = window.innerWidth < 768;
@@ -166,12 +202,14 @@ const AdminSidebar = () => {
 
         check();
         window.addEventListener("resize", check);
+
         return () => window.removeEventListener("resize", check);
     }, []);
 
     return (
         <>
-            {/* Mobile menu button */}
+            {/* Mobile Menu Button */}
+
             {isMobile && !isMobileMenuOpen && (
                 <button
                     onClick={() => setIsMobileMenuOpen(true)}
@@ -182,6 +220,7 @@ const AdminSidebar = () => {
             )}
 
             {/* Sidebar */}
+
             <aside
                 className={`text-[14px] bg-white border-r border-gray-200 transition-all duration-300
         ${
@@ -193,11 +232,10 @@ const AdminSidebar = () => {
                 }`}
             >
                 {/* Header */}
+
                 <div className="flex items-center h-[48px] justify-between px-4 border-b border-gray-300">
                     {(!isCollapsed || isMobile) && (
-                        <h2 className="font-bold text-[15px]">
-                            MR Trade International
-                        </h2>
+                        <h2 className="font-bold text-[15px]">MR Trade International</h2>
                     )}
 
                     {!isMobile && (
@@ -207,23 +245,31 @@ const AdminSidebar = () => {
                     )}
 
                     {isMobile && (
-                        <button className="cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                        <button
+                            className="cursor-pointer"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
                             <FiX size={20}/>
                         </button>
                     )}
                 </div>
 
                 {/* Menu */}
+
                 <div className="p-4 space-y-2">
                     {menuItems.map((item) => {
                         const active =
                             isActive(item.path) ||
-                            item.subItems?.some((s) => isActive(s.path));
+                            item.subItems?.some((sub) =>
+                                sub.children?.some((c) => isActive(c.path))
+                            );
+
                         const isOpen = openMenuId === item.id;
 
                         return (
                             <div key={item.id}>
-                                {/* Main */}
+                                {/* Main Menu */}
+
                                 {item.subItems ? (
                                     <div
                                         onClick={() =>
@@ -240,6 +286,7 @@ const AdminSidebar = () => {
                                             {item.icon}
                                             {(!isCollapsed || isMobile) && item.title}
                                         </div>
+
                                         {(!isCollapsed || isMobile) && (
                                             <FiChevronDown
                                                 className={isOpen ? "rotate-180" : ""}
@@ -247,7 +294,7 @@ const AdminSidebar = () => {
                                         )}
                                     </div>
                                 ) : (
-                                    <Link href={item.path}>
+                                    <Link href={item.path || "#"}>
                                         <div
                                             className={`px-3 py-2 rounded-lg flex gap-2 items-center
                       ${
@@ -263,22 +310,71 @@ const AdminSidebar = () => {
                                 )}
 
                                 {/* Submenu */}
+
                                 {item.subItems && isOpen && (!isCollapsed || isMobile) && (
                                     <div className="pl-6 mt-1 space-y-1">
-                                        {item.subItems.map((sub) => (
-                                            <Link key={sub.id} href={sub.path}>
-                                                <div
-                                                    className={`p-2 rounded-md text-sm
-                          ${
-                                                        isActive(sub.path)
-                                                            ? "bg-primary/10 text-primary"
-                                                            : "hover:bg-gray-100"
-                                                    }`}
-                                                >
-                                                    {sub.title}
+                                        {item.subItems.map((sub) => {
+                                            const subOpen = openSubMenuId === sub.id;
+
+                                            return (
+                                                <div key={sub.id}>
+                                                    {/* Sub Item */}
+
+                                                    {sub.children ? (
+                                                        <div
+                                                            onClick={() =>
+                                                                setOpenSubMenuId(
+                                                                    subOpen ? null : sub.id
+                                                                )
+                                                            }
+                                                            className="p-2 rounded-md text-sm cursor-pointer hover:bg-gray-100 flex justify-between"
+                                                        >
+                                                            {sub.title}
+
+                                                            <FiChevronDown
+                                                                className={`${
+                                                                    subOpen ? "rotate-180" : ""
+                                                                }`}
+                                                            />
+                                                        </div>
+                                                    ) : (
+                                                        <Link href={sub.path || "#"}>
+                                                            <div
+                                                                className={`p-2 rounded-md text-sm
+                                ${
+                                                                    isActive(sub.path)
+                                                                        ? "bg-primary/10 text-primary"
+                                                                        : "hover:bg-gray-100"
+                                                                }`}
+                                                            >
+                                                                {sub.title}
+                                                            </div>
+                                                        </Link>
+                                                    )}
+
+                                                    {/* Sub Sub Menu */}
+
+                                                    {sub.children && subOpen && (
+                                                        <div className="pl-4 space-y-1">
+                                                            {sub.children.map((child) => (
+                                                                <Link key={child.id} href={child.path}>
+                                                                    <div
+                                                                        className={`p-2 rounded-md text-sm
+                                    ${
+                                                                            isActive(child.path)
+                                                                                ? "bg-primary/10 text-primary"
+                                                                                : "hover:bg-gray-100"
+                                                                        }`}
+                                                                    >
+                                                                        {child.title}
+                                                                    </div>
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    )}
                                                 </div>
-                                            </Link>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                 )}
                             </div>
