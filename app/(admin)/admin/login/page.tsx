@@ -74,12 +74,12 @@ export default function LoginPage() {
                         </div>
 
                         {/* Button */}
-                        <button
+                        <Link href='/admin/dashboard'
                             type="submit"
-                            className="w-full cursor-pointer border border-primary bg-primary hover:bg-transparent hover:text-primary text-white py-2 rounded font-semibold"
+                            className="w-full block text-center cursor-pointer border border-primary bg-primary hover:bg-transparent hover:text-primary text-white py-2 rounded font-semibold"
                         >
                             Log In
-                        </button>
+                        </Link>
                     </form>
                 </div>
             </div>
