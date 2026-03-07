@@ -33,6 +33,14 @@ function Page() {
             fileRef.current.value = "";
         }
     };
+
+    // Button Click To Showing Info //
+    const [showManager, setShowManager] = useState(false);
+    const [showDue, setShowDue] = useState(false);
+    const [showGuarantor, setShowGuarantor] = useState(false);
+    const [showGuarnt, setShowGuarnt] = useState(false);
+    const [showGuarantorB, setShowGuarantorB] = useState(false);
+    const [showGuarntB, setShowGuarntB] = useState(false);
     return (
         <>
             <section id="category-section" className="mt-10">
@@ -535,7 +543,39 @@ function Page() {
                                             </div>
                                         </div>
 
-                                        <div className="col mt-6">
+                                        <div className="col mt-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setShowManager(!showManager)}
+                                                className={`cursor-pointer py-2 px-4 rounded border transition-all duration-300
+                                                    ${showManager
+                                                    ? "bg-transparent border-primary text-primary"
+                                                    : "bg-primary border-primary text-white hover:bg-transparent hover:text-primary"
+                                                }`}
+                                            >
+                                                Add Manager Info <span className="ml-1">{showManager ? "-" : "+"}</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="col mt-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setShowDue(!showDue)}
+                                                className={`cursor-pointer py-2 px-4 rounded border transition-all duration-300
+                                                ${showDue
+                                                    ? "bg-transparent border-primary text-primary"
+                                                    : "bg-primary border-primary text-white hover:bg-transparent hover:text-primary"
+                                                }`}
+                                            >
+                                                Add Due Info <span className="ml-1">{showDue ? "-" : "+"}</span>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            className={`col transition-all duration-500 overflow-hidden ${
+                                                showManager ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                            }`}
+                                        >
                                             <div className="bg-primary p-3 text-[14px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Manager Information
@@ -564,7 +604,12 @@ function Page() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col mt-6">
+
+                                        <div
+                                            className={`col transition-all duration-500 overflow-hidden ${
+                                                showDue ? "max-h-[1200px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                            }`}
+                                        >
                                             <div className="bg-primary p-3 text-[14px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Due Limited
@@ -831,7 +876,40 @@ function Page() {
                                             </div>
                                         </div>
 
-                                        <div className="col mt-6">
+                                        <div className="col mt-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setShowGuarantor(!showGuarantor)}
+                                                className={`cursor-pointer py-2 px-4 rounded border transition-all duration-300
+                                                    ${showGuarantor
+                                                    ? "bg-transparent border-primary text-primary"
+                                                    : "bg-primary border-primary text-white hover:bg-transparent hover:text-primary"
+                                                }`}
+                                            >
+                                                Add Guarantor/Refer Info <span
+                                                className="ml-1">{showGuarantor ? "-" : "+"}</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="col mt-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setShowGuarnt(!showGuarnt)}
+                                                className={`cursor-pointer py-2 px-4 rounded border transition-all duration-300
+                                                ${showGuarnt
+                                                    ? "bg-transparent border-primary text-primary"
+                                                    : "bg-primary border-primary text-white hover:bg-transparent hover:text-primary"
+                                                }`}
+                                            >
+                                                Add Guarnt Info <span className="ml-1">{showGuarnt ? "-" : "+"}</span>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            className={`col transition-all duration-500 overflow-hidden ${
+                                                showGuarantor ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                            }`}
+                                        >
                                             <div className="bg-primary p-3 text-[14px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Guarantor Infomation
@@ -871,9 +949,68 @@ function Page() {
                                                     />
                                                 </div>
                                             </div>
+
+                                            <div className="col mt-6">
+                                                <div className="bg-primary p-3 text-[14px] rounded">
+                                                    <h2 className="text-white font-semibold">
+                                                        Refer
+                                                    </h2>
+                                                </div>
+                                                <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                    <div className="w-full">
+                                                        <label className="block mb-1 text-[14px] font-medium">
+                                                            Sales Type
+                                                        </label>
+                                                        <select
+                                                            className="block w-full rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary"
+                                                        >
+                                                            <option value="">--- Select a type---</option>
+                                                            <option value="value1">Show Room Sales</option>
+                                                            <option value="value2">Others Sales</option>
+                                                        </select>
+                                                    </div>
+                                                    <div className="w-full mt-4 md:mt-0">
+                                                        <label className="block mb-1 text-[14px] font-medium">
+                                                            Show Room Name
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            placeholder=""
+                                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                    <div className="w-full">
+                                                        <label className="block mb-1 text-[14px] font-medium">
+                                                            Full Name
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            placeholder=""
+                                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                        />
+                                                    </div>
+                                                    <div className="w-full mt-4 md:mt-0">
+                                                        <label className="block mb-1 text-[14px] font-medium">
+                                                            Mobile No
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            placeholder=""
+                                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div className="col mt-6">
+                                        <div
+                                            className={`transition-all duration-500 overflow-hidden ${
+                                                showGuarnt ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                            }`}
+                                        >
                                             <div className="bg-primary p-3 text-[14px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Guarnt Contact Infomation
@@ -934,61 +1071,6 @@ function Page() {
                                                         type="text"
                                                         placeholder=""
                                                         className="w-full text-[14px]  border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="col mt-6">
-                                            <div className="bg-primary p-3 text-[14px] rounded">
-                                                <h2 className="text-white font-semibold">
-                                                    Refer
-                                                </h2>
-                                            </div>
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
-                                                    <label className="block mb-1 text-[14px] font-medium">
-                                                        Sales Type
-                                                    </label>
-                                                    <select
-                                                        className="block w-full rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary"
-                                                    >
-                                                        <option value="">--- Select a type---</option>
-                                                        <option value="value1">Show Room Sales</option>
-                                                        <option value="value2">Others Sales</option>
-                                                    </select>
-                                                </div>
-                                                <div className="w-full mt-4 md:mt-0">
-                                                    <label className="block mb-1 text-[14px] font-medium">
-                                                        Show Room Name
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
-                                                    <label className="block mb-1 text-[14px] font-medium">
-                                                        Full Name
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                                <div className="w-full mt-4 md:mt-0">
-                                                    <label className="block mb-1 text-[14px] font-medium">
-                                                        Mobile No
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                     />
                                                 </div>
                                             </div>
@@ -1180,7 +1262,40 @@ function Page() {
                                             </div>
                                         </div>
 
-                                        <div className="col mt-6">
+                                        <div className="col mt-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setShowGuarantorB(!showGuarantorB)}
+                                                className={`cursor-pointer py-2 px-4 rounded border transition-all duration-300
+                                                    ${showGuarantorB
+                                                    ? "bg-transparent border-primary text-primary"
+                                                    : "bg-primary border-primary text-white hover:bg-transparent hover:text-primary"
+                                                }`}
+                                            >
+                                                Add Guarantor/Refer Info <span
+                                                className="ml-1">{showGuarantorB ? "-" : "+"}</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="col mt-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setShowGuarntB(!showGuarntB)}
+                                                className={`cursor-pointer py-2 px-4 rounded border transition-all duration-300
+                                                ${showGuarntB
+                                                    ? "bg-transparent border-primary text-primary"
+                                                    : "bg-primary border-primary text-white hover:bg-transparent hover:text-primary"
+                                                }`}
+                                            >
+                                                Add Guarnt Info <span className="ml-1">{showGuarntB ? "-" : "+"}</span>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            className={`col transition-all duration-500 overflow-hidden ${
+                                                showGuarantorB ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                            }`}
+                                        >
                                             <div className="bg-primary p-3 text-[14px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Guarantor Infomation
@@ -1220,9 +1335,68 @@ function Page() {
                                                     />
                                                 </div>
                                             </div>
+
+                                            <div className="col mt-6">
+                                                <div className="bg-primary p-3 text-[14px] rounded">
+                                                    <h2 className="text-white font-semibold">
+                                                        Refer
+                                                    </h2>
+                                                </div>
+                                                <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                    <div className="w-full">
+                                                        <label className="block mb-1 text-[14px] font-medium">
+                                                            Sales Type
+                                                        </label>
+                                                        <select
+                                                            className="block w-full rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary"
+                                                        >
+                                                            <option value="">--- Select a type---</option>
+                                                            <option value="value1">Show Room Sales</option>
+                                                            <option value="value2">Others Sales</option>
+                                                        </select>
+                                                    </div>
+                                                    <div className="w-full mt-4 md:mt-0">
+                                                        <label className="block mb-1 text-[14px] font-medium">
+                                                            Show Room Name
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            placeholder=""
+                                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                    <div className="w-full">
+                                                        <label className="block mb-1 text-[14px] font-medium">
+                                                            Full Name
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            placeholder=""
+                                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                        />
+                                                    </div>
+                                                    <div className="w-full mt-4 md:mt-0">
+                                                        <label className="block mb-1 text-[14px] font-medium">
+                                                            Mobile No
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            placeholder=""
+                                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div className="col mt-6">
+                                        <div
+                                            className={`transition-all duration-500 overflow-hidden ${
+                                                showGuarntB ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                            }`}
+                                        >
                                             <div className="bg-primary p-3 text-[14px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Guarnt Contact Infomation
@@ -1283,61 +1457,6 @@ function Page() {
                                                         type="text"
                                                         placeholder=""
                                                         className="w-full text-[14px]  border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="col mt-6">
-                                            <div className="bg-primary p-3 text-[14px] rounded">
-                                                <h2 className="text-white font-semibold">
-                                                    Refer
-                                                </h2>
-                                            </div>
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
-                                                    <label className="block mb-1 text-[14px] font-medium">
-                                                        Sales Type
-                                                    </label>
-                                                    <select
-                                                        className="block w-full rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary"
-                                                    >
-                                                        <option value="">--- Select a type---</option>
-                                                        <option value="value1">Show Room Sales</option>
-                                                        <option value="value2">Others Sales</option>
-                                                    </select>
-                                                </div>
-                                                <div className="w-full mt-4 md:mt-0">
-                                                    <label className="block mb-1 text-[14px] font-medium">
-                                                        Show Room Name
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
-                                                    <label className="block mb-1 text-[14px] font-medium">
-                                                        Full Name
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                                <div className="w-full mt-4 md:mt-0">
-                                                    <label className="block mb-1 text-[14px] font-medium">
-                                                        Mobile No
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                     />
                                                 </div>
                                             </div>
