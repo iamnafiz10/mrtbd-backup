@@ -19,6 +19,10 @@ function Page() {
             fileRef.current.value = "";
         }
     };
+
+    // Button Click To Showing Info //
+    const [showAddressP, setShowshowAddressP] = useState(false);
+    const [showPaymentD, setShowPaymentD] = useState(false);
     return (
         <>
             <section id="category-section" className="mt-10">
@@ -65,7 +69,7 @@ function Page() {
                                 accept="image/*"
                                 onChange={handleImageChange}
                                 className="w-1/2 text-[12px] border border-gray-300 rounded p-3 py-2
-                focus:outline-none focus:border-primary"
+                                focus:outline-none focus:border-primary"
                             />
                         </div>
                         <div className="w-full"></div>
@@ -202,7 +206,40 @@ function Page() {
                                         </div>
                                     </div>
 
-                                    <div className="col mt-6">
+                                    <div className="col mt-4">
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowshowAddressP(!showAddressP)}
+                                            className={`cursor-pointer py-2 px-4 rounded border transition-all duration-300
+                                                    ${showAddressP
+                                                ? "bg-transparent border-primary text-primary"
+                                                : "bg-primary border-primary text-white hover:bg-transparent hover:text-primary"
+                                            }`}
+                                        >
+                                            Add Address/Product Info <span
+                                            className="ml-1">{showAddressP ? "-" : "+"}</span>
+                                        </button>
+                                    </div>
+
+                                    <div className="col mt-4">
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowPaymentD(!showPaymentD)}
+                                            className={`cursor-pointer py-2 px-4 rounded border transition-all duration-300
+                                                ${showPaymentD
+                                                ? "bg-transparent border-primary text-primary"
+                                                : "bg-primary border-primary text-white hover:bg-transparent hover:text-primary"
+                                            }`}
+                                        >
+                                            Add Payment/Delivery Info <span className="ml-1">{showPaymentD ? "-" : "+"}</span>
+                                        </button>
+                                    </div>
+
+                                    <div
+                                        className={`col transition-all duration-500 overflow-hidden ${
+                                            showAddressP ? "max-h-[1200px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                        }`}
+                                    >
                                         <div className="bg-primary p-3 text-[14px] rounded">
                                             <h2 className="text-white font-semibold">
                                                 Address Information
@@ -296,9 +333,34 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
+
+                                        <div className="col mt-6">
+                                            <div className="bg-primary p-3 text-[14px] rounded">
+                                                <h2 className="text-white font-semibold">
+                                                    Product Information
+                                                </h2>
+                                            </div>
+
+                                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                <div className="w-full">
+                                                    <label className="block mb-1 text-[14px] font-medium">
+                                                        Product Category
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div className="col mt-6">
+                                    <div
+                                        className={`col transition-all duration-500 overflow-hidden ${
+                                            showPaymentD ? "max-h-[1200px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                        }`}
+                                    >
                                         <div className="bg-primary p-3 text-[14px] rounded">
                                             <h2 className="text-white font-semibold">
                                                 Payment Information
@@ -326,7 +388,6 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
-
                                         <div className="input_box mt-4 block md:flex items-center gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[14px] font-medium">
@@ -349,7 +410,6 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
-
                                         <div className="input_box mt-4 block md:flex items-center gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[14px] font-medium">
@@ -362,58 +422,37 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div className="col mt-6">
-                                        <div className="bg-primary p-3 text-[14px] rounded">
-                                            <h2 className="text-white font-semibold">
-                                                Product Information
-                                            </h2>
-                                        </div>
-
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
-                                                    Product Category
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
+                                        <div className="col mt-6">
+                                            <div className="bg-primary p-3 text-[14px] rounded">
+                                                <h2 className="text-white font-semibold">
+                                                    Delivery And Reciver Information
+                                                </h2>
                                             </div>
-                                        </div>
-                                    </div>
 
-                                    <div className="col mt-6">
-                                        <div className="bg-primary p-3 text-[14px] rounded">
-                                            <h2 className="text-white font-semibold">
-                                                Delivery And Reciver Information
-                                            </h2>
-                                        </div>
-
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
-                                                    Delivery Man
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
+                                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                <div className="w-full">
+                                                    <label className="block mb-1 text-[14px] font-medium">
+                                                        Delivery Man
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
-                                                    Delivery Man Contact No
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
+                                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                <div className="w-full">
+                                                    <label className="block mb-1 text-[14px] font-medium">
+                                                        Delivery Man Contact No
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
