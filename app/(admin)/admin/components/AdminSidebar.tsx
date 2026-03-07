@@ -13,7 +13,7 @@ import {
     FiSettings,
 } from "react-icons/fi";
 import {FaUsers} from "react-icons/fa";
-import {MdOutlineInventory2, MdWork} from "react-icons/md";
+import {MdOutlineInventory2, MdSms, MdWork} from "react-icons/md";
 import {CgCalculator} from "react-icons/cg";
 
 /* ---------------- TYPES ---------------- */
@@ -104,6 +104,20 @@ const menuItems: MenuItemUI[] = [
     },
     {
         id: 7,
+        title: "SMS Service",
+        icon: <MdSms className="h-5 w-5"/>,
+        path: "/admin/basic",
+        subItems: [
+            {id: 71, title: "SMS Inbox", path: "/admin/dashboard/sms-inbox"},
+            {id: 72, title: "Send SMS", path: "/admin/dashboard/send-sms"},
+            {id: 73, title: "SMS Bill", path: "/admin/dashboard/sms-bill"},
+            {id: 74, title: "SMS Report", path: "/admin/dashboard/sms-report"},
+            {id: 75, title: "SMS Service Setting", path: "/admin/dashboard/sms-service-setting"},
+            {id: 76, title: "Send Bulk SMS", path: "/admin/dashboard/send-bulk-sms"},
+        ],
+    },
+    {
+        id: 8,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",
