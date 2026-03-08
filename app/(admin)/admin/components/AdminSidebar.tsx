@@ -157,6 +157,27 @@ const menuItems: MenuItemUI[] = [
     //             children: [
     //                 {id: 911, title: "Employee Information", path: "/admin/dashboard/employee-information"},
     //                 {id: 912, title: "Product Information", path: "#"},
+    //                 {id: 913, title: "Stock Details Report", path: "/admin/dashboard/stock-details-report"},
+    //                 {id: 914, title: "Stock Summary Report", path: "/admin/dashboard/stock-summary-report"},
+    //                 {id: 915, title: "Stock Ledger", path: "/admin/dashboard/stock-ledger"},
+    //                 {id: 916, title: "Stock Quantity Report", path: "/admin/dashboard/stock-quantity-report"},
+    //                 {
+    //                     id: 917,
+    //                     title: "Stock Forcasting Report (Product Wise)",
+    //                     path: "/admin/dashboard/stock-forcasting-report-pw"
+    //                 },
+    //                 {
+    //                     id: 918,
+    //                     title: "Stock Forcasting Report (Concern Wise)",
+    //                     path: "/admin/dashboard/stock-forcasting-report-cw"
+    //                 },
+    //             ],
+    //         },
+    //         {
+    //             id: 92,
+    //             title: "Purchase Report",
+    //             children: [
+    //                 {id: 921, title: "One", path: "/admin/dashboard/one"},
     //             ],
     //         },
     //     ],
@@ -225,10 +246,10 @@ const AdminSidebar = () => {
                 className={`text-[14px] bg-white border-r border-gray-200 transition-all duration-300
         ${
                     isMobile
-                        ? `fixed top-0 left-0 z-30 h-full w-[240px] ${
+                        ? `fixed top-0 left-0 z-30 h-full w-[300px] ${
                             isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
                         }`
-                        : `${isCollapsed ? "w-fit" : "w-[240px]"}`
+                        : `${isCollapsed ? "w-fit" : "w-[300px]"}`
                 }`}
             >
                 {/* Header */}

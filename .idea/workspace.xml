@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cab406-5a62-43ed-b061-f76082749093" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/balance-sheet/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-in-hand/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/employee-information/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/profit-and-loss-account/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/trial-balance/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-details-report/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-forcasting-report-cw/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-forcasting-report-pw/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-ledger/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-quantity-report/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/stock-summary-report/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" afterDir="false" />
     </list>
@@ -109,7 +110,8 @@
       <workItem from="1772784904456" duration="1591000" />
       <workItem from="1772797306957" duration="5336000" />
       <workItem from="1772850731378" duration="12214000" />
-      <workItem from="1772887309391" duration="3452000" />
+      <workItem from="1772887309391" duration="3495000" />
+      <workItem from="1772939104925" duration="5098000" />
     </task>
     <servers />
   </component>
