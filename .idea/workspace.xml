@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cab406-5a62-43ed-b061-f76082749093" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/default-customer-summary/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/defaulting-customer/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/installment-collection/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-commission-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-visit-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-customer-due/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-customer-sales-summary/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-customer-status/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-sales-details/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-sales-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/upcoming-installment/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/category-wise-custom-due/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-cash-collection/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-due-report-date-wise/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-ledger-report/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-wise-sales-report/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" afterDir="false" />
     </list>
@@ -121,6 +115,7 @@
       <workItem from="1772974248920" duration="3992000" />
       <workItem from="1773025981785" duration="2407000" />
       <workItem from="1773057579605" duration="2565000" />
+      <workItem from="1773061961681" duration="1573000" />
     </task>
     <servers />
   </component>

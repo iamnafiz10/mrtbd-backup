@@ -228,11 +228,22 @@ const menuItems: MenuItemUI[] = [
     //                 {id: 128, title: "SR Commission Report", path: "/admin/dashboard/sr-commission-report"},
     //             ],
     //         },
+    //         {
+    //             id: 13,
+    //             title: "Customer Wise Report",
+    //             children: [
+    //                 {id: 131, title: "Customer Wise Sales Report", path: "/admin/dashboard/customer-wise-sales-report"},
+    //                 {id: 132, title: "Category Wise Custom Due", path: "/admin/dashboard/category-wise-custom-due"},
+    //                 {id: 133, title: "Customer Ledger Report", path: "/admin/dashboard/customer-ledger-report"},
+    //                 {id: 134, title: "Customer Due Report [Date Wise]", path: "/admin/dashboard/customer-due-report-date-wise"},
+    //                 {id: 135, title: "Customer Cash Collection", path: "/admin/dashboard/customer-cash-collection"},
+    //             ],
+    //         },
     //     ],
     // },
 
     {
-        id: 13,
+        id: 14,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",
