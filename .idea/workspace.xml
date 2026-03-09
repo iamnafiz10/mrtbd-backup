@@ -2,23 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cab406-5a62-43ed-b061-f76082749093" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/daily-purchase-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/daily-sales-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/model-wise-purchase/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/model-wise-sales/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/monthly-purchase-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/monthly-sales-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/replacement-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/supplier-cash-delivery/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/supplier-due-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/supplier-ledger/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/supplier-wise-purchase/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/vat-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/yearly-purchase-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/yearly-sales-report/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/default-customer-summary/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/defaulting-customer/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/installment-collection/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-commission-report/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-visit-report/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-customer-due/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-customer-sales-summary/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-customer-status/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-sales-details/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sr-wise-sales-report/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/upcoming-installment/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customers/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customers/create/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +119,8 @@
       <workItem from="1772939104925" duration="5098000" />
       <workItem from="1772950996645" duration="1963000" />
       <workItem from="1772974248920" duration="3992000" />
+      <workItem from="1773025981785" duration="2407000" />
+      <workItem from="1773057579605" duration="2565000" />
     </task>
     <servers />
   </component>

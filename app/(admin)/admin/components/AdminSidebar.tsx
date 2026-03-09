@@ -199,11 +199,40 @@ const menuItems: MenuItemUI[] = [
     //                 {id: 105, title: "Model Wise Sales", path: "/admin/dashboard/model-wise-sales"},
     //             ],
     //         },
+    //         {
+    //             id: 11,
+    //             title: "Hire Sales Report",
+    //             children: [
+    //                 {id: 111, title: "Installment Collection", path: "/admin/dashboard/installment-collection"},
+    //                 {id: 112, title: "Upcoming Installment", path: "/admin/dashboard/upcoming-installment"},
+    //                 {id: 113, title: "Defaulting Customer", path: "/admin/dashboard/defaulting-customer"},
+    //                 {id: 114, title: "Default Customer Summary", path: "/admin/dashboard/default-customer-summary"},
+    //                 {id: 115, title: "Hire Account Details", path: "/admin/dashboard/hire-account-details"},
+    //             ],
+    //         },
+    //         {
+    //             id: 12,
+    //             title: "SR Report",
+    //             children: [
+    //                 {id: 121, title: "SR Wise Sales Report", path: "/admin/dashboard/sr-wise-sales-report"},
+    //                 {id: 122, title: "SR Wise Sales Details", path: "/admin/dashboard/sr-wise-sales-details"},
+    //                 {id: 123, title: "SR Wise Customer Due", path: "/admin/dashboard/sr-wise-customer-due"},
+    //                 {
+    //                     id: 124,
+    //                     title: "SR Wise Customer Sales Summary",
+    //                     path: "/admin/dashboard/sr-wise-customer-sales-summary"
+    //                 },
+    //                 {id: 125, title: "SR Visit Report", path: "/admin/dashboard/sr-visit-report"},
+    //                 {id: 126, title: "SR Wise Customer Status", path: "/admin/dashboard/sr-wise-customer-status"},
+    //                 {id: 127, title: "SR Wise Cash Collection", path: "#"},
+    //                 {id: 128, title: "SR Commission Report", path: "/admin/dashboard/sr-commission-report"},
+    //             ],
+    //         },
     //     ],
     // },
 
     {
-        id: 11,
+        id: 13,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",
