@@ -239,11 +239,25 @@ const menuItems: MenuItemUI[] = [
     //                 {id: 135, title: "Customer Cash Collection", path: "/admin/dashboard/customer-cash-collection"},
     //             ],
     //         },
+    //         {
+    //             id: 14,
+    //             title: "Managment Report",
+    //             children: [
+    //                 {id: 141, title: "Expense Report", path: "/admin/dashboard/expense-report"},
+    //                 {id: 142, title: "Product Wise Benefit Report", path: "/admin/dashboard/product-wise-benefit-report"},
+    //                 {id: 143, title: "Income Report", path: "/admin/dashboard/income-report"},
+    //                 {id: 144, title: "Adjustment Report", path: "/admin/dashboard/adjustment-report"},
+    //                 {id: 145, title: "Transaction Summary Report", path: "/admin/dashboard/transaction-summary-report"},
+    //                 {id: 146, title: "Monthly Transaction Report", path: "/admin/dashboard/monthly-transaction-report"},
+    //                 {id: 147, title: "Showroom Analysis Report", path: "/admin/dashboard/showroom-analysis-report"},
+    //                 {id: 148, title: "Advance Search", path: "/admin/dashboard/advance-search"},
+    //             ],
+    //         },
     //     ],
     // },
 
     {
-        id: 14,
+        id: 15,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",
