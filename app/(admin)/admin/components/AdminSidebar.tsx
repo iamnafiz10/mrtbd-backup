@@ -272,6 +272,33 @@ const menuItems: MenuItemUI[] = [
     //         },
     //     ],
     // },
+    // {
+    //     id: 40,
+    //     title: "Bank Loan",
+    //     icon: <FaRegFlag className="h-5 w-5"/>,
+    //     subItems: [
+    //         {
+    //             id: 401,
+    //             title: "CC Loan",
+    //             path: "/admin/dashboard/cc-loan",
+    //         },
+    //         {
+    //             id: 402,
+    //             title: "Bank Loan",
+    //             path: "/admin/dashboard/bank-loan",
+    //         },
+    //         {
+    //             id: 403,
+    //             title: "Bank Loan Collection",
+    //             path: "/admin/dashboard/bank-loan-collection",
+    //         },
+    //         {
+    //             id: 404,
+    //             title: "Bank Loan Report",
+    //             path: "/admin/dashboard/bank-loan-report",
+    //         },
+    //     ],
+    // },
 
     {
         id: 18,

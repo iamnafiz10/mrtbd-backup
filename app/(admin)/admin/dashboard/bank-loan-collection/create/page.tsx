@@ -1,0 +1,192 @@
+"use client";
+import React from 'react';
+
+function Page() {
+    return (
+        <>
+            <section id="category-section" className="mt-10">
+                <div className="container">
+                    <div
+                        className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
+                        <h2>Create Bank Loan Collection</h2>
+                    </div>
+                    <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
+                        <div className="grid grid-cols-1">
+                            <div className="col">
+                                <form className="border border-gray-300 rounded p-4">
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Code
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="00001"
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Collection Amount
+                                            </label>
+                                            <input
+                                                type="number"
+                                                placeholder="0.00"
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Date
+                                            </label>
+                                            <input
+                                                type="date"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                SDPS
+                                            </label>
+                                            <input
+                                                type="number"
+                                                placeholder="0.00"
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                CollectionType
+                                            </label>
+                                            <div className="block md:flex items-center gap-2">
+                                                <div className="relative w-full mt-4 md:mt-0">
+                                                    <select
+                                                        className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary">
+                                                        <option value="option1">--Select Type--</option>
+                                                        <option value="option2">Normal</option>
+                                                        <option value="option3">CC Loan</option>
+                                                    </select>
+                                                    <div
+                                                        className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                        <svg className="h-4 w-4 fill-current"
+                                                             xmlns="http://www.w3.org/2000/svg"
+                                                             viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Savings
+                                            </label>
+                                            <input
+                                                type="number"
+                                                placeholder="0.00"
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Bank
+                                            </label>
+                                            <div className="block md:flex items-center gap-2">
+                                                <div className="relative w-full mt-4 md:mt-0">
+                                                    <select
+                                                        className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary">
+                                                        <option value="option1">--Select a Bank--</option>
+                                                        <option value="option2">Islami Bank 001</option>
+                                                        <option value="option3">City Bank 002</option>
+                                                    </select>
+                                                    <div
+                                                        className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                        <svg className="h-4 w-4 fill-current"
+                                                             xmlns="http://www.w3.org/2000/svg"
+                                                             viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Total
+                                            </label>
+                                            <input
+                                                type="number"
+                                                placeholder="0.00"
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Bank Loan
+                                            </label>
+                                            <div className="block md:flex items-center gap-2">
+                                                <div className="relative w-full mt-4 md:mt-0">
+                                                    <select
+                                                        className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary">
+                                                        <option value="option1">--Select--</option>
+                                                        <option value="option2">Data One</option>
+                                                        <option value="option3">Data Two</option>
+                                                    </select>
+                                                    <div
+                                                        className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                        <svg className="h-4 w-4 fill-current"
+                                                             xmlns="http://www.w3.org/2000/svg"
+                                                             viewBox="0 0 20 20">
+                                                            <path
+                                                                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Loan Amount
+                                            </label>
+                                            <input
+                                                type="number"
+                                                placeholder="0.00"
+                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center mt-4">
+                            <button
+                                className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
+                                Save Paid
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+}
+
+export default Page;

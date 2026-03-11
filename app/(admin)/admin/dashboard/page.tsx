@@ -112,7 +112,7 @@ function Page() {
                             </div>
                         </div>
                         <div className="w-full md:w-[300px] border border-primary rounded p-4">
-                            <div className="bg-green-500 px-3 py-2 text-white rounded text-center">
+                            <div className="bg-primary px-3 py-2 text-white rounded text-center">
                                 <h3>Advance Search</h3>
                             </div>
                             <div onClick={() => setOpenAdvanceModal(true)}

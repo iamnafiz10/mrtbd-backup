@@ -6,10 +6,10 @@
 ========================= */
 @theme {
     --font-primary: "Inter", sans-serif;
-    --color-primary: #41B53F;
+    --color-primary: #2cb7c2;
     --color-custom-opacity: #00000061;
     --color-modal-opacity: #00000080;
-    --color-dark-primary: #3b843a;
+    --color-dark-primary: #04949f;
 }
 
 /* =========================

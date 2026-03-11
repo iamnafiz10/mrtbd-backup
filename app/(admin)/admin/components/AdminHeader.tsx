@@ -1,10 +1,11 @@
 "use client";
 
 import React, {useEffect, useRef, useState} from "react";
-import {FiLogOut, FiSettings} from "react-icons/fi";
+import {FiLogOut} from "react-icons/fi";
 import {IoLockOpenOutline} from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 import userImg from "../../../../public/assets/images/user.png";
 
@@ -32,10 +33,12 @@ const AdminHeader: React.FC = () => {
             document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    const router = useRouter();
     const signOut = () => {
         setDropdownOpen(false);
         // 🔹 UI only (no backend)
         console.log("Sign out clicked");
+        router.push("/");
     };
 
     return (
@@ -87,15 +90,7 @@ const AdminHeader: React.FC = () => {
 
                         {/* Actions */}
                         <Link
-                            href="#"
-                            onClick={() => setDropdownOpen(false)}
-                            className="flex items-center gap-2 px-4 py-2 text-[14px] hover:bg-gray-100 text-gray-800 transition-colors"
-                        >
-                            <FiSettings className="h-4 w-4"/> Update Profile
-                        </Link>
-
-                        <Link
-                            href="#"
+                            href="/admin/dashboard/auth/change-password"
                             onClick={() => setDropdownOpen(false)}
                             className="flex items-center gap-2 px-4 py-2 text-[14px] hover:bg-gray-100 text-gray-800 transition-colors"
                         >
@@ -105,7 +100,7 @@ const AdminHeader: React.FC = () => {
                         <button
                             type="button"
                             onClick={signOut}
-                            className="w-full text-left flex items-center gap-2 px-4 py-2 text-[14px] hover:bg-gray-100 text-gray-800 transition-colors"
+                            className="w-full cursor-pointer text-left flex items-center gap-2 px-4 py-2 text-[14px] hover:bg-gray-100 text-gray-800 transition-colors"
                         >
                             <FiLogOut className="h-4 w-4"/> Sign Out
                         </button>
