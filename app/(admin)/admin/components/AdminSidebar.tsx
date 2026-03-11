@@ -250,14 +250,31 @@ const menuItems: MenuItemUI[] = [
     //                 {id: 145, title: "Transaction Summary Report", path: "/admin/dashboard/transaction-summary-report"},
     //                 {id: 146, title: "Monthly Transaction Report", path: "/admin/dashboard/monthly-transaction-report"},
     //                 {id: 147, title: "Showroom Analysis Report", path: "/admin/dashboard/showroom-analysis-report"},
-    //                 {id: 148, title: "Advance Search", path: "/admin/dashboard/advance-search"},
     //             ],
+    //         },
+    //         {
+    //             id: 15,
+    //             title: "Advance Search",
+    //             path: "/admin/dashboard/advance-search",
+    //         },
+    //         {
+    //             id: 16,
+    //             title: "Bank Report",
+    //             children: [
+    //                 {id: 161, title: "Bank Transaction Report", path: "/admin/dashboard/bank-transaction-report"},
+    //                 {id: 162, title: "Bank Ledger", path: "/admin/dashboard/bank-ledger"},
+    //             ],
+    //         },
+    //         {
+    //             id: 17,
+    //             title: "Transfer Report",
+    //             path: "/admin/dashboard/transfer-report",
     //         },
     //     ],
     // },
 
     {
-        id: 15,
+        id: 18,
         title: "Settings",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/settings",
