@@ -14,7 +14,7 @@ import {
     FiSettings,
 } from "react-icons/fi";
 
-import {FaRegFlag, FaUsers} from "react-icons/fa";
+import {FaRegFlag, FaRegMoneyBillAlt, FaUsers} from "react-icons/fa";
 import {MdOutlineInventory2, MdSms, MdWork} from "react-icons/md";
 import {CgCalculator} from "react-icons/cg";
 import {LuChartColumnIncreasing} from "react-icons/lu";
@@ -235,7 +235,11 @@ const menuItems: MenuItemUI[] = [
     //                 {id: 131, title: "Customer Wise Sales Report", path: "/admin/dashboard/customer-wise-sales-report"},
     //                 {id: 132, title: "Category Wise Custom Due", path: "/admin/dashboard/category-wise-custom-due"},
     //                 {id: 133, title: "Customer Ledger Report", path: "/admin/dashboard/customer-ledger-report"},
-    //                 {id: 134, title: "Customer Due Report [Date Wise]", path: "/admin/dashboard/customer-due-report-date-wise"},
+    //                 {
+    //                     id: 134,
+    //                     title: "Customer Due Report [Date Wise]",
+    //                     path: "/admin/dashboard/customer-due-report-date-wise"
+    //                 },
     //                 {id: 135, title: "Customer Cash Collection", path: "/admin/dashboard/customer-cash-collection"},
     //             ],
     //         },
@@ -244,7 +248,11 @@ const menuItems: MenuItemUI[] = [
     //             title: "Managment Report",
     //             children: [
     //                 {id: 141, title: "Expense Report", path: "/admin/dashboard/expense-report"},
-    //                 {id: 142, title: "Product Wise Benefit Report", path: "/admin/dashboard/product-wise-benefit-report"},
+    //                 {
+    //                     id: 142,
+    //                     title: "Product Wise Benefit Report",
+    //                     path: "/admin/dashboard/product-wise-benefit-report"
+    //                 },
     //                 {id: 143, title: "Income Report", path: "/admin/dashboard/income-report"},
     //                 {id: 144, title: "Adjustment Report", path: "/admin/dashboard/adjustment-report"},
     //                 {id: 145, title: "Transaction Summary Report", path: "/admin/dashboard/transaction-summary-report"},
@@ -299,13 +307,35 @@ const menuItems: MenuItemUI[] = [
     //         },
     //     ],
     // },
-
-    {
-        id: 18,
-        title: "Settings",
-        icon: <FiSettings className="h-5 w-5"/>,
-        path: "/admin/settings",
-    },
+    // {
+    //     id: 50,
+    //     title: "Investment",
+    //     icon: <FaRegMoneyBillAlt className="h-5 w-5"/>,
+    //     subItems: [
+    //         {
+    //             id: 401,
+    //             title: "Investment Heads",
+    //             path: "/admin/dashboard/investment-heads",
+    //         },
+    //         {
+    //             id: 402,
+    //             title: "Asset",
+    //             children: [
+    //                 {id: 4021, title: "Fixed Asset", path: "/admin/dashboard/fixed-asset"},
+    //                 {id: 4022, title: "Current Asset", path: "/admin/dashboard/current-asset"},
+    //             ],
+    //         },
+    //         {
+    //             id: 403,
+    //             title: "Liability",
+    //             children: [
+    //                 {id: 4031, title: "Liability Receive", path: "/admin/dashboard/liability-receive"},
+    //                 {id: 4032, title: "Liability Pay", path: "/admin/dashboard/liability-pay"},
+    //                 {id: 4033, title: "Liability Report", path: "/admin/dashboard/liability-report"},
+    //             ],
+    //         },
+    //     ],
+    // },
 ];
 
 /* ---------------- COMPONENT ---------------- */
