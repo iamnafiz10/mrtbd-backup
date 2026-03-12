@@ -2,8 +2,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {FiPlusSquare, FiTrash2} from "react-icons/fi";
 import {RxCross1} from "react-icons/rx";
-import {FaCartPlus, FaCheck, FaTrashAlt} from "react-icons/fa";
-import {BsEraser} from "react-icons/bs";
+import {FaCheck} from "react-icons/fa";
 import CustomCheckbox from "@/app/(admin)/admin/dashboard/helper/CustomCheckbox";
 
 type Stock = {
@@ -122,16 +121,72 @@ function Page() {
             )
         );
     };
+
+    // Click to coming Payment Details Box
+    const [showPaymentDetails, setShowPaymentDetails] = useState(false);
     return (
         <>
             <section id="category-section" className="mt-10">
                 <div className="container">
                     <div
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
-                        <h2>Edit Dealer Sales Order</h2>
+                        <h2>Edit Sales Order</h2>
                     </div>
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="col">
+                                <form className="border border-gray-300 rounded p-4">
+                                    <div className="input_box flex items-center gap-2">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Customer
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="mt-4">
+                                            <div onClick={() => setOpenCustomerPickModal(true)}
+                                                 className="icon_box flex items-center gap-1 bg-primary p-1 text-white rounded cursor-pointer">
+                                                <FiPlusSquare size={20}/>
+                                                Pick
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/*<div className="input_box mt-2">*/}
+                                    {/*    <div className="w-full">*/}
+                                    {/*        <button type='button' onClick={() => setOpenAddCustomerModal(true)}*/}
+                                    {/*                className="px-3 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">*/}
+                                    {/*            Add Customer*/}
+                                    {/*        </button>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
+
+                                    <div className="input_box mt-4 flex items-center gap-2">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Product
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="mt-4">
+                                            <div onClick={() => setOpenProductPickModal(true)}
+                                                 className="icon_box flex items-center gap-1 bg-primary p-1 text-white rounded cursor-pointer">
+                                                <FiPlusSquare size={20}/>
+                                                Pick
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
                             <div className="col">
                                 <form className="border border-gray-300 rounded p-4">
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
@@ -156,259 +211,41 @@ function Page() {
                                             />
                                         </div>
                                     </div>
-
-                                    <div className="input_box mt-4 flex items-center gap-2">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Customer
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="mt-4">
-                                            <div onClick={() => setOpenCustomerPickModal(true)}
-                                                 className="icon_box flex items-center gap-1 bg-primary p-1 text-white rounded cursor-pointer">
-                                                <FiPlusSquare size={20}/>
-                                                Pick
+                                    <div className="flex items-center justify-end gap-4 mt-4">
+                                        <label className="flex items-center gap-2 cursor-pointer select-none">
+                                            <input type="checkbox" className="peer hidden"/>
+                                            <div
+                                                className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                <FaCheck className="text-white text-[10px]"/>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-end gap-4">
-                                        <div className="w-full">
-                                            <button type='button' onClick={() => setOpenAddCustomerModal(true)}
-                                                    className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                                Add Customer
-                                            </button>
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Prev. Due
-                                            </label>
-                                            <input
-                                                type="text"
-                                                disabled
-                                                placeholder=""
-                                                className="w-full text-[14px] border bg-gray-100 border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
+                                            <span>Manual</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            placeholder=""
+                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        />
                                     </div>
                                 </form>
                             </div>
+                        </div>
 
+                        <div className="grid grid-cols-1 mt-4">
                             <div className="col">
-                                <div className="border border-gray-300 rounded p-4">
+                                <div className="border border-gray-300 rounded p-4 pb-[200px]">
                                     {/* Table */}
                                     <div className="overflow-x-auto">
                                         <table className="w-full border-collapse">
                                             <thead className="bg-gray-50">
                                             <tr className="border border-gray-200">
                                                 <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                <th className="p-3 border border-gray-200 text-left">Product</th>
+                                                <th className="p-3 border border-gray-200 text-left">ProductName</th>
+                                                <th className="p-3 border border-gray-200 text-left">Color</th>
                                                 <th className="p-3 border border-gray-200 text-left">IMEI</th>
-                                                <th className="p-3 border border-gray-200 text-center">Action</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            {paginatedData.length === 0 && (
-                                                <tr>
-                                                    <td
-                                                        colSpan={5}
-                                                        className="text-center p-4 text-gray-500"
-                                                    >
-                                                        No Data Found
-                                                    </td>
-                                                </tr>
-                                            )}
-
-                                            {paginatedData.map((item, index) => (
-                                                <tr key={item.id} className="border border-gray-200 hover:bg-gray-50">
-                                                    <td className="p-3 border border-gray-200 text-center">
-                                                        {(page - 1) * entries + index + 1}
-                                                    </td>
-
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.GodownName}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        <div className="flex justify-center gap-2">
-                                                            <button
-                                                                className="bg-red-500 p-2 rounded text-white cursor-pointer hover:bg-red-600 transition">
-                                                                <FaTrashAlt size={12}/>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col">
-                                <form action="" method="" className="border border-gray-300 rounded p-4">
-                                    <div className="w-full bg-primary text-white p-2 rounded text-[14px]">
-                                        <h4>Currently available Offer with this Product</h4>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                DO
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Manual
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 flex items-center gap-2">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Product
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="mt-4">
-                                            <div onClick={() => setOpenProductPickModal(true)}
-                                                 className="icon_box flex items-center gap-1 bg-primary p-1 text-white rounded cursor-pointer">
-                                                <FiPlusSquare size={20}/>
-                                                Pick
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Stock
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Color
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                IMEI
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Sales Rate
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Qty
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Dis. Amt.
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Dis. Per.
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Total
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div className="col">
-                                <div className="border border-gray-300 rounded p-4">
-                                    {/* Table */}
-                                    <div className="overflow-x-auto">
-                                        <table className="w-full border-collapse">
-                                            <thead className="bg-gray-50">
-                                            <tr className="border border-gray-200">
-                                                <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                <th className="p-3 border border-gray-200 text-left">Product</th>
-                                                <th className="p-3 border border-gray-200 text-left">IMEI</th>
-                                                <th className="p-3 border border-gray-200 text-left">QTY</th>
+                                                <th className="p-3 border border-gray-200 text-left">Qty</th>
                                                 <th className="p-3 border border-gray-200 text-left">Sales Rate</th>
-                                                <th className="p-3 border border-gray-200 text-left">Dis (%)</th>
-                                                <th className="p-3 border border-gray-200 text-left">Dis.Amt</th>
+                                                <th className="p-3 border border-gray-200 text-left">Dis. Per.</th>
+                                                <th className="p-3 border border-gray-200 text-left">Dis. Amt.</th>
                                                 <th className="p-3 border border-gray-200 text-left">Total</th>
                                             </tr>
                                             </thead>
@@ -451,259 +288,269 @@ function Page() {
                                                     <td className="p-3 border border-gray-200">
                                                         {item.name}
                                                     </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
                                                 </tr>
                                             ))}
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div className="border border-gray-300 rounded p-4">
-                                    <div className="flex items-center gap-4">
-                                        <button
-                                            className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
-                                            <FaCartPlus size={15}/> Add to order
-                                        </button>
-                                        <button
-                                            className="flex items-center gap-1 py-2 px-4 bg-yellow-400 hover:bg-yellow-600 text-white rounded text-[13px] cursor-pointer">
-                                            <BsEraser size={15}/> Clear
-                                        </button>
+                            <div className="col mt-4">
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPaymentDetails(!showPaymentDetails)}
+                                    className="cursor-pointer py-2 px-4 bg-primary text-white text-[14px] rounded"
+                                >
+                                    {showPaymentDetails ? "Hide Payment Details" : "Add Payment Details"}
+                                </button>
+                            </div>
+                            {/*Click To Come Payment Details Div*/}
+                            <div
+                                className={`col transition-all duration-500 ease-in-out overflow-hidden ${
+                                    showPaymentDetails ? "max-h-[2000px] opacity-100 mt-4" : "max-h-0 opacity-0"
+                                }`}
+                            >
+                                <div className="mt-4 border border-gray-300 rounded p-4">
+                                    <div className="w-full overflow-x-auto">
+                                        <h2 className="mb-4 text-[16px] text-primary font-semibold">
+                                            Payment Details
+                                        </h2>
+
+                                        {/* ================= MOBILE CARD VIEW ================= */}
+                                        <div className="block md:hidden space-y-4">
+                                            {rows.map((row, index) => {
+                                                const isBank = row.paymentType === 'Bank';
+
+                                                return (
+                                                    <div
+                                                        key={row.id}
+                                                        className="border border-primary rounded-lg p-4 bg-white shadow-sm"
+                                                    >
+                                                        {/* Header */}
+                                                        <div className="flex justify-between items-center mb-3">
+
+                                                            <p className="text-sm font-semibold text-gray-600">
+                                                                Payment #{index + 1}
+                                                            </p>
+
+                                                            {/* Remove */}
+                                                            {index !== 0 && (
+                                                                <FiTrash2
+                                                                    onClick={() => removeRow(row.id)}
+                                                                    className="text-red-500 cursor-pointer"
+                                                                    size={18}
+                                                                />
+                                                            )}
+                                                        </div>
+
+
+                                                        {/* Payment Type */}
+                                                        <div className="mb-3">
+                                                            <label className="text-sm font-medium block mb-1">
+                                                                Name
+                                                            </label>
+
+                                                            <select
+                                                                value={row.paymentType}
+                                                                onChange={(e) =>
+                                                                    changeType(row.id, e.target.value)
+                                                                }
+                                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                            >
+                                                                <option>Cash</option>
+                                                                <option>Rocket</option>
+                                                                <option>Bkash</option>
+                                                                <option>Nagad</option>
+                                                                <option>Bank</option>
+                                                            </select>
+                                                        </div>
+
+
+                                                        {/* Bank Name */}
+                                                        <div className="mb-3">
+                                                            <label className="text-sm font-medium block mb-1">
+                                                                Bank Name
+                                                            </label>
+
+                                                            <select
+                                                                disabled={!isBank}
+                                                                className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                    ${!isBank ? 'bg-gray-100' : 'bg-white'}
+                  `}
+                                                            >
+                                                                <option>--- Select ---</option>
+                                                                <option>Islami Bank Bangladesh Ltd</option>
+                                                                <option>Sonali Bank PLC</option>
+                                                                <option>Dutch Bangla Bank PLC</option>
+                                                                <option>Brac Bank PLC</option>
+                                                            </select>
+                                                        </div>
+
+
+                                                        {/* Cheque */}
+                                                        <div className="mb-3">
+                                                            <label className="text-sm font-medium block mb-1">
+                                                                Cheque No
+                                                            </label>
+
+                                                            <input
+                                                                disabled={!isBank}
+                                                                className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                    ${!isBank ? 'bg-gray-100' : 'bg-white'}
+                  `}
+                                                            />
+                                                        </div>
+
+
+                                                        {/* Amount */}
+                                                        <div>
+                                                            <label className="text-sm font-medium block mb-1">
+                                                                Paid Amount
+                                                            </label>
+
+                                                            <input
+                                                                type="number"
+                                                                defaultValue={0}
+                                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                            />
+                                                        </div>
+
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+
+                                        {/* ================= DESKTOP TABLE VIEW ================= */}
+                                        <div className="hidden md:block overflow-x-auto">
+                                            <table className="w-full border-collapse border border-primary">
+                                                <thead>
+                                                <tr className="bg-gray-300 text-gray-700">
+                                                    <th className="border border-primary px-2 py-2 w-12">Id</th>
+                                                    <th className="border border-primary px-4 py-2 text-left">Name *
+                                                    </th>
+                                                    <th className="border border-primary px-4 py-2 text-left">Bank Name
+                                                        *
+                                                    </th>
+                                                    <th className="border border-primary px-4 py-2 text-left">Cheque No
+                                                        *
+                                                    </th>
+                                                    <th className="border border-primary px-4 py-2 text-left">Paid
+                                                        Amount *
+                                                    </th>
+                                                    <th className="border border-primary px-2 py-2 w-12 text-center">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {rows.map((row, index) => {
+                                                    const isBank = row.paymentType === 'Bank';
+
+                                                    return (
+                                                        <tr key={row.id}>
+
+                                                            {/* ID */}
+                                                            <td className="border border-primary px-2 py-2 text-center">
+                                                                {index + 1}
+                                                            </td>
+
+
+                                                            {/* Name */}
+                                                            <td className="border border-primary px-2 py-2">
+
+                                                                <select
+                                                                    value={row.paymentType}
+                                                                    onChange={(e) =>
+                                                                        changeType(row.id, e.target.value)
+                                                                    }
+                                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                >
+                                                                    <option>Cash</option>
+                                                                    <option>Rocket</option>
+                                                                    <option>Bkash</option>
+                                                                    <option>Nagad</option>
+                                                                    <option>Bank</option>
+                                                                </select>
+                                                            </td>
+
+                                                            {/* Bank */}
+                                                            <td className="border border-primary px-2 py-2">
+
+                                                                <select
+                                                                    disabled={!isBank}
+                                                                    className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                          ${!isBank ? 'bg-gray-100' : 'bg-white'}
+                                                        `}
+                                                                >
+                                                                    <option>--- Select ---</option>
+                                                                    <option>Islami Bank Bangladesh Ltd</option>
+                                                                    <option>Sonali Bank PLC</option>
+                                                                    <option>Dutch Bangla Bank PLC</option>
+                                                                    <option>Brac Bank PLC</option>
+                                                                </select>
+                                                            </td>
+
+
+                                                            {/* Cheque */}
+                                                            <td className="border border-primary px-2 py-2">
+                                                                <input
+                                                                    disabled={!isBank}
+                                                                    className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                      ${!isBank ? 'bg-gray-100' : 'bg-white'}
+                                                    `}
+                                                                />
+
+                                                            </td>
+
+
+                                                            {/* Amount */}
+                                                            <td className="border border-primary px-2 py-2">
+
+                                                                <input
+                                                                    type="number"
+                                                                    defaultValue={0}
+                                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                />
+
+                                                            </td>
+
+
+                                                            {/* Remove */}
+                                                            <td className="border border-primary px-2 py-2 text-center">
+                                                                {index !== 0 && (
+                                                                    <FiTrash2
+                                                                        onClick={() => removeRow(row.id)}
+                                                                        className="text-red-500 cursor-pointer hover:text-red-700"
+                                                                        size={20}
+                                                                    />
+                                                                )}
+                                                            </td>
+
+                                                        </tr>
+                                                    );
+                                                })}
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        {/* Add Button */}
+                                        <div className="w-full flex justify-end mt-2">
+                                            <FiPlusSquare
+                                                size={26}
+                                                onClick={addRow}
+                                                className="text-primary cursor-pointer hover:text-primary/80"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <div className="border border-gray-300 rounded p-4">
-                            <div className="w-full overflow-x-auto">
-                                <h2 className="mb-4 text-[16px] text-primary font-semibold">
-                                    Payment Details
-                                </h2>
 
-                                {/* ================= MOBILE CARD VIEW ================= */}
-                                <div className="block md:hidden space-y-4">
-                                    {rows.map((row, index) => {
-                                        const isBank = row.paymentType === 'Bank';
-
-                                        return (
-                                            <div
-                                                key={row.id}
-                                                className="border border-primary rounded-lg p-4 bg-white shadow-sm"
-                                            >
-                                                {/* Header */}
-                                                <div className="flex justify-between items-center mb-3">
-
-                                                    <p className="text-sm font-semibold text-gray-600">
-                                                        Payment #{index + 1}
-                                                    </p>
-
-                                                    {/* Remove */}
-                                                    {index !== 0 && (
-                                                        <FiTrash2
-                                                            onClick={() => removeRow(row.id)}
-                                                            className="text-red-500 cursor-pointer"
-                                                            size={18}
-                                                        />
-                                                    )}
-                                                </div>
-
-
-                                                {/* Payment Type */}
-                                                <div className="mb-3">
-                                                    <label className="text-sm font-medium block mb-1">
-                                                        Name
-                                                    </label>
-
-                                                    <select
-                                                        value={row.paymentType}
-                                                        onChange={(e) =>
-                                                            changeType(row.id, e.target.value)
-                                                        }
-                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    >
-                                                        <option>Cash</option>
-                                                        <option>Rocket</option>
-                                                        <option>Bkash</option>
-                                                        <option>Nagad</option>
-                                                        <option>Bank</option>
-                                                    </select>
-                                                </div>
-
-
-                                                {/* Bank Name */}
-                                                <div className="mb-3">
-                                                    <label className="text-sm font-medium block mb-1">
-                                                        Bank Name
-                                                    </label>
-
-                                                    <select
-                                                        disabled={!isBank}
-                                                        className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
-                    ${!isBank ? 'bg-gray-100' : 'bg-white'}
-                  `}
-                                                    >
-                                                        <option>--- Select ---</option>
-                                                        <option>Islami Bank Bangladesh Ltd</option>
-                                                        <option>Sonali Bank PLC</option>
-                                                        <option>Dutch Bangla Bank PLC</option>
-                                                        <option>Brac Bank PLC</option>
-                                                    </select>
-                                                </div>
-
-
-                                                {/* Cheque */}
-                                                <div className="mb-3">
-                                                    <label className="text-sm font-medium block mb-1">
-                                                        Cheque No
-                                                    </label>
-
-                                                    <input
-                                                        disabled={!isBank}
-                                                        className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
-                    ${!isBank ? 'bg-gray-100' : 'bg-white'}
-                  `}
-                                                    />
-                                                </div>
-
-
-                                                {/* Amount */}
-                                                <div>
-                                                    <label className="text-sm font-medium block mb-1">
-                                                        Paid Amount
-                                                    </label>
-
-                                                    <input
-                                                        type="number"
-                                                        defaultValue={0}
-                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-
-                                {/* ================= DESKTOP TABLE VIEW ================= */}
-                                <div className="hidden md:block overflow-x-auto">
-                                    <table className="w-full border-collapse border border-primary">
-                                        <thead>
-                                        <tr className="bg-gray-300 text-gray-700">
-                                            <th className="border border-primary px-2 py-2 w-12">Id</th>
-                                            <th className="border border-primary px-4 py-2 text-left">Name *</th>
-                                            <th className="border border-primary px-4 py-2 text-left">Bank Name *</th>
-                                            <th className="border border-primary px-4 py-2 text-left">Cheque No *</th>
-                                            <th className="border border-primary px-4 py-2 text-left">Paid Amount *</th>
-                                            <th className="border border-primary px-2 py-2 w-12 text-center">
-                                                Action
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {rows.map((row, index) => {
-                                            const isBank = row.paymentType === 'Bank';
-
-                                            return (
-                                                <tr key={row.id}>
-
-                                                    {/* ID */}
-                                                    <td className="border border-primary px-2 py-2 text-center">
-                                                        {index + 1}
-                                                    </td>
-
-
-                                                    {/* Name */}
-                                                    <td className="border border-primary px-2 py-2">
-
-                                                        <select
-                                                            value={row.paymentType}
-                                                            onChange={(e) =>
-                                                                changeType(row.id, e.target.value)
-                                                            }
-                                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                        >
-                                                            <option>Cash</option>
-                                                            <option>Rocket</option>
-                                                            <option>Bkash</option>
-                                                            <option>Nagad</option>
-                                                            <option>Bank</option>
-                                                        </select>
-                                                    </td>
-
-                                                    {/* Bank */}
-                                                    <td className="border border-primary px-2 py-2">
-
-                                                        <select
-                                                            disabled={!isBank}
-                                                            className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
-                                                          ${!isBank ? 'bg-gray-100' : 'bg-white'}
-                                                        `}
-                                                        >
-                                                            <option>--- Select ---</option>
-                                                            <option>Islami Bank Bangladesh Ltd</option>
-                                                            <option>Sonali Bank PLC</option>
-                                                            <option>Dutch Bangla Bank PLC</option>
-                                                            <option>Brac Bank PLC</option>
-                                                        </select>
-                                                    </td>
-
-
-                                                    {/* Cheque */}
-                                                    <td className="border border-primary px-2 py-2">
-                                                        <input
-                                                            disabled={!isBank}
-                                                            className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
-                                                      ${!isBank ? 'bg-gray-100' : 'bg-white'}
-                                                    `}
-                                                        />
-
-                                                    </td>
-
-
-                                                    {/* Amount */}
-                                                    <td className="border border-primary px-2 py-2">
-
-                                                        <input
-                                                            type="number"
-                                                            defaultValue={0}
-                                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                        />
-
-                                                    </td>
-
-
-                                                    {/* Remove */}
-                                                    <td className="border border-primary px-2 py-2 text-center">
-                                                        {index !== 0 && (
-                                                            <FiTrash2
-                                                                onClick={() => removeRow(row.id)}
-                                                                className="text-red-500 cursor-pointer hover:text-red-700"
-                                                                size={20}
-                                                            />
-                                                        )}
-                                                    </td>
-
-                                                </tr>
-                                            );
-                                        })}
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                {/* Add Button */}
-                                <div className="w-full flex justify-end mt-2">
-                                    <FiPlusSquare
-                                        size={26}
-                                        onClick={addRow}
-                                        className="text-primary cursor-pointer hover:text-primary/80"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                        <br/>
-                        <div className="border border-gray-300 rounded p-4">
+                        <div className="border border-gray-300 rounded p-4 mt-4">
                             <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full">
                                     <label className="block mb-1 text-[14px] font-medium">
@@ -902,7 +749,7 @@ function Page() {
                                     <div>
                                         <input
                                             type="text"
-                                            placeholder="Product Name..."
+                                            placeholder="Search..."
                                             value={search}
                                             onChange={(e) => setSearch(e.target.value)}
                                             className="border border-primary
@@ -1157,7 +1004,7 @@ function Page() {
                                     <div>
                                         <input
                                             type="text"
-                                            placeholder="Product Name..."
+                                            placeholder="Search..."
                                             value={search}
                                             onChange={(e) => setSearch(e.target.value)}
                                             className="border border-primary

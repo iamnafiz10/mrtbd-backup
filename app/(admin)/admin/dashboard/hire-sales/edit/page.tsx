@@ -229,7 +229,75 @@ function Page() {
                         </div>
 
                         <div className="grid grid-cols-1 mt-4">
-                            <div className="col">
+                            <div className="col mt-4">
+                                <div className="border border-gray-300 rounded p-4 pb-[100px]">
+                                    {/* Table */}
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full border-collapse">
+                                            <thead className="bg-gray-50">
+                                            <tr className="border border-gray-200">
+                                                <th className="p-3 border border-gray-200 text-center">SI</th>
+                                                <th className="p-3 border border-gray-200 text-left">ProductName</th>
+                                                <th className="p-3 border border-gray-200 text-left">Color</th>
+                                                <th className="p-3 border border-gray-200 text-left">IME/Barcode</th>
+                                                <th className="p-3 border border-gray-200 text-left">Qty</th>
+                                                <th className="p-3 border border-gray-200 text-left">Sales Rate</th>
+                                                <th className="p-3 border border-gray-200 text-left">Interest(%)</th>
+                                                <th className="p-3 border border-gray-200 text-left">Interest(A.M)</th>
+                                                <th className="p-3 border border-gray-200 text-left">Total</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {paginatedData.length === 0 && (
+                                                <tr>
+                                                    <td
+                                                        colSpan={8}
+                                                        className="text-center p-4 text-gray-500"
+                                                    >
+                                                        No Data Found
+                                                    </td>
+                                                </tr>
+                                            )}
+
+                                            {paginatedData.map((item, index) => (
+                                                <tr key={item.id} className="border border-gray-200 hover:bg-gray-50">
+                                                    <td className="p-3 border border-gray-200 text-center">
+                                                        {(page - 1) * entries + index + 1}
+                                                    </td>
+
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.GodownName}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col mt-4">
                                 <div className="border border-gray-300 rounded p-4 pb-[200px]">
                                     {/* Table */}
                                     <div className="overflow-x-auto">
@@ -273,74 +341,6 @@ function Page() {
                                                     <td className="p-3 border border-gray-200">
                                                         {item.GodownName}
                                                     </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.GodownName}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col mt-4">
-                                <div className="border border-gray-300 rounded p-4 pb-[100px]">
-                                    {/* Table */}
-                                    <div className="overflow-x-auto">
-                                        <table className="w-full border-collapse">
-                                            <thead className="bg-gray-50">
-                                            <tr className="border border-gray-200">
-                                                <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                <th className="p-3 border border-gray-200 text-left">ProductName</th>
-                                                <th className="p-3 border border-gray-200 text-left">Color</th>
-                                                <th className="p-3 border border-gray-200 text-left">IME/Barcode</th>
-                                                <th className="p-3 border border-gray-200 text-left">Qty</th>
-                                                <th className="p-3 border border-gray-200 text-left">Sales Rate</th>
-                                                <th className="p-3 border border-gray-200 text-left">Interest(%)</th>
-                                                <th className="p-3 border border-gray-200 text-left">Interest(A.M)</th>
-                                                <th className="p-3 border border-gray-200 text-left">Total</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            {paginatedData.length === 0 && (
-                                                <tr>
-                                                    <td
-                                                        colSpan={8}
-                                                        className="text-center p-4 text-gray-500"
-                                                    >
-                                                        No Data Found
-                                                    </td>
-                                                </tr>
-                                            )}
-
-                                            {paginatedData.map((item, index) => (
-                                                <tr key={item.id} className="border border-gray-200 hover:bg-gray-50">
-                                                    <td className="p-3 border border-gray-200 text-center">
-                                                        {(page - 1) * entries + index + 1}
-                                                    </td>
-
                                                     <td className="p-3 border border-gray-200">
                                                         {item.name}
                                                     </td>

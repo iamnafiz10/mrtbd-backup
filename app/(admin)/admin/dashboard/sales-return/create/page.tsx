@@ -160,7 +160,7 @@ function Page() {
                                 <div className="border border-gray-300 rounded p-4">
                                     {/* Table */}
                                     <div className="overflow-x-auto">
-                                        <table className="w-full border-collapse">
+                                        <table className="w-full border-collapse text-[12px]">
                                             <thead className="bg-gray-50">
                                             <tr className="border border-gray-200">
                                                 <th className="p-3 border border-gray-200 text-center">SI</th>
@@ -420,7 +420,7 @@ function Page() {
                                     <div>
                                         <input
                                             type="text"
-                                            placeholder="Product Name..."
+                                            placeholder="Search..."
                                             value={search}
                                             onChange={(e) => setSearch(e.target.value)}
                                             className="border border-primary
@@ -607,7 +607,7 @@ function Page() {
                                     <div>
                                         <input
                                             type="text"
-                                            placeholder="Product Name..."
+                                            placeholder="Search..."
                                             value={search}
                                             onChange={(e) => setSearch(e.target.value)}
                                             className="border border-primary
