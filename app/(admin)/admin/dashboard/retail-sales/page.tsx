@@ -75,9 +75,9 @@ function Page() {
                         <h2>Existing Sales Orders</h2>
                     </div>
 
-                    <div className="w-full bg-white rounded border border-gray-200 p-6 mt-4">
+                    <div className="w-full bg-white rounded border border-gray-200 p-4 mt-4">
                         <div className="block md:flex items-center gap-4">
-                            <div className="input_box block md:flex items-center gap-2">
+                            <div className="input_box w-full block md:flex items-center gap-2">
                                 <div className="w-full">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         From Date
@@ -114,7 +114,7 @@ function Page() {
                         </div>
 
                         <div className="block md:flex items-center gap-4 mt-4">
-                            <div className="input_box block md:flex items-center gap-2">
+                            <div className="input_box w-full block md:flex items-center gap-2">
                                 <div className="w-full">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         To Date
