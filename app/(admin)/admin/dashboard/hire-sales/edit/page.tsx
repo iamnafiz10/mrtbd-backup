@@ -237,14 +237,16 @@ function Page() {
                                             <thead className="bg-gray-50">
                                             <tr className="border border-gray-200">
                                                 <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                <th className="p-3 border border-gray-200 text-left">ProductName</th>
-                                                <th className="p-3 border border-gray-200 text-left">Color</th>
-                                                <th className="p-3 border border-gray-200 text-left">IMEI</th>
-                                                <th className="p-3 border border-gray-200 text-left">Qty</th>
-                                                <th className="p-3 border border-gray-200 text-left">Sales Rate</th>
-                                                <th className="p-3 border border-gray-200 text-left">Dis. Per.</th>
-                                                <th className="p-3 border border-gray-200 text-left">Dis. Amt.</th>
-                                                <th className="p-3 border border-gray-200 text-left">Total</th>
+                                                <th className="p-3 border border-gray-200 text-left">Action</th>
+                                                <th className="p-3 border border-gray-200 text-left">Schedule</th>
+                                                <th className="p-3 border border-gray-200 text-left">Pay Date</th>
+                                                <th className="p-3 border border-gray-200 text-left">Opening</th>
+                                                <th className="p-3 border border-gray-200 text-left">Net</th>
+                                                <th className="p-3 border border-gray-200 text-left">Hire</th>
+                                                <th className="p-3 border border-gray-200 text-left">Installment</th>
+                                                <th className="p-3 border border-gray-200 text-left">Closing</th>
+                                                <th className="p-3 border border-gray-200 text-left">Status</th>
+                                                <th className="p-3 border border-gray-200 text-left">Remarks</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -265,6 +267,12 @@ function Page() {
                                                         {(page - 1) * entries + index + 1}
                                                     </td>
 
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.GodownName}
+                                                    </td>
                                                     <td className="p-3 border border-gray-200">
                                                         {item.name}
                                                     </td>
