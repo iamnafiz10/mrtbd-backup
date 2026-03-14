@@ -1,33 +1,7 @@
 "use client";
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import {FiPlusSquare, FiTrash2} from "react-icons/fi";
-import {RxCross1} from "react-icons/rx";
-import {FaCheck} from "react-icons/fa";
-import CustomCheckbox from "@/app/(admin)/admin/dashboard/helper/CustomCheckbox";
-
-type Stock = {
-    id: number;
-    name: string;
-    GodownName: string;
-    Company: string;
-    Category: string;
-    Color: string;
-    MRPRate: string;
-    StockQty: string;
-};
-
-const data: Stock[] = [
-    {
-        id: 1,
-        name: "Data",
-        GodownName: "Data",
-        Company: "Data",
-        Category: "Data",
-        Color: "Data",
-        MRPRate: "Data",
-        StockQty: "Data",
-    },
-];
+import {FaCheck, FaChevronDown} from "react-icons/fa";
 
 type PaymentRow = {
     id: number;
@@ -35,43 +9,6 @@ type PaymentRow = {
 };
 
 function Page() {
-    // ----------- Data Table ------------//
-    const [search, setSearch] = useState("");
-    const [entries, setEntries] = useState(10);
-    const [page, setPage] = useState(1);
-
-    /* Filter Data */
-    const filteredData = useMemo(() => {
-        return data.filter((item) =>
-            item.name.toLowerCase().includes(search.toLowerCase())
-        );
-    }, [search]);
-
-    /* Pagination */
-    const totalPages = Math.ceil(filteredData.length / entries);
-
-    const paginatedData = filteredData.slice(
-        (page - 1) * entries,
-        page * entries
-    );
-
-    // -------- CustomerPick Modal ---------- //
-    const [openCustomerPickModal, setOpenCustomerPickModal] = useState(false);
-    useEffect(() => {
-        if (openCustomerPickModal) {
-            document.body.style.position = "fixed";
-            document.body.style.width = "100%";
-        } else {
-            document.body.style.position = "";
-            document.body.style.width = "";
-        }
-
-        return () => {
-            document.body.style.position = "";
-            document.body.style.width = "";
-        };
-    }, [openCustomerPickModal]);
-
     // -------- Payment Details Enable Disable Logic ---------- //
     const [paymentType, setPaymentType] = useState<string>('Cash');
     const isBankSelected = paymentType === 'Bank';
@@ -102,6 +39,36 @@ function Page() {
             )
         );
     };
+    //-------- Change Type Accroding Select ---------------//
+    const [collectionType, setCollectionType] = useState("Normal");
+
+    // ------------- PickDropdown -----------------//
+    const [isOpenPickDropdown, setIsOpenPickDropdown] = useState(false);
+    const [selectedPickDropdown, setSelectedPickDropdown] = useState("");
+    const [searchPickDropdown, setSearchPickDropdown] = useState("");
+    const optionsPickDropdown = [
+        {
+            FullName: "Nafiz",
+            code: "00049",
+            MobileNo: "5965965265",
+            Address: "Rajshahi",
+        },
+        {
+            FullName: "Roshan",
+            code: "0002",
+            MobileNo: "5965965265",
+            Address: "Rajshahi",
+        },
+        {
+            FullName: "Sayham",
+            code: "0005",
+            MobileNo: "5965965265",
+            Address: "Rajshahi",
+        },
+    ];
+    const filteredOptions = optionsPickDropdown.filter((item) =>
+        item.FullName.toLowerCase().includes(searchPickDropdown.toLowerCase())
+    );
     return (
         <>
             <section id="category-section" className="mt-10">
@@ -138,17 +105,124 @@ function Page() {
                                     </div>
 
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full flex items-center gap-2">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[14px] font-medium">
+                                                    Customer Name
+                                                </label>
+
+                                                <div className="relative">
+                                                    {/* Input + Arrow */}
+                                                    <div
+                                                        onClick={() => setIsOpenPickDropdown(!isOpenPickDropdown)}
+                                                        className="w-full flex items-center justify-between border border-gray-300 rounded px-3 py-2 cursor-pointer focus-within:border-primary"
+                                                    >
+                                                        <input
+                                                            type="text"
+                                                            value={selectedPickDropdown}
+                                                            readOnly
+                                                            placeholder="Select customer"
+                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
+                                                        />
+
+                                                        {/* Arrow */}
+                                                        <FaChevronDown
+                                                            className={`text-gray-500 text-[12px] transition-transform duration-200 ${
+                                                                isOpenPickDropdown ? "rotate-180" : ""
+                                                            }`}
+                                                        />
+                                                    </div>
+
+                                                    {/* Dropdown */}
+                                                    {isOpenPickDropdown && (
+                                                        <>
+                                                            {/* Overlay */}
+                                                            <div
+                                                                className="fixed inset-0 z-10"
+                                                                onClick={() => setIsOpenPickDropdown(false)}
+                                                            />
+
+                                                            <ul className="absolute right-0 mt-2 w-full bg-[#f7f7f7] border border-gray-300 rounded shadow-xl z-20 overflow-hidden">
+
+                                                                {/* Search Field */}
+                                                                <div className="p-2 border-b border-gray-300">
+                                                                    <input
+                                                                        type="text"
+                                                                        placeholder="Search..."
+                                                                        value={searchPickDropdown}
+                                                                        onChange={(e) => setSearchPickDropdown(e.target.value)}
+                                                                        className="w-full px-2 py-2 text-[13px] border border-gray-300 rounded focus:outline-none focus:border-primary"
+                                                                    />
+                                                                </div>
+
+                                                                {/* Options */}
+                                                                <div
+                                                                    className="max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600">
+                                                                    {filteredOptions.length > 0 ? (
+                                                                        filteredOptions.map((option, index) => (
+                                                                            <li
+                                                                                key={index}
+                                                                                onClick={() => {
+                                                                                    setSelectedPickDropdown(`${option.FullName} (${option.code})`);
+                                                                                    setIsOpenPickDropdown(false);
+                                                                                    setSearchPickDropdown("");
+                                                                                }}
+                                                                                className="px-4 py-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer transition"
+                                                                            >
+
+                                                                                {/* Product Title */}
+                                                                                <div
+                                                                                    className="text-[14px] font-semibold text-gray-700">
+                                                                                    {option.FullName} ({option.code})
+                                                                                </div>
+
+                                                                                {/* Product Details */}
+                                                                                <div
+                                                                                    className="text-[12px] text-gray-500 mt-[2px]">
+                                                                                    Mobile: {option.MobileNo} |
+                                                                                    Address: {option.Address}
+                                                                                </div>
+                                                                            </li>
+                                                                        ))
+                                                                    ) : (
+                                                                        <div
+                                                                            className="px-4 py-2 text-[12px] text-gray-500">
+                                                                            No result found
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            </ul>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Adjustment
+                                            </label>
+                                            <input
+                                                type="number"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                CollectionType
+                                                Collection Type
                                             </label>
                                             <div className="block md:flex items-center gap-2">
                                                 <div className="relative w-full mt-4 md:mt-0">
                                                     <select
-                                                        className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary">
-                                                        <option value="option1">--Select--</option>
-                                                        <option value="option2">Normal</option>
-                                                        <option value="option3">Installment</option>
+                                                        value={collectionType}
+                                                        onChange={(e) => setCollectionType(e.target.value)}
+                                                        className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary"
+                                                    >
+                                                        <option value="Normal">Normal</option>
+                                                        <option value="Installment">Installment</option>
                                                     </select>
                                                     <div
                                                         className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -163,37 +237,25 @@ function Page() {
                                             </div>
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 flex items-center gap-2">
-                                        <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Customer Name
+                                                InterestAmt
                                             </label>
                                             <input
-                                                type="text"
+                                                type="number"
                                                 placeholder=""
                                                 className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
-                                        </div>
-                                        <div className="mt-4">
-                                            <div onClick={() => setOpenCustomerPickModal(true)}
-                                                 className="icon_box flex items-center gap-1 bg-primary p-1 text-white rounded cursor-pointer">
-                                                <FiPlusSquare size={20}/>
-                                                Pick
-                                            </div>
                                         </div>
                                     </div>
 
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Hire Invoice No
+                                                {collectionType === "Installment" ? "Hire Invoice No" : "Invoice No"}
                                             </label>
+
                                             <input
                                                 type="text"
-                                                placeholder=""
                                                 className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
@@ -228,29 +290,6 @@ function Page() {
                                                 type="text"
                                                 placeholder=""
                                                 className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                InterestAmt
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Adjustment
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                     </div>
@@ -521,199 +560,12 @@ function Page() {
                             <div className="flex items-center gap-4">
                                 <button
                                     className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
-                                    Update Cash Collection
+                                    Save Cash Collection
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                {/*CustomerPick Modal*/}
-                {openCustomerPickModal && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center">
-                        <div className="absolute inset-0 bg-modal-opacity"
-                             onClick={() => setOpenCustomerPickModal(false)}/>
-                        <div
-                            className="w-[90%] max-w-5xl relative bg-white rounded shadow mx-4 px-4 py-4 z-10 text-[14px]">
-                            <button className="absolute top-6 right-6 cursor-pointer text-gray-500 hover:text-red-500"
-                                    onClick={() => setOpenCustomerPickModal(false)}>
-                                <RxCross1 size={18}/>
-                            </button>
-                            <h3 className="text-[16px] font-semibold pb-4 border-b border-gray-300">
-                                Existing Customers
-                            </h3>
-
-                            {/*Data Table One */}
-                            <div className="bg-white p-2 rounded">
-                                {/* Top Controls */}
-                                <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
-                                    {/* Show Entries */}
-                                    <div className="flex items-center gap-2">
-                                        <span>Show</span>
-
-                                        <select
-                                            value={entries}
-                                            onChange={(e) => {
-                                                setEntries(Number(e.target.value));
-                                                setPage(1);
-                                            }}
-                                            className=" border border-primary
-                                            rounded
-                                            px-2 py-1
-                                            focus:outline-none
-                                            focus:ring-0
-                                            "
-                                        >
-                                            <option>10</option>
-                                            <option>25</option>
-                                            <option>50</option>
-                                        </select>
-
-                                        <span>entries</span>
-                                    </div>
-
-                                    {/* Search */}
-                                    <div>
-                                        <input
-                                            type="text"
-                                            placeholder="Product Name..."
-                                            value={search}
-                                            onChange={(e) => setSearch(e.target.value)}
-                                            className="border border-primary
-                                                px-3 py-2
-                                                rounded
-                                                w-[220px]
-                                                focus:outline-none
-                                                focus:ring-0
-                                              "
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Table */}
-                                <div className="overflow-x-auto">
-                                    <table className="w-full border-collapse">
-                                        <thead className="bg-gray-50">
-                                        <tr className="border border-gray-200">
-                                            <th className="p-3 border border-gray-200">
-                                                <CustomCheckbox/>
-                                            </th>
-                                            <th className="p-3 border border-gray-200 text-left">SI</th>
-                                            <th className="p-3 border border-gray-200 text-left">Code</th>
-                                            <th className="p-3 border border-gray-200 text-left">Name</th>
-                                            <th className="p-3 border border-gray-200 text-center">Contact No.</th>
-                                            <th className="p-3 border border-gray-200 text-center">Address</th>
-                                            <th className="p-3 border border-gray-200 text-center">Sales Due</th>
-                                            <th className="p-3 border border-gray-200 text-center">Hire Due</th>
-                                            <th className="p-3 border border-gray-200 text-center">Total Due</th>
-                                            <th className="p-3 border border-gray-200 text-center">DMS Code</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {paginatedData.length === 0 && (
-                                            <tr>
-                                                <td
-                                                    colSpan={10}
-                                                    className="text-center p-4 text-gray-500"
-                                                >
-                                                    No Data Found
-                                                </td>
-                                            </tr>
-                                        )}
-
-                                        {paginatedData.map((item, index) => (
-                                            <tr key={item.id} className="border border-gray-200 hover:bg-gray-50">
-                                                <td className="p-3 border border-gray-200 text-center">
-                                                    <CustomCheckbox/>
-                                                </td>
-
-                                                <td className="p-3 border border-gray-200">
-                                                    {(page - 1) * entries + index + 1}
-                                                </td>
-
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.name}
-                                                </td>
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.GodownName}
-                                                </td>
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.Company}
-                                                </td>
-                                                <td className="p-3 border border-gray-200 font-medium">
-                                                    {item.Category}
-                                                </td>
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.Color}
-                                                </td>
-                                                <td className="p-3 border border-gray-200 text-center">
-                                                    {item.MRPRate}
-                                                </td>
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.name}
-                                                </td>
-                                                <td className="p-3 border border-gray-200">
-                                                    {item.name}
-                                                </td>
-                                            </tr>
-                                        ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                {/* Bottom Info + Pagination */}
-                                <div className="flex flex-col md:flex-row justify-between items-center mt-4 gap-3">
-
-                                    {/* Info */}
-                                    <p className="text-sm text-gray-600">
-                                        Showing {paginatedData.length} of {filteredData.length} entries
-                                    </p>
-
-                                    {/* Pagination */}
-                                    <div className="flex gap-1">
-
-                                        <button
-                                            disabled={page === 1}
-                                            onClick={() => setPage(page - 1)}
-                                            className="px-3 py-1 border cursor-pointer border-gray-200 rounded disabled:opacity-40"
-                                        >
-                                            Previous
-                                        </button>
-
-                                        {[...Array(totalPages)].map((_, i) => (
-                                            <button
-                                                key={i}
-                                                onClick={() => setPage(i + 1)}
-                                                className={`px-3 py-1 border cursor-pointer border-gray-200 rounded ${
-                                                    page === i + 1
-                                                        ? "bg-green-500 text-white"
-                                                        : ""
-                                                }`}
-                                            >
-                                                {i + 1}
-                                            </button>
-                                        ))}
-
-                                        <button
-                                            disabled={page === totalPages}
-                                            onClick={() => setPage(page + 1)}
-                                            className="px-3 py-1 border border-gray-200 cursor-pointer rounded disabled:opacity-40"
-                                        >
-                                            Next
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="flex justify-end gap-3 mt-4 text-[14px]">
-                                <button onClick={() => setOpenCustomerPickModal(false)}
-                                        className="px-4 py-2 cursor-pointer rounded bg-red-500 text-white hover:bg-red-700 transition">
-                                    Close
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                )}
             </section>
         </>
     );

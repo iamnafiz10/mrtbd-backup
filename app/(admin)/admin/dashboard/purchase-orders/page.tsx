@@ -75,7 +75,7 @@ function Page() {
 
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
                         <div className="block md:flex items-center gap-4">
-                            <div className="input_box block md:flex items-center gap-2">
+                            <div className="input_box w-full block md:flex items-center gap-2">
                                 <div className="w-full">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         From Date
