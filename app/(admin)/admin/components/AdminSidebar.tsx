@@ -146,196 +146,196 @@ const menuItems: MenuItemUI[] = [
             {id: 84, title: "Balance Sheet", path: "/admin/dashboard/balance-sheet"},
         ],
     },
-    // {
-    //     id: 9,
-    //     title: "MIS Report",
-    //     icon: <FaRegFlag className="h-5 w-5"/>,
-    //     subItems: [
-    //         {
-    //             id: 91,
-    //             title: "Basic Report",
-    //             children: [
-    //                 {id: 911, title: "Employee Information", path: "/admin/dashboard/employee-information"},
-    //                 {id: 912, title: "Product Information", path: "#"},
-    //                 {id: 913, title: "Stock Details Report", path: "/admin/dashboard/stock-details-report"},
-    //                 {id: 914, title: "Stock Summary Report", path: "/admin/dashboard/stock-summary-report"},
-    //                 {id: 915, title: "Stock Ledger", path: "/admin/dashboard/stock-ledger"},
-    //                 {id: 916, title: "Stock Quantity Report", path: "/admin/dashboard/stock-quantity-report"},
-    //                 {
-    //                     id: 917,
-    //                     title: "Stock Forcasting Report (Product Wise)",
-    //                     path: "/admin/dashboard/stock-forcasting-report-pw"
-    //                 },
-    //                 {
-    //                     id: 918,
-    //                     title: "Stock Forcasting Report (Concern Wise)",
-    //                     path: "/admin/dashboard/stock-forcasting-report-cw"
-    //                 },
-    //             ],
-    //         },
-    //         {
-    //             id: 92,
-    //             title: "Purchase Report",
-    //             children: [
-    //                 {id: 921, title: "Supplier Ledger", path: "/admin/dashboard/supplier-ledger"},
-    //                 {id: 922, title: "Daily Purchase Report", path: "/admin/dashboard/daily-purchase-report"},
-    //                 {id: 923, title: "Monthly Purchase Report", path: "/admin/dashboard/monthly-purchase-report"},
-    //                 {id: 924, title: "Yearly Purchase Report", path: "/admin/dashboard/yearly-purchase-report"},
-    //                 {id: 925, title: "Supplier Wise Purchase", path: "/admin/dashboard/supplier-wise-purchase"},
-    //                 {id: 926, title: "Supplier Cash Delivery", path: "/admin/dashboard/supplier-cash-delivery"},
-    //                 {id: 927, title: "Supplier Due Report", path: "/admin/dashboard/supplier-due-report"},
-    //                 {id: 928, title: "Model Wise Purchase", path: "/admin/dashboard/model-wise-purchase"},
-    //                 {id: 929, title: "Vat Report", path: "/admin/dashboard/vat-report"},
-    //             ],
-    //         },
-    //         {
-    //             id: 10,
-    //             title: "Sales Report",
-    //             children: [
-    //                 {id: 101, title: "Daily Sales Report", path: "/admin/dashboard/daily-sales-report"},
-    //                 {id: 102, title: "Monthly Sales Report", path: "/admin/dashboard/monthly-sales-report"},
-    //                 {id: 103, title: "Yearly Sales Report", path: "/admin/dashboard/yearly-sales-report"},
-    //                 {id: 104, title: "Replacement Report", path: "/admin/dashboard/replacement-report"},
-    //                 {id: 105, title: "Model Wise Sales", path: "/admin/dashboard/model-wise-sales"},
-    //             ],
-    //         },
-    //         {
-    //             id: 11,
-    //             title: "Hire Sales Report",
-    //             children: [
-    //                 {id: 111, title: "Installment Collection", path: "/admin/dashboard/installment-collection"},
-    //                 {id: 112, title: "Upcoming Installment", path: "/admin/dashboard/upcoming-installment"},
-    //                 {id: 113, title: "Defaulting Customer", path: "/admin/dashboard/defaulting-customer"},
-    //                 {id: 114, title: "Default Customer Summary", path: "/admin/dashboard/default-customer-summary"},
-    //                 {id: 115, title: "Hire Account Details", path: "/admin/dashboard/hire-account-details"},
-    //             ],
-    //         },
-    //         {
-    //             id: 12,
-    //             title: "SR Report",
-    //             children: [
-    //                 {id: 121, title: "SR Wise Sales Report", path: "/admin/dashboard/sr-wise-sales-report"},
-    //                 {id: 122, title: "SR Wise Sales Details", path: "/admin/dashboard/sr-wise-sales-details"},
-    //                 {id: 123, title: "SR Wise Customer Due", path: "/admin/dashboard/sr-wise-customer-due"},
-    //                 {
-    //                     id: 124,
-    //                     title: "SR Wise Customer Sales Summary",
-    //                     path: "/admin/dashboard/sr-wise-customer-sales-summary"
-    //                 },
-    //                 {id: 125, title: "SR Visit Report", path: "/admin/dashboard/sr-visit-report"},
-    //                 {id: 126, title: "SR Wise Customer Status", path: "/admin/dashboard/sr-wise-customer-status"},
-    //                 {id: 127, title: "SR Wise Cash Collection", path: "#"},
-    //                 {id: 128, title: "SR Commission Report", path: "/admin/dashboard/sr-commission-report"},
-    //             ],
-    //         },
-    //         {
-    //             id: 13,
-    //             title: "Customer Wise Report",
-    //             children: [
-    //                 {id: 131, title: "Customer Wise Sales Report", path: "/admin/dashboard/customer-wise-sales-report"},
-    //                 {id: 132, title: "Category Wise Custom Due", path: "/admin/dashboard/category-wise-custom-due"},
-    //                 {id: 133, title: "Customer Ledger Report", path: "/admin/dashboard/customer-ledger-report"},
-    //                 {
-    //                     id: 134,
-    //                     title: "Customer Due Report [Date Wise]",
-    //                     path: "/admin/dashboard/customer-due-report-date-wise"
-    //                 },
-    //                 {id: 135, title: "Customer Cash Collection", path: "/admin/dashboard/customer-cash-collection"},
-    //             ],
-    //         },
-    //         {
-    //             id: 14,
-    //             title: "Managment Report",
-    //             children: [
-    //                 {id: 141, title: "Expense Report", path: "/admin/dashboard/expense-report"},
-    //                 {
-    //                     id: 142,
-    //                     title: "Product Wise Benefit Report",
-    //                     path: "/admin/dashboard/product-wise-benefit-report"
-    //                 },
-    //                 {id: 143, title: "Income Report", path: "/admin/dashboard/income-report"},
-    //                 {id: 144, title: "Adjustment Report", path: "/admin/dashboard/adjustment-report"},
-    //                 {id: 145, title: "Transaction Summary Report", path: "/admin/dashboard/transaction-summary-report"},
-    //                 {id: 146, title: "Monthly Transaction Report", path: "/admin/dashboard/monthly-transaction-report"},
-    //                 {id: 147, title: "Showroom Analysis Report", path: "/admin/dashboard/showroom-analysis-report"},
-    //             ],
-    //         },
-    //         {
-    //             id: 15,
-    //             title: "Advance Search",
-    //             path: "/admin/dashboard/advance-search",
-    //         },
-    //         {
-    //             id: 16,
-    //             title: "Bank Report",
-    //             children: [
-    //                 {id: 161, title: "Bank Transaction Report", path: "/admin/dashboard/bank-transaction-report"},
-    //                 {id: 162, title: "Bank Ledger", path: "/admin/dashboard/bank-ledger"},
-    //             ],
-    //         },
-    //         {
-    //             id: 17,
-    //             title: "Transfer Report",
-    //             path: "/admin/dashboard/transfer-report",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 40,
-    //     title: "Bank Loan",
-    //     icon: <FaRegFlag className="h-5 w-5"/>,
-    //     subItems: [
-    //         {
-    //             id: 401,
-    //             title: "CC Loan",
-    //             path: "/admin/dashboard/cc-loan",
-    //         },
-    //         {
-    //             id: 402,
-    //             title: "Bank Loan",
-    //             path: "/admin/dashboard/bank-loan",
-    //         },
-    //         {
-    //             id: 403,
-    //             title: "Bank Loan Collection",
-    //             path: "/admin/dashboard/bank-loan-collection",
-    //         },
-    //         {
-    //             id: 404,
-    //             title: "Bank Loan Report",
-    //             path: "/admin/dashboard/bank-loan-report",
-    //         },
-    //     ],
-    // },
-    // {
-    //     id: 50,
-    //     title: "Investment",
-    //     icon: <FaRegMoneyBillAlt className="h-5 w-5"/>,
-    //     subItems: [
-    //         {
-    //             id: 401,
-    //             title: "Investment Heads",
-    //             path: "/admin/dashboard/investment-heads",
-    //         },
-    //         {
-    //             id: 402,
-    //             title: "Asset",
-    //             children: [
-    //                 {id: 4021, title: "Fixed Asset", path: "/admin/dashboard/fixed-asset"},
-    //                 {id: 4022, title: "Current Asset", path: "/admin/dashboard/current-asset"},
-    //             ],
-    //         },
-    //         {
-    //             id: 403,
-    //             title: "Liability",
-    //             children: [
-    //                 {id: 4031, title: "Liability Receive", path: "/admin/dashboard/liability-receive"},
-    //                 {id: 4032, title: "Liability Pay", path: "/admin/dashboard/liability-pay"},
-    //                 {id: 4033, title: "Liability Report", path: "/admin/dashboard/liability-report"},
-    //             ],
-    //         },
-    //     ],
-    // },
+    {
+        id: 9,
+        title: "MIS Report",
+        icon: <FaRegFlag className="h-5 w-5"/>,
+        subItems: [
+            {
+                id: 91,
+                title: "Basic Report",
+                children: [
+                    {id: 911, title: "Employee Information", path: "/admin/dashboard/employee-information"},
+                    {id: 912, title: "Product Information", path: "#"},
+                    {id: 913, title: "Stock Details Report", path: "/admin/dashboard/stock-details-report"},
+                    {id: 914, title: "Stock Summary Report", path: "/admin/dashboard/stock-summary-report"},
+                    {id: 915, title: "Stock Ledger", path: "/admin/dashboard/stock-ledger"},
+                    {id: 916, title: "Stock Quantity Report", path: "/admin/dashboard/stock-quantity-report"},
+                    {
+                        id: 917,
+                        title: "Stock Forcasting Report (Product Wise)",
+                        path: "/admin/dashboard/stock-forcasting-report-pw"
+                    },
+                    {
+                        id: 918,
+                        title: "Stock Forcasting Report (Concern Wise)",
+                        path: "/admin/dashboard/stock-forcasting-report-cw"
+                    },
+                ],
+            },
+            {
+                id: 92,
+                title: "Purchase Report",
+                children: [
+                    {id: 921, title: "Supplier Ledger", path: "/admin/dashboard/supplier-ledger"},
+                    {id: 922, title: "Daily Purchase Report", path: "/admin/dashboard/daily-purchase-report"},
+                    {id: 923, title: "Monthly Purchase Report", path: "/admin/dashboard/monthly-purchase-report"},
+                    {id: 924, title: "Yearly Purchase Report", path: "/admin/dashboard/yearly-purchase-report"},
+                    {id: 925, title: "Supplier Wise Purchase", path: "/admin/dashboard/supplier-wise-purchase"},
+                    {id: 926, title: "Supplier Cash Delivery", path: "/admin/dashboard/supplier-cash-delivery"},
+                    {id: 927, title: "Supplier Due Report", path: "/admin/dashboard/supplier-due-report"},
+                    {id: 928, title: "Model Wise Purchase", path: "/admin/dashboard/model-wise-purchase"},
+                    {id: 929, title: "Vat Report", path: "/admin/dashboard/vat-report"},
+                ],
+            },
+            {
+                id: 10,
+                title: "Sales Report",
+                children: [
+                    {id: 101, title: "Daily Sales Report", path: "/admin/dashboard/daily-sales-report"},
+                    {id: 102, title: "Monthly Sales Report", path: "/admin/dashboard/monthly-sales-report"},
+                    {id: 103, title: "Yearly Sales Report", path: "/admin/dashboard/yearly-sales-report"},
+                    {id: 104, title: "Replacement Report", path: "/admin/dashboard/replacement-report"},
+                    {id: 105, title: "Model Wise Sales", path: "/admin/dashboard/model-wise-sales"},
+                ],
+            },
+            {
+                id: 11,
+                title: "Hire Sales Report",
+                children: [
+                    {id: 111, title: "Installment Collection", path: "/admin/dashboard/installment-collection"},
+                    {id: 112, title: "Upcoming Installment", path: "/admin/dashboard/upcoming-installment"},
+                    {id: 113, title: "Defaulting Customer", path: "/admin/dashboard/defaulting-customer"},
+                    {id: 114, title: "Default Customer Summary", path: "/admin/dashboard/default-customer-summary"},
+                    {id: 115, title: "Hire Account Details", path: "/admin/dashboard/hire-account-details"},
+                ],
+            },
+            {
+                id: 12,
+                title: "SR Report",
+                children: [
+                    {id: 121, title: "SR Wise Sales Report", path: "/admin/dashboard/sr-wise-sales-report"},
+                    {id: 122, title: "SR Wise Sales Details", path: "/admin/dashboard/sr-wise-sales-details"},
+                    {id: 123, title: "SR Wise Customer Due", path: "/admin/dashboard/sr-wise-customer-due"},
+                    {
+                        id: 124,
+                        title: "SR Wise Customer Sales Summary",
+                        path: "/admin/dashboard/sr-wise-customer-sales-summary"
+                    },
+                    {id: 125, title: "SR Visit Report", path: "/admin/dashboard/sr-visit-report"},
+                    {id: 126, title: "SR Wise Customer Status", path: "/admin/dashboard/sr-wise-customer-status"},
+                    {id: 127, title: "SR Wise Cash Collection", path: "#"},
+                    {id: 128, title: "SR Commission Report", path: "/admin/dashboard/sr-commission-report"},
+                ],
+            },
+            {
+                id: 13,
+                title: "Customer Wise Report",
+                children: [
+                    {id: 131, title: "Customer Wise Sales Report", path: "/admin/dashboard/customer-wise-sales-report"},
+                    {id: 132, title: "Category Wise Custom Due", path: "/admin/dashboard/category-wise-custom-due"},
+                    {id: 133, title: "Customer Ledger Report", path: "/admin/dashboard/customer-ledger-report"},
+                    {
+                        id: 134,
+                        title: "Customer Due Report [Date Wise]",
+                        path: "/admin/dashboard/customer-due-report-date-wise"
+                    },
+                    {id: 135, title: "Customer Cash Collection", path: "/admin/dashboard/customer-cash-collection"},
+                ],
+            },
+            {
+                id: 14,
+                title: "Managment Report",
+                children: [
+                    {id: 141, title: "Expense Report", path: "/admin/dashboard/expense-report"},
+                    {
+                        id: 142,
+                        title: "Product Wise Benefit Report",
+                        path: "/admin/dashboard/product-wise-benefit-report"
+                    },
+                    {id: 143, title: "Income Report", path: "/admin/dashboard/income-report"},
+                    {id: 144, title: "Adjustment Report", path: "/admin/dashboard/adjustment-report"},
+                    {id: 145, title: "Transaction Summary Report", path: "/admin/dashboard/transaction-summary-report"},
+                    {id: 146, title: "Monthly Transaction Report", path: "/admin/dashboard/monthly-transaction-report"},
+                    {id: 147, title: "Showroom Analysis Report", path: "/admin/dashboard/showroom-analysis-report"},
+                ],
+            },
+            {
+                id: 15,
+                title: "Advance Search",
+                path: "/admin/dashboard/advance-search",
+            },
+            {
+                id: 16,
+                title: "Bank Report",
+                children: [
+                    {id: 161, title: "Bank Transaction Report", path: "/admin/dashboard/bank-transaction-report"},
+                    {id: 162, title: "Bank Ledger", path: "/admin/dashboard/bank-ledger"},
+                ],
+            },
+            {
+                id: 17,
+                title: "Transfer Report",
+                path: "/admin/dashboard/transfer-report",
+            },
+        ],
+    },
+    {
+        id: 40,
+        title: "Bank Loan",
+        icon: <FaRegFlag className="h-5 w-5"/>,
+        subItems: [
+            {
+                id: 401,
+                title: "CC Loan",
+                path: "/admin/dashboard/cc-loan",
+            },
+            {
+                id: 402,
+                title: "Bank Loan",
+                path: "/admin/dashboard/bank-loan",
+            },
+            {
+                id: 403,
+                title: "Bank Loan Collection",
+                path: "/admin/dashboard/bank-loan-collection",
+            },
+            {
+                id: 404,
+                title: "Bank Loan Report",
+                path: "/admin/dashboard/bank-loan-report",
+            },
+        ],
+    },
+    {
+        id: 50,
+        title: "Investment",
+        icon: <FaRegMoneyBillAlt className="h-5 w-5"/>,
+        subItems: [
+            {
+                id: 401,
+                title: "Investment Heads",
+                path: "/admin/dashboard/investment-heads",
+            },
+            {
+                id: 402,
+                title: "Asset",
+                children: [
+                    {id: 4021, title: "Fixed Asset", path: "/admin/dashboard/fixed-asset"},
+                    {id: 4022, title: "Current Asset", path: "/admin/dashboard/current-asset"},
+                ],
+            },
+            {
+                id: 403,
+                title: "Liability",
+                children: [
+                    {id: 4031, title: "Liability Receive", path: "/admin/dashboard/liability-receive"},
+                    {id: 4032, title: "Liability Pay", path: "/admin/dashboard/liability-pay"},
+                    {id: 4033, title: "Liability Report", path: "/admin/dashboard/liability-report"},
+                ],
+            },
+        ],
+    },
 ];
 
 /* ---------------- COMPONENT ---------------- */
