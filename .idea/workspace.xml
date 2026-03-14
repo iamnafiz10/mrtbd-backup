@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cab406-5a62-43ed-b061-f76082749093" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/bank-transaction/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/bank-transaction/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/bank-transaction/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/bank-transaction/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/bank-transaction/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/bank-transaction/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-collection/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-collection/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-collection/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-collection/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-collection/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-collection/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-delivery/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-delivery/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-delivery/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-delivery/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-delivery/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/cash-delivery/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/dealer-sales/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/dealer-sales/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/dealer-sales/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/dealer-sales/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/expense/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/expense/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/expense/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/expense/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/hire-sales/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/hire-sales/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/hire-sales/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/hire-sales/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/income/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/income/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/income/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/income/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/income/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/income/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/purchase-orders/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/purchase-orders/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/purchase-return/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/purchase-return/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/purchase-return/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/purchase-return/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/replacement-orders/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/replacement-orders/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/replacement-orders/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/replacement-orders/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/retail-sales/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/retail-sales/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/retail-sales/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/retail-sales/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sales-return/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sales-return/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sales-return/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sales-return/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/transfer/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/transfer/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/transfer/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/transfer/edit/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/check/page.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +118,7 @@
       <workItem from="1773232673350" duration="4333000" />
       <workItem from="1773288209420" duration="269000" />
       <workItem from="1773290660090" duration="7736000" />
-      <workItem from="1773458040236" duration="14078000" />
+      <workItem from="1773458040236" duration="14584000" />
     </task>
     <servers />
   </component>
