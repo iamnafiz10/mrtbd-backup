@@ -1,11 +1,13 @@
 "use client";
 import React, {useMemo, useState} from 'react';
 import CustomCheckbox from "@/app/(admin)/admin/dashboard/helper/CustomCheckbox";
-import {FaTrashAlt} from "react-icons/fa";
+import {FaPlus, FaTrashAlt} from "react-icons/fa";
 import {TfiReload} from "react-icons/tfi";
 import {RiShareForward2Fill} from "react-icons/ri";
 import {RxCross1} from "react-icons/rx";
 import toast from "react-hot-toast";
+import Link from "next/link";
+import {FaPencil} from "react-icons/fa6";
 
 type Stock = {
     id: number;
@@ -109,6 +111,12 @@ function Page() {
                     </div>
 
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
+                        <div className="flex items-center justify-end">
+                            <Link href='/admin/dashboard/purchase-orders/create'
+                                  className="mt-4 md:mt-0 flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
+                                <FaPlus/> Create Order
+                            </Link>
+                        </div>
                         {/* Top Controls */}
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4 my-4">
                             {/* Show Entries */}
@@ -272,6 +280,10 @@ function Page() {
                                         </td>
                                         <td className="p-3 border border-gray-200">
                                             <div className="flex justify-center gap-2">
+                                                <Link href='/admin/dashboard/purchase-orders/edit'
+                                                      className="bg-blue-500 p-2 rounded text-white cursor-pointer hover:bg-blue-600 transition">
+                                                    <FaPencil size={12}/>
+                                                </Link>
                                                 <button onClick={() => setOpenDeleteProductModal(true)}
                                                         className="bg-red-500 p-2 rounded text-white cursor-pointer hover:bg-red-600 transition">
                                                     <FaTrashAlt size={12}/>
