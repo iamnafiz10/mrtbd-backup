@@ -32,49 +32,6 @@ function Page() {
                         <h2>Create Supplier</h2>
                     </div>
 
-                    <div className="input_box block md:flex items-center gap-4">
-                        <div className="w-full">
-                            <div className="flex items-center gap-4 my-4">
-                                {/* Image Preview Box */}
-                                <div
-                                    className="w-[120px] h-[120px] border border-gray-200 rounded flex items-center justify-center overflow-hidden">
-                                    {preview ? (
-                                        <Image
-                                            width={100}
-                                            height={100}
-                                            src={preview}
-                                            alt="Logo Preview"
-                                            className="object-cover"
-                                        />
-                                    ) : (
-                                        <IoImageOutline size={60} className="text-gray-400"/>
-                                    )}
-                                </div>
-
-                                {/* Remove Button */}
-                                {preview && (
-                                    <button
-                                        type="button"
-                                        onClick={handleRemove}
-                                        className="px-4 py-2 text-[13px] bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
-                                    >
-                                        Remove
-                                    </button>
-                                )}
-                            </div>
-
-                            <input
-                                ref={fileRef}
-                                type="file"
-                                accept="image/*"
-                                onChange={handleImageChange}
-                                className="w-1/2 text-[12px] border border-gray-300 rounded p-3 py-2
-                                focus:outline-none focus:border-primary"
-                            />
-                        </div>
-                        <div className="w-full"></div>
-                    </div>
-
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
                         <div className="tab_wrap">
                             {/* Tab Content */}
@@ -159,6 +116,48 @@ function Page() {
                                                     type="email"
                                                     placeholder=""
                                                     className="w-full text-[14px]  border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="input_box block md:flex items-center gap-4">
+                                            <div className="w-full">
+                                                <div className="flex items-center gap-4 my-4">
+                                                    {/* Image Preview Box */}
+                                                    <div
+                                                        className="w-[120px] h-[120px] border border-gray-200 rounded flex items-center justify-center overflow-hidden">
+                                                        {preview ? (
+                                                            <Image
+                                                                width={100}
+                                                                height={100}
+                                                                src={preview}
+                                                                alt="Logo Preview"
+                                                                className="object-cover"
+                                                            />
+                                                        ) : (
+                                                            <IoImageOutline size={60} className="text-gray-400"/>
+                                                        )}
+                                                    </div>
+
+                                                    {/* Remove Button */}
+                                                    {preview && (
+                                                        <button
+                                                            type="button"
+                                                            onClick={handleRemove}
+                                                            className="px-4 py-2 text-[13px] bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
+                                                        >
+                                                            Remove
+                                                        </button>
+                                                    )}
+                                                </div>
+
+                                                <input
+                                                    ref={fileRef}
+                                                    type="file"
+                                                    accept="image/*"
+                                                    onChange={handleImageChange}
+                                                    className="w-1/2 text-[12px] border border-gray-300 rounded p-3 py-2
+                                focus:outline-none focus:border-primary"
                                                 />
                                             </div>
                                         </div>
