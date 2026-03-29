@@ -375,7 +375,7 @@ function Page() {
                                     {/* Table */}
                                     <div className="overflow-x-auto">
                                         <table className="w-full border border-gray-200 border-collapse text-[12px]">
-                                            <thead className="bg-gray-50">
+                                            <thead className="bg-primary text-white">
                                             <tr>
                                                 <th className="p-2 border border-gray-200 text-center">SI</th>
                                                 <th className="p-2 border border-gray-200 text-left">Product</th>
@@ -480,16 +480,170 @@ function Page() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div className="col mt-4">
-                                <button
-                                    type="button"
-                                    onClick={() => setShowPaymentDetails(!showPaymentDetails)}
-                                    className="cursor-pointer py-2 px-4 bg-primary text-white text-[14px] rounded"
-                                >
-                                    {showPaymentDetails ? "Hide Payment Details" : "Add Payment Details"}
-                                </button>
+                        <div className="border border-gray-300 rounded p-4 mt-4">
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                <div className="w-full">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Flat Dis. Per.
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Flat Dis. Amt.
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Total Dis.
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Pay Amount
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder=""
+                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
                             </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Labour Cost Per
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Labour Cost
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Courier Cost Percent.
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Courier Cost
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Grand Total
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Adj. Amt
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Net Total
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Payment Due
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                <div className="w-full">
+                                    <label className="block mb-1 text-[14px] font-medium">
+                                        Remarks
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder=""
+                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <div className="col mt-6">
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowPaymentDetails(!showPaymentDetails)}
+                                            className="cursor-pointer py-2 px-4 bg-primary text-white text-[14px] rounded"
+                                        >
+                                            {showPaymentDetails ? "Hide Payment Details" : "Add Payment Details"}
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <div className="flex items-center justify-end gap-4 mt-4">
+                                        <button
+                                            className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
+                                            Save order
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
                             {/*Click To Come Payment Details Div*/}
                             <div
                                 className={`col transition-all duration-500 ease-in-out overflow-hidden ${
@@ -727,160 +881,6 @@ function Page() {
                                                 className="text-primary cursor-pointer hover:text-primary/80"
                                             />
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="border border-gray-300 rounded p-4 mt-4">
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Flat Dis. Per.
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Flat Dis. Amt.
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Total Dis.
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Pay Amount
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Labour Cost Per
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Labour Cost
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Courier Cost Percent.
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Courier Cost
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Grand Total
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Adj. Amt
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Net Total
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Payment Due
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Remarks
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <div className="flex items-center justify-end gap-4 mt-4">
-                                        <button
-                                            className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                            Save order
-                                        </button>
                                     </div>
                                 </div>
                             </div>
