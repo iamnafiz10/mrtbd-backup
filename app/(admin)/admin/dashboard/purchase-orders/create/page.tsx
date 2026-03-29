@@ -1,8 +1,7 @@
 "use client";
 import React, {useState} from 'react';
 import {FiPlusSquare, FiTrash2} from "react-icons/fi";
-import {FaCartPlus, FaChevronDown} from "react-icons/fa";
-import {BsEraser} from "react-icons/bs";
+import {FaChevronDown} from "react-icons/fa";
 import {RxCross1} from "react-icons/rx";
 import {MdDeleteOutline} from "react-icons/md";
 
@@ -173,98 +172,6 @@ function Page() {
                                         <div className="w-full flex items-center gap-2">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[14px] font-medium">
-                                                    Supplier
-                                                </label>
-
-                                                <div className="relative">
-                                                    {/* Input + Arrow */}
-                                                    <div
-                                                        onClick={() => setIsOpenPickDropdown(!isOpenPickDropdown)}
-                                                        className="w-full flex items-center justify-between border border-gray-300 rounded px-3 py-2 cursor-pointer focus-within:border-primary"
-                                                    >
-                                                        <input
-                                                            type="text"
-                                                            value={selectedPickDropdown}
-                                                            readOnly
-                                                            placeholder="Select customer"
-                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
-                                                        />
-
-                                                        {/* Arrow */}
-                                                        <FaChevronDown
-                                                            className={`text-gray-500 text-[12px] transition-transform duration-200 ${
-                                                                isOpenPickDropdown ? "rotate-180" : ""
-                                                            }`}
-                                                        />
-                                                    </div>
-
-                                                    {/* Dropdown */}
-                                                    {isOpenPickDropdown && (
-                                                        <>
-                                                            {/* Overlay */}
-                                                            <div
-                                                                className="fixed inset-0 z-10"
-                                                                onClick={() => setIsOpenPickDropdown(false)}
-                                                            />
-
-                                                            <ul className="absolute right-0 mt-2 w-full bg-[#f7f7f7] border border-gray-300 rounded shadow-xl z-20 overflow-hidden">
-
-                                                                {/* Search Field */}
-                                                                <div className="p-2 border-b border-gray-300">
-                                                                    <input
-                                                                        type="text"
-                                                                        placeholder="Search..."
-                                                                        value={searchPickDropdown}
-                                                                        onChange={(e) => setSearchPickDropdown(e.target.value)}
-                                                                        className="w-full px-2 py-2 text-[13px] border border-gray-300 rounded focus:outline-none focus:border-primary"
-                                                                    />
-                                                                </div>
-
-                                                                {/* Options */}
-                                                                <div
-                                                                    className="max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600">
-                                                                    {filteredOptions.length > 0 ? (
-                                                                        filteredOptions.map((option, index) => (
-                                                                            <li
-                                                                                key={index}
-                                                                                onClick={() => {
-                                                                                    setSelectedPickDropdown(`${option.FullName} (${option.code})`);
-                                                                                    setIsOpenPickDropdown(false);
-                                                                                    setSearchPickDropdown("");
-                                                                                }}
-                                                                                className="px-4 py-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer transition"
-                                                                            >
-
-                                                                                {/* Product Title */}
-                                                                                <div
-                                                                                    className="text-[14px] font-semibold text-gray-700">
-                                                                                    {option.FullName} ({option.code})
-                                                                                </div>
-
-                                                                                {/* Product Details */}
-                                                                                <div
-                                                                                    className="text-[12px] text-gray-500 mt-[2px]">
-                                                                                    Mobile: {option.MobileNo} |
-                                                                                    Address: {option.Address}
-                                                                                </div>
-                                                                            </li>
-                                                                        ))
-                                                                    ) : (
-                                                                        <div
-                                                                            className="px-4 py-2 text-[12px] text-gray-500">
-                                                                            No result found
-                                                                        </div>
-                                                                    )}
-                                                                </div>
-                                                            </ul>
-                                                        </>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="w-full flex items-center gap-2">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
                                                     Product
                                                 </label>
 
@@ -355,6 +262,98 @@ function Page() {
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="w-full flex items-center gap-2">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[14px] font-medium">
+                                                    Supplier
+                                                </label>
+
+                                                <div className="relative">
+                                                    {/* Input + Arrow */}
+                                                    <div
+                                                        onClick={() => setIsOpenPickDropdown(!isOpenPickDropdown)}
+                                                        className="w-full flex items-center justify-between border border-gray-300 rounded px-3 py-2 cursor-pointer focus-within:border-primary"
+                                                    >
+                                                        <input
+                                                            type="text"
+                                                            value={selectedPickDropdown}
+                                                            readOnly
+                                                            placeholder="Select customer"
+                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
+                                                        />
+
+                                                        {/* Arrow */}
+                                                        <FaChevronDown
+                                                            className={`text-gray-500 text-[12px] transition-transform duration-200 ${
+                                                                isOpenPickDropdown ? "rotate-180" : ""
+                                                            }`}
+                                                        />
+                                                    </div>
+
+                                                    {/* Dropdown */}
+                                                    {isOpenPickDropdown && (
+                                                        <>
+                                                            {/* Overlay */}
+                                                            <div
+                                                                className="fixed inset-0 z-10"
+                                                                onClick={() => setIsOpenPickDropdown(false)}
+                                                            />
+
+                                                            <ul className="absolute right-0 mt-2 w-full bg-[#f7f7f7] border border-gray-300 rounded shadow-xl z-20 overflow-hidden">
+
+                                                                {/* Search Field */}
+                                                                <div className="p-2 border-b border-gray-300">
+                                                                    <input
+                                                                        type="text"
+                                                                        placeholder="Search..."
+                                                                        value={searchPickDropdown}
+                                                                        onChange={(e) => setSearchPickDropdown(e.target.value)}
+                                                                        className="w-full px-2 py-2 text-[13px] border border-gray-300 rounded focus:outline-none focus:border-primary"
+                                                                    />
+                                                                </div>
+
+                                                                {/* Options */}
+                                                                <div
+                                                                    className="max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600">
+                                                                    {filteredOptions.length > 0 ? (
+                                                                        filteredOptions.map((option, index) => (
+                                                                            <li
+                                                                                key={index}
+                                                                                onClick={() => {
+                                                                                    setSelectedPickDropdown(`${option.FullName} (${option.code})`);
+                                                                                    setIsOpenPickDropdown(false);
+                                                                                    setSearchPickDropdown("");
+                                                                                }}
+                                                                                className="px-4 py-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer transition"
+                                                                            >
+
+                                                                                {/* Product Title */}
+                                                                                <div
+                                                                                    className="text-[14px] font-semibold text-gray-700">
+                                                                                    {option.FullName} ({option.code})
+                                                                                </div>
+
+                                                                                {/* Product Details */}
+                                                                                <div
+                                                                                    className="text-[12px] text-gray-500 mt-[2px]">
+                                                                                    Mobile: {option.MobileNo} |
+                                                                                    Address: {option.Address}
+                                                                                </div>
+                                                                            </li>
+                                                                        ))
+                                                                    ) : (
+                                                                        <div
+                                                                            className="px-4 py-2 text-[12px] text-gray-500">
+                                                                            No result found
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            </ul>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
                                                 Prv. Due
@@ -366,23 +365,13 @@ function Page() {
                                             />
                                         </div>
                                     </div>
-                                    <div className="mt-4 flex items-center justify-end gap-4">
-                                        <button type='button'
-                                                className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
-                                            <FaCartPlus size={15}/> Add to order
-                                        </button>
-                                        <button type='button'
-                                                className="flex items-center gap-1 py-2 px-4 bg-yellow-400 hover:bg-yellow-600 text-white rounded text-[13px] cursor-pointer">
-                                            <BsEraser size={15}/> Clear
-                                        </button>
-                                    </div>
                                 </form>
                             </div>
                         </div>
 
                         <div className="grid grid-cols-1 mt-4">
                             <div className="col">
-                                <div className="border border-gray-300 rounded p-4 pb-[150px]">
+                                <div className="bg-gray-50 border border-gray-300 rounded p-4 pb-[150px]">
                                     {/* Table */}
                                     <div className="overflow-x-auto">
                                         <table className="w-full border border-gray-200 border-collapse text-[12px]">
@@ -391,11 +380,10 @@ function Page() {
                                                 <th className="p-2 border border-gray-200 text-center">SI</th>
                                                 <th className="p-2 border border-gray-200 text-left">Product</th>
                                                 <th className="p-2 border border-gray-200 text-left">Qty</th>
+                                                <th className="p-2 border border-gray-200 text-left">Color</th>
                                                 <th className="p-2 border border-gray-200 text-left">MRP</th>
                                                 <th className="p-2 border border-gray-200 text-left">Dis.Per.</th>
-                                                <th className="p-2 border border-gray-200 text-left">Actu.Pur.Rate</th>
                                                 <th className="p-2 border border-gray-200 text-left">Dis. Amt</th>
-                                                <th className="p-2 border border-gray-200 text-left">Color</th>
                                                 <th className="p-2 border border-gray-200 text-left">GoDown</th>
                                                 <th className="p-2 border border-gray-200 text-left">Total</th>
                                                 <th className="p-2 border border-gray-200 text-center">Action</th>
@@ -431,13 +419,6 @@ function Page() {
                                                         <input
                                                             className="w-full focus:outline-none border border-gray-200 px-2 py-1"
                                                             defaultValue={id === 1 ? "100" : "200"}
-                                                        />
-                                                    </td>
-
-                                                    <td className="p-2 border border-gray-200">
-                                                        <input
-                                                            className="w-full focus:outline-none border border-gray-200 px-2 py-1"
-                                                            defaultValue={id === 1 ? "10" : "20"}
                                                         />
                                                     </td>
 
@@ -783,10 +764,7 @@ function Page() {
                                         className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
+                                <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Pay Amount
                                     </label>
@@ -796,6 +774,9 @@ function Page() {
                                         className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
+                            </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Labour Cost Per
@@ -816,10 +797,7 @@ function Page() {
                                         className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
+                                <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Courier Cost Percent.
                                     </label>
@@ -839,6 +817,9 @@ function Page() {
                                         className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
+                            </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Grand Total
@@ -849,10 +830,7 @@ function Page() {
                                         className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
+                                <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Adj. Amt
                                     </label>

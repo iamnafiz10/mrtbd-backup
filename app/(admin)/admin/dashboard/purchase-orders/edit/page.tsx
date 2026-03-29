@@ -1,33 +1,9 @@
 "use client";
-import React, {useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import {FiPlusSquare, FiTrash2} from "react-icons/fi";
-import {FaCartPlus, FaChevronDown} from "react-icons/fa";
-import {BsEraser} from "react-icons/bs";
+import {FaChevronDown} from "react-icons/fa";
 import {RxCross1} from "react-icons/rx";
-
-type Stock = {
-    id: number;
-    name: string;
-    GodownName: string;
-    Company: string;
-    Category: string;
-    Color: string;
-    MRPRate: string;
-    StockQty: string;
-};
-
-const data: Stock[] = [
-    {
-        id: 1,
-        name: "Data",
-        GodownName: "Data",
-        Company: "Data",
-        Category: "Data",
-        Color: "Data",
-        MRPRate: "Data",
-        StockQty: "Data",
-    },
-];
+import {MdDeleteOutline} from "react-icons/md";
 
 type PaymentRow = {
     id: number;
@@ -35,26 +11,6 @@ type PaymentRow = {
 };
 
 function Page() {
-    // ----------- Data Table ------------//
-    const [search, setSearch] = useState("");
-    const [entries, setEntries] = useState(10);
-    const [page, setPage] = useState(1);
-
-    /* Filter Data */
-    const filteredData = useMemo(() => {
-        return data.filter((item) =>
-            item.name.toLowerCase().includes(search.toLowerCase())
-        );
-    }, [search]);
-
-    /* Pagination */
-    const totalPages = Math.ceil(filteredData.length / entries);
-
-    const paginatedData = filteredData.slice(
-        (page - 1) * entries,
-        page * entries
-    );
-
     // -------- Payment Details Enable Disable Logic ---------- //
     const [paymentType, setPaymentType] = useState<string>('Cash');
     const isBankSelected = paymentType === 'Bank';
@@ -145,10 +101,14 @@ function Page() {
         item.Name.toLowerCase().includes(searchPickDropdownP.toLowerCase())
     );
 
-    // ---------- CREATE Color ---------- //
-    const [openCreateColorModal, setOpenCreateColorModal] = useState(false);
-    // ---------- CREATE  Godown ---------- //
-    const [openCreateGodownModal, setOpenCreateGodownModal] = useState(false);
+    // ---------- Add ---------- //
+    const [openAddModal, setOpenAddModal] = useState(false);
+
+    // just for delete
+    const [rowsT, setRowsT] = useState([1, 2]);
+    const handleDeleteT = (id: number) => {
+        setRowsT(rowsT.filter((rowT) => rowT !== id));
+    };
     return (
         <>
             <section id="category-section" className="mt-10">
@@ -158,104 +118,57 @@ function Page() {
                         <h2>Edit Purchase Order</h2>
                     </div>
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1">
                             <div className="col">
                                 <form className="border border-gray-300 rounded p-4">
-                                    <div className="input_box flex items-center gap-2">
-                                        <div className="w-full flex items-center gap-2">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
-                                                    Supplier
-                                                </label>
-
-                                                <div className="relative">
-                                                    {/* Input + Arrow */}
-                                                    <div
-                                                        onClick={() => setIsOpenPickDropdown(!isOpenPickDropdown)}
-                                                        className="w-full flex items-center justify-between border border-gray-300 rounded px-3 py-2 cursor-pointer focus-within:border-primary"
-                                                    >
-                                                        <input
-                                                            type="text"
-                                                            value={selectedPickDropdown}
-                                                            readOnly
-                                                            placeholder="Select customer"
-                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
-                                                        />
-
-                                                        {/* Arrow */}
-                                                        <FaChevronDown
-                                                            className={`text-gray-500 text-[12px] transition-transform duration-200 ${
-                                                                isOpenPickDropdown ? "rotate-180" : ""
-                                                            }`}
-                                                        />
-                                                    </div>
-
-                                                    {/* Dropdown */}
-                                                    {isOpenPickDropdown && (
-                                                        <>
-                                                            {/* Overlay */}
-                                                            <div
-                                                                className="fixed inset-0 z-10"
-                                                                onClick={() => setIsOpenPickDropdown(false)}
-                                                            />
-
-                                                            <ul className="absolute right-0 mt-2 w-full bg-[#f7f7f7] border border-gray-300 rounded shadow-xl z-20 overflow-hidden">
-
-                                                                {/* Search Field */}
-                                                                <div className="p-2 border-b border-gray-300">
-                                                                    <input
-                                                                        type="text"
-                                                                        placeholder="Search..."
-                                                                        value={searchPickDropdown}
-                                                                        onChange={(e) => setSearchPickDropdown(e.target.value)}
-                                                                        className="w-full px-2 py-2 text-[13px] border border-gray-300 rounded focus:outline-none focus:border-primary"
-                                                                    />
-                                                                </div>
-
-                                                                {/* Options */}
-                                                                <div
-                                                                    className="max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600">
-                                                                    {filteredOptions.length > 0 ? (
-                                                                        filteredOptions.map((option, index) => (
-                                                                            <li
-                                                                                key={index}
-                                                                                onClick={() => {
-                                                                                    setSelectedPickDropdown(`${option.FullName} (${option.code})`);
-                                                                                    setIsOpenPickDropdown(false);
-                                                                                    setSearchPickDropdown("");
-                                                                                }}
-                                                                                className="px-4 py-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer transition"
-                                                                            >
-
-                                                                                {/* Product Title */}
-                                                                                <div
-                                                                                    className="text-[14px] font-semibold text-gray-700">
-                                                                                    {option.FullName} ({option.code})
-                                                                                </div>
-
-                                                                                {/* Product Details */}
-                                                                                <div
-                                                                                    className="text-[12px] text-gray-500 mt-[2px]">
-                                                                                    Mobile: {option.MobileNo} |
-                                                                                    Address: {option.Address}
-                                                                                </div>
-                                                                            </li>
-                                                                        ))
-                                                                    ) : (
-                                                                        <div
-                                                                            className="px-4 py-2 text-[12px] text-gray-500">
-                                                                            No result found
-                                                                        </div>
-                                                                    )}
-                                                                </div>
-                                                            </ul>
-                                                        </>
-                                                    )}
-                                                </div>
-                                            </div>
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Pur. Date
+                                            </label>
+                                            <input
+                                                type="date"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Challan
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="00001"
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                Invoice No
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[14px] font-medium">
+                                                DO
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
                                         </div>
                                     </div>
-                                    <div className="input_box mt-4 flex items-center gap-2">
+                                </form>
+                            </div>
+
+                            <div className="col mt-4">
+                                <form className="border border-gray-300 rounded p-4">
+                                    <div className="input_box flex items-center gap-2">
                                         <div className="w-full flex items-center gap-2">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[14px] font-medium">
@@ -349,131 +262,98 @@ function Page() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full flex items-center gap-2">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Color
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                            <div onClick={() => setOpenCreateColorModal(true)} className="flex justify-end">
-                                                <FiPlusSquare
-                                                    size={26}
-                                                    onClick={addRow}
-                                                    className="text-primary cursor-pointer hover:text-primary/80"
-                                                />
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[14px] font-medium">
+                                                    Supplier
+                                                </label>
+
+                                                <div className="relative">
+                                                    {/* Input + Arrow */}
+                                                    <div
+                                                        onClick={() => setIsOpenPickDropdown(!isOpenPickDropdown)}
+                                                        className="w-full flex items-center justify-between border border-gray-300 rounded px-3 py-2 cursor-pointer focus-within:border-primary"
+                                                    >
+                                                        <input
+                                                            type="text"
+                                                            value={selectedPickDropdown}
+                                                            readOnly
+                                                            placeholder="Select customer"
+                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
+                                                        />
+
+                                                        {/* Arrow */}
+                                                        <FaChevronDown
+                                                            className={`text-gray-500 text-[12px] transition-transform duration-200 ${
+                                                                isOpenPickDropdown ? "rotate-180" : ""
+                                                            }`}
+                                                        />
+                                                    </div>
+
+                                                    {/* Dropdown */}
+                                                    {isOpenPickDropdown && (
+                                                        <>
+                                                            {/* Overlay */}
+                                                            <div
+                                                                className="fixed inset-0 z-10"
+                                                                onClick={() => setIsOpenPickDropdown(false)}
+                                                            />
+
+                                                            <ul className="absolute right-0 mt-2 w-full bg-[#f7f7f7] border border-gray-300 rounded shadow-xl z-20 overflow-hidden">
+
+                                                                {/* Search Field */}
+                                                                <div className="p-2 border-b border-gray-300">
+                                                                    <input
+                                                                        type="text"
+                                                                        placeholder="Search..."
+                                                                        value={searchPickDropdown}
+                                                                        onChange={(e) => setSearchPickDropdown(e.target.value)}
+                                                                        className="w-full px-2 py-2 text-[13px] border border-gray-300 rounded focus:outline-none focus:border-primary"
+                                                                    />
+                                                                </div>
+
+                                                                {/* Options */}
+                                                                <div
+                                                                    className="max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600">
+                                                                    {filteredOptions.length > 0 ? (
+                                                                        filteredOptions.map((option, index) => (
+                                                                            <li
+                                                                                key={index}
+                                                                                onClick={() => {
+                                                                                    setSelectedPickDropdown(`${option.FullName} (${option.code})`);
+                                                                                    setIsOpenPickDropdown(false);
+                                                                                    setSearchPickDropdown("");
+                                                                                }}
+                                                                                className="px-4 py-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer transition"
+                                                                            >
+
+                                                                                {/* Product Title */}
+                                                                                <div
+                                                                                    className="text-[14px] font-semibold text-gray-700">
+                                                                                    {option.FullName} ({option.code})
+                                                                                </div>
+
+                                                                                {/* Product Details */}
+                                                                                <div
+                                                                                    className="text-[12px] text-gray-500 mt-[2px]">
+                                                                                    Mobile: {option.MobileNo} |
+                                                                                    Address: {option.Address}
+                                                                                </div>
+                                                                            </li>
+                                                                        ))
+                                                                    ) : (
+                                                                        <div
+                                                                            className="px-4 py-2 text-[12px] text-gray-500">
+                                                                            No result found
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            </ul>
+                                                        </>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="w-full flex items-center gap-2 mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                GoDown
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                            <div onClick={() => setOpenCreateGodownModal(true)} className="flex justify-end">
-                                                <FiPlusSquare
-                                                    size={26}
-                                                    onClick={addRow}
-                                                    className="text-primary cursor-pointer hover:text-primary/80"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Qty
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                MRP Rate
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Dis.Per.
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Actu.Pur.Rate
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Dis. Amt
-                                            </label>
-                                            <input
-                                                type="number"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Total Amt.
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="border border-gray-300 rounded p-4 mt-4">
-                                        <div className="flex items-center justify-end gap-4">
-                                            <button
-                                                className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[13px] cursor-pointer">
-                                                <FaCartPlus size={15}/> Add to order
-                                            </button>
-                                            <button
-                                                className="flex items-center gap-1 py-2 px-4 bg-yellow-400 hover:bg-yellow-600 text-white rounded text-[13px] cursor-pointer">
-                                                <BsEraser size={15}/> Clear
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div className="col">
-                                <form className="border border-gray-300 rounded p-4">
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
                                                 Prv. Due
@@ -484,155 +364,117 @@ function Page() {
                                                 className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Pur. Date
-                                            </label>
-                                            <input
-                                                type="date"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Challan
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder="00001"
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                        <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
-                                                Invoice No
-                                            </label>
-                                            <input
-                                                type="text"
-                                                placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center justify-end gap-4 mt-4">
-                                        <label className="block mb-1 text-[14px] font-medium">
-                                            DO
-                                        </label>
-                                        <input
-                                            type="text"
-                                            placeholder=""
-                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                        />
                                     </div>
                                 </form>
-
-                                <div className="col mt-4">
-                                    <div className="border border-gray-300 rounded p-4">
-                                        {/* Table */}
-                                        <div className="overflow-x-auto">
-                                            <table className="w-full border-collapse">
-                                                <thead className="bg-gray-50">
-                                                <tr className="border border-gray-200">
-                                                    <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                    <th className="p-3 border border-gray-200 text-left">Name</th>
-                                                    <th className="p-3 border border-gray-200 text-left">IMEI</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                {paginatedData.length === 0 && (
-                                                    <tr>
-                                                        <td
-                                                            colSpan={8}
-                                                            className="text-center p-4 text-gray-500"
-                                                        >
-                                                            No Data Found
-                                                        </td>
-                                                    </tr>
-                                                )}
-
-                                                {paginatedData.map((item, index) => (
-                                                    <tr key={item.id} className="border border-gray-200 hover:bg-gray-50">
-                                                        <td className="p-3 border border-gray-200 text-center">
-                                                            {(page - 1) * entries + index + 1}
-                                                        </td>
-
-                                                        <td className="p-3 border border-gray-200">
-                                                            {item.name}
-                                                        </td>
-                                                        <td className="p-3 border border-gray-200">
-                                                            {item.name}
-                                                        </td>
-                                                    </tr>
-                                                ))}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                         <div className="grid grid-cols-1 mt-4">
                             <div className="col">
-                                <div className="border border-gray-300 rounded p-4 pb-[200px]">
+                                <div className="bg-gray-50 border border-gray-300 rounded p-4 pb-[150px]">
                                     {/* Table */}
                                     <div className="overflow-x-auto">
-                                        <table className="w-full border-collapse">
+                                        <table className="w-full border border-gray-200 border-collapse text-[12px]">
                                             <thead className="bg-gray-50">
-                                            <tr className="border border-gray-200">
-                                                <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                <th className="p-3 border border-gray-200 text-left">Product</th>
-                                                <th className="p-3 border border-gray-200 text-left">Qty</th>
-                                                <th className="p-3 border border-gray-200 text-left">MRP Rate</th>
-                                                <th className="p-3 border border-gray-200 text-left">Dis.Per.</th>
-                                                <th className="p-3 border border-gray-200 text-left">Dis. Amt</th>
-                                                <th className="p-3 border border-gray-200 text-left">Actu.Pur.Rate</th>
-                                                <th className="p-3 border border-gray-200 text-left">Total Amt.</th>
+                                            <tr>
+                                                <th className="p-2 border border-gray-200 text-center">SI</th>
+                                                <th className="p-2 border border-gray-200 text-left">Product</th>
+                                                <th className="p-2 border border-gray-200 text-left">Qty</th>
+                                                <th className="p-2 border border-gray-200 text-left">Color</th>
+                                                <th className="p-2 border border-gray-200 text-left">MRP</th>
+                                                <th className="p-2 border border-gray-200 text-left">Dis.Per.</th>
+                                                <th className="p-2 border border-gray-200 text-left">Dis. Amt</th>
+                                                <th className="p-2 border border-gray-200 text-left">GoDown</th>
+                                                <th className="p-2 border border-gray-200 text-left">Total</th>
+                                                <th className="p-2 border border-gray-200 text-center">Action</th>
                                             </tr>
                                             </thead>
+
                                             <tbody>
-                                            {paginatedData.length === 0 && (
+                                            {rowsT.map((id, index) => (
+                                                <tr key={id}>
+                                                    <td className="p-2 border border-gray-200 text-center">
+                                                        {index + 1}
+                                                    </td>
+
+                                                    <td className="p-2 border border-gray-200">
+                                                        {id === 1 ? "Product" : "Product"}
+                                                    </td>
+
+                                                    <td className="p-2 border border-gray-200 flex items-center gap-1">
+                                                        <input
+                                                            className="w-full focus:outline-none border border-gray-200 px-2 py-1"
+                                                            defaultValue={id === 1 ? "2" : "1"}
+                                                        />
+                                                        <div onClick={() => setOpenAddModal(true)}
+                                                             className="flex justify-end">
+                                                            <FiPlusSquare
+                                                                size={18}
+                                                                className="text-primary cursor-pointer hover:text-primary/80"
+                                                            />
+                                                        </div>
+                                                    </td>
+
+                                                    <td className="p-2 border border-gray-200">
+                                                        <input
+                                                            className="w-full focus:outline-none border border-gray-200 px-2 py-1"
+                                                            defaultValue={id === 1 ? "100" : "200"}
+                                                        />
+                                                    </td>
+
+                                                    <td className="p-2 border border-gray-200">
+                                                        <input
+                                                            className="w-full focus:outline-none border border-gray-200 px-2 py-1"
+                                                            defaultValue={id === 1 ? "190" : "180"}
+                                                        />
+                                                    </td>
+                                                    <td className="p-2 border border-gray-200">
+                                                        <input
+                                                            className="w-full focus:outline-none border border-gray-200 px-2 py-1"
+                                                            defaultValue={id === 1 ? "70" : "80"}
+                                                        />
+                                                    </td>
+                                                    <td className="p-2 border border-gray-200">
+                                                        <input
+                                                            className="w-full focus:outline-none border border-gray-200 px-2 py-1"
+                                                            defaultValue={id === 1 ? "Code" : "Code"}
+                                                        />
+                                                    </td>
+                                                    <td className="p-2 border border-gray-200">
+                                                        <input
+                                                            className="w-full focus:outline-none border border-gray-200 px-2 py-1"
+                                                            defaultValue={id === 1 ? "Name" : "Name"}
+                                                        />
+                                                    </td>
+
+                                                    <td className="p-2 border border-gray-200">
+                                                        <input
+                                                            className="w-full focus:outline-none border border-gray-200 px-2 py-1"
+                                                            defaultValue={id === 1 ? "500" : "600"}
+                                                        />
+                                                    </td>
+
+                                                    <td className="p-2 border border-gray-200 text-center">
+                                                        <button
+                                                            onClick={() => handleDeleteT(id)}
+                                                            className="text-red-500 cursor-pointer hover:text-red-700"
+                                                        >
+                                                            <MdDeleteOutline size={20}/>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            ))}
+
+                                            {rowsT.length === 0 && (
                                                 <tr>
                                                     <td
-                                                        colSpan={8}
-                                                        className="text-center p-4 text-gray-500"
+                                                        colSpan={11}
+                                                        className="text-center p-4 text-gray-500 border border-gray-200"
                                                     >
                                                         No Data Found
                                                     </td>
                                                 </tr>
                                             )}
-
-                                            {paginatedData.map((item, index) => (
-                                                <tr key={item.id} className="border border-gray-200 hover:bg-gray-50">
-                                                    <td className="p-3 border border-gray-200 text-center">
-                                                        {(page - 1) * entries + index + 1}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.GodownName}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                    <td className="p-3 border border-gray-200">
-                                                        {item.name}
-                                                    </td>
-                                                </tr>
-                                            ))}
                                             </tbody>
                                         </table>
                                     </div>
@@ -922,10 +764,7 @@ function Page() {
                                         className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
+                                <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Pay Amount
                                     </label>
@@ -935,6 +774,9 @@ function Page() {
                                         className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
+                            </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Labour Cost Per
@@ -955,10 +797,7 @@ function Page() {
                                         className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
+                                <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Courier Cost Percent.
                                     </label>
@@ -978,6 +817,9 @@ function Page() {
                                         className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
+                            </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Grand Total
@@ -988,10 +830,7 @@ function Page() {
                                         className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
+                                <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[14px] font-medium">
                                         Adj. Amt
                                     </label>
@@ -1049,23 +888,23 @@ function Page() {
                     </div>
                 </div>
 
-                {/* CREATE Color MODAL */}
-                {openCreateColorModal && (
+                {/* Add MODAL */}
+                {openAddModal && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center">
                         <div className="absolute inset-0 bg-modal-opacity"
-                             onClick={() => setOpenCreateColorModal(false)}/>
+                             onClick={() => setOpenAddModal(false)}/>
                         <div className="relative bg-white rounded shadow w-2xl mx-4 px-6 py-4 z-10 text-[14px]">
                             <button className="absolute top-6 right-6 cursor-pointer text-gray-500 hover:text-red-500"
-                                    onClick={() => setOpenCreateColorModal(false)}>
+                                    onClick={() => setOpenAddModal(false)}>
                                 <RxCross1 size={18}/>
                             </button>
-                            <h3 className="text-[16px] font-semibold mb-4">Add New Color</h3>
+                            <h3 className="text-[16px] font-semibold mb-4">Add New</h3>
                             <div className="py-4 border-b border-t border-gray-200">
                                 <form action="" method="">
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
-                                        <div className="w-full mt-4 md:mt-0">
+                                        <div className="w-full">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Color Name
+                                                Name
                                             </label>
                                             <input
                                                 type="text"
@@ -1073,42 +912,9 @@ function Page() {
                                                 className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
-                                        <div className="w-full"></div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div className="flex justify-end gap-3 mt-4 text-[14px]">
-                                <button onClick={() => setOpenCreateColorModal(false)}
-                                        className="px-4 py-2 cursor-pointer rounded bg-red-500 text-white hover:bg-red-700 transition">
-                                    Close
-                                </button>
-                                <button onClick={() => setOpenCreateColorModal(false)}
-                                        className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                    Add Color
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                )}
-
-
-                {/* CREATE Godown MODAL */}
-                {openCreateGodownModal && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center">
-                        <div className="absolute inset-0 bg-modal-opacity"
-                             onClick={() => setOpenCreateGodownModal(false)}/>
-                        <div className="relative bg-white rounded shadow w-2xl mx-4 px-6 py-4 z-10 text-[14px]">
-                            <button className="absolute top-6 right-6 cursor-pointer text-gray-500 hover:text-red-500"
-                                    onClick={() => setOpenCreateGodownModal(false)}>
-                                <RxCross1 size={18}/>
-                            </button>
-                            <h3 className="text-[16px] font-semibold mb-4">Add New Godown</h3>
-                            <div className="py-4 border-b border-t border-gray-200">
-                                <form action="" method="">
-                                    <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full mt-4 md:mt-0">
                                             <label className="block mb-1 text-[14px] font-medium">
-                                                Godown Name
+                                                IMEI
                                             </label>
                                             <input
                                                 type="text"
@@ -1116,18 +922,17 @@ function Page() {
                                                 className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
-                                        <div className="w-full"></div>
                                     </div>
                                 </form>
                             </div>
                             <div className="flex justify-end gap-3 mt-4 text-[14px]">
-                                <button onClick={() => setOpenCreateGodownModal(false)}
+                                <button onClick={() => setOpenAddModal(false)}
                                         className="px-4 py-2 cursor-pointer rounded bg-red-500 text-white hover:bg-red-700 transition">
                                     Close
                                 </button>
-                                <button onClick={() => setOpenCreateGodownModal(false)}
+                                <button onClick={() => setOpenAddModal(false)}
                                         className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                    Add Godown
+                                    Add
                                 </button>
                             </div>
                         </div>
