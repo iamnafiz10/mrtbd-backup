@@ -153,14 +153,14 @@ function Page() {
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
                         <h2>Create Sales Order</h2>
                     </div>
-                    <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
+                    <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[12px]">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="col">
                                 <form className="border border-gray-300 rounded p-4">
                                     <div className="input_box flex items-center gap-2">
                                         <div className="w-full flex items-center gap-2">
                                             <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
+                                                <label className="block mb-1 text-[12px] font-medium">
                                                     Customer
                                                 </label>
 
@@ -175,7 +175,7 @@ function Page() {
                                                             value={selectedPickDropdown}
                                                             readOnly
                                                             placeholder="Select customer"
-                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
+                                                            className="w-full text-[12px] focus:outline-none bg-transparent cursor-pointer"
                                                         />
 
                                                         {/* Arrow */}
@@ -225,7 +225,7 @@ function Page() {
 
                                                                                 {/* Product Title */}
                                                                                 <div
-                                                                                    className="text-[14px] font-semibold text-gray-700">
+                                                                                    className="text-[12px] font-semibold text-gray-700">
                                                                                     {option.FullName} ({option.code})
                                                                                 </div>
 
@@ -264,7 +264,7 @@ function Page() {
                                     <div className="input_box mt-4 flex items-center gap-2">
                                         <div className="w-full flex items-center gap-2">
                                             <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
+                                                <label className="block mb-1 text-[12px] font-medium">
                                                     Product
                                                 </label>
 
@@ -279,7 +279,7 @@ function Page() {
                                                             value={selectedPickDropdownP}
                                                             readOnly
                                                             placeholder="Select product"
-                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
+                                                            className="w-full text-[12px] focus:outline-none bg-transparent cursor-pointer"
                                                         />
 
                                                         {/* Arrow */}
@@ -329,7 +329,7 @@ function Page() {
 
                                                                                 {/* Product Title */}
                                                                                 <div
-                                                                                    className="text-[14px] font-semibold text-gray-700">
+                                                                                    className="text-[12px] font-semibold text-gray-700">
                                                                                     {option.Quantity}
                                                                                 </div>
 
@@ -363,23 +363,23 @@ function Page() {
                                 <form className="border border-gray-300 rounded p-4">
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 Inv. No.
                                             </label>
                                             <input
                                                 type="text"
                                                 placeholder="00001"
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 Sales Date
                                             </label>
                                             <input
                                                 type="date"
                                                 placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                     </div>
@@ -395,7 +395,7 @@ function Page() {
                                         <input
                                             type="text"
                                             placeholder=""
-                                            className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                         />
                                     </div>
                                 </form>
@@ -404,21 +404,21 @@ function Page() {
 
                         <div className="grid grid-cols-1 mt-4">
                             <div className="col">
-                                <div className="border border-gray-300 rounded p-4 pb-[200px]">
+                                <div className="border bg-gray-50 border-gray-300 rounded p-4 pb-[150px]">
                                     {/* Table */}
                                     <div className="overflow-x-auto">
-                                        <table className="w-full border-collapse">
-                                            <thead className="bg-gray-50">
+                                        <table className="w-full border-collapse text-[12px]">
+                                            <thead className="bg-primary text-white">
                                             <tr className="border border-gray-200">
-                                                <th className="p-3 border border-gray-200 text-center">SI</th>
-                                                <th className="p-3 border border-gray-200 text-left">ProductName</th>
-                                                <th className="p-3 border border-gray-200 text-left">Color</th>
-                                                <th className="p-3 border border-gray-200 text-left">IMEI</th>
-                                                <th className="p-3 border border-gray-200 text-left">Qty</th>
-                                                <th className="p-3 border border-gray-200 text-left">Sales Rate</th>
-                                                <th className="p-3 border border-gray-200 text-left">Dis. Per.</th>
-                                                <th className="p-3 border border-gray-200 text-left">Dis. Amt.</th>
-                                                <th className="p-3 border border-gray-200 text-left">Total</th>
+                                                <th className="p-2 border border-gray-200 text-center">SI</th>
+                                                <th className="p-2 border border-gray-200 text-left">ProductName</th>
+                                                <th className="p-2 border border-gray-200 text-left">Color</th>
+                                                <th className="p-2 border border-gray-200 text-left">IMEI</th>
+                                                <th className="p-2 border border-gray-200 text-left">Qty</th>
+                                                <th className="p-2 border border-gray-200 text-left">Sales Rate</th>
+                                                <th className="p-2 border border-gray-200 text-left">Dis. Per.</th>
+                                                <th className="p-2 border border-gray-200 text-left">Dis. Amt.</th>
+                                                <th className="p-2 border border-gray-200 text-left">Total</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -470,16 +470,148 @@ function Page() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className="border border-gray-300 rounded p-4 mt-4">
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                <div className="w-full">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Flat Dis. Per.
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Flat Dis. Amt.
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Net Total
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Net Discount
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder=""
+                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                <div className="w-full">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Adjust. Amt
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Pay Amount
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Labour Cost Per
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Labour Cost
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Payment Due
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Remind Date
+                                    </label>
+                                    <input
+                                        type="date"
+                                        placeholder=""
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Remarks
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder=""
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                                <div className="w-full mt-4 md:mt-0">
+                                    <label className="block mb-1 text-[12px] font-medium">
+                                        Broker Cost
+                                    </label>
+                                    <input
+                                        type="number"
+                                        placeholder=""
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                    />
+                                </div>
+                            </div>
 
                             <div className="col mt-4">
                                 <button
                                     type="button"
                                     onClick={() => setShowPaymentDetails(!showPaymentDetails)}
-                                    className="cursor-pointer py-2 px-4 bg-primary text-white text-[14px] rounded"
+                                    className="cursor-pointer py-2 px-4 bg-primary text-white text-[12px] rounded"
                                 >
                                     {showPaymentDetails ? "Hide Payment Details" : "Add Payment Details"}
                                 </button>
                             </div>
+
                             {/*Click To Come Payment Details Div*/}
                             <div
                                 className={`col transition-all duration-500 ease-in-out overflow-hidden ${
@@ -531,7 +663,7 @@ function Page() {
                                                                 onChange={(e) =>
                                                                     changeType(row.id, e.target.value)
                                                                 }
-                                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                             >
                                                                 <option>Cash</option>
                                                                 <option>Rocket</option>
@@ -550,7 +682,7 @@ function Page() {
 
                                                             <select
                                                                 disabled={!isBank}
-                                                                className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                                className={`w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
                     ${!isBank ? 'bg-gray-100' : 'bg-white'}
                   `}
                                                             >
@@ -571,7 +703,7 @@ function Page() {
 
                                                             <input
                                                                 disabled={!isBank}
-                                                                className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                                className={`w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
                     ${!isBank ? 'bg-gray-100' : 'bg-white'}
                   `}
                                                             />
@@ -587,7 +719,7 @@ function Page() {
                                                             <input
                                                                 type="number"
                                                                 defaultValue={0}
-                                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                             />
                                                         </div>
 
@@ -639,7 +771,7 @@ function Page() {
                                                                     onChange={(e) =>
                                                                         changeType(row.id, e.target.value)
                                                                     }
-                                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                                 >
                                                                     <option>Cash</option>
                                                                     <option>Rocket</option>
@@ -654,7 +786,7 @@ function Page() {
 
                                                                 <select
                                                                     disabled={!isBank}
-                                                                    className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                                    className={`w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
                                                           ${!isBank ? 'bg-gray-100' : 'bg-white'}
                                                         `}
                                                                 >
@@ -671,7 +803,7 @@ function Page() {
                                                             <td className="border border-primary px-2 py-2">
                                                                 <input
                                                                     disabled={!isBank}
-                                                                    className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                                    className={`w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
                                                       ${!isBank ? 'bg-gray-100' : 'bg-white'}
                                                     `}
                                                                 />
@@ -685,7 +817,7 @@ function Page() {
                                                                 <input
                                                                     type="number"
                                                                     defaultValue={0}
-                                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                                 />
 
                                                             </td>
@@ -720,140 +852,6 @@ function Page() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="border border-gray-300 rounded p-4 mt-4">
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Flat Dis. Per.
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Flat Dis. Amt.
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Net Total
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Net Discount
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Adjust. Amt
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Pay Amount
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Labour Cost Per
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Labour Cost
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Payment Due
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Remind Date
-                                    </label>
-                                    <input
-                                        type="date"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Remarks
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
-                                        Broker Cost
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
 
                             <div className="flex items-center justify-end gap-4 mt-4">
                                 <label className="flex items-center gap-2 cursor-pointer select-none">
@@ -872,193 +870,6 @@ function Page() {
                         </div>
                     </div>
                 </div>
-
-                {/*/!*CustomerPick Modal*!/*/}
-                {/*{openCustomerPickModal && (*/}
-                {/*    <div className="fixed inset-0 z-50 flex items-center justify-center">*/}
-                {/*        <div className="absolute inset-0 bg-modal-opacity"*/}
-                {/*             onClick={() => setOpenCustomerPickModal(false)}/>*/}
-                {/*        <div*/}
-                {/*            className="w-[90%] max-w-5xl relative bg-white rounded shadow mx-4 px-4 py-4 z-10 text-[14px]">*/}
-                {/*            <button className="absolute top-6 right-6 cursor-pointer text-gray-500 hover:text-red-500"*/}
-                {/*                    onClick={() => setOpenCustomerPickModal(false)}>*/}
-                {/*                <RxCross1 size={18}/>*/}
-                {/*            </button>*/}
-                {/*            <h3 className="text-[16px] font-semibold pb-4 border-b border-gray-300">*/}
-                {/*                Existing Customers*/}
-                {/*            </h3>*/}
-
-                {/*            /!*Data Table One *!/*/}
-                {/*            <div className="bg-white p-2 rounded">*/}
-                {/*                /!* Top Controls *!/*/}
-                {/*                <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">*/}
-                {/*                    /!* Show Entries *!/*/}
-                {/*                    <div className="flex items-center gap-2">*/}
-                {/*                        <span>Show</span>*/}
-
-                {/*                        <select*/}
-                {/*                            value={entries}*/}
-                {/*                            onChange={(e) => {*/}
-                {/*                                setEntries(Number(e.target.value));*/}
-                {/*                                setPage(1);*/}
-                {/*                            }}*/}
-                {/*                            className=" border border-primary*/}
-                {/*                            rounded*/}
-                {/*                            px-2 py-1*/}
-                {/*                            focus:outline-none*/}
-                {/*                            focus:ring-0*/}
-                {/*                            "*/}
-                {/*                        >*/}
-                {/*                            <option>10</option>*/}
-                {/*                            <option>25</option>*/}
-                {/*                            <option>50</option>*/}
-                {/*                        </select>*/}
-
-                {/*                        <span>entries</span>*/}
-                {/*                    </div>*/}
-
-                {/*                    /!* Search *!/*/}
-                {/*                    <div>*/}
-                {/*                        <input*/}
-                {/*                            type="text"*/}
-                {/*                            placeholder="Search..."*/}
-                {/*                            value={search}*/}
-                {/*                            onChange={(e) => setSearch(e.target.value)}*/}
-                {/*                            className="border border-primary*/}
-                {/*                                px-3 py-2*/}
-                {/*                                rounded*/}
-                {/*                                w-[220px]*/}
-                {/*                                focus:outline-none*/}
-                {/*                                focus:ring-0*/}
-                {/*                              "*/}
-                {/*                        />*/}
-                {/*                    </div>*/}
-                {/*                </div>*/}
-
-                {/*                /!* Table *!/*/}
-                {/*                <div className="overflow-x-auto">*/}
-                {/*                    <table className="w-full border-collapse">*/}
-                {/*                        <thead className="bg-gray-50">*/}
-                {/*                        <tr className="border border-gray-200">*/}
-                {/*                            <th className="p-3 border border-gray-200">*/}
-                {/*                                <CustomCheckbox/>*/}
-                {/*                            </th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-left">SI</th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-left">Code</th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-left">Name</th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-center">Contact No.</th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-center">Address</th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-center">Sales Due</th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-center">Hire Due</th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-center">Total Due</th>*/}
-                {/*                            <th className="p-3 border border-gray-200 text-center">DMS Code</th>*/}
-                {/*                        </tr>*/}
-                {/*                        </thead>*/}
-                {/*                        <tbody>*/}
-                {/*                        {paginatedData.length === 0 && (*/}
-                {/*                            <tr>*/}
-                {/*                                <td*/}
-                {/*                                    colSpan={10}*/}
-                {/*                                    className="text-center p-4 text-gray-500"*/}
-                {/*                                >*/}
-                {/*                                    No Data Found*/}
-                {/*                                </td>*/}
-                {/*                            </tr>*/}
-                {/*                        )}*/}
-
-                {/*                        {paginatedData.map((item, index) => (*/}
-                {/*                            <tr key={item.id} className="border border-gray-200 hover:bg-gray-50">*/}
-                {/*                                <td className="p-3 border border-gray-200 text-center">*/}
-                {/*                                    <CustomCheckbox/>*/}
-                {/*                                </td>*/}
-
-                {/*                                <td className="p-3 border border-gray-200">*/}
-                {/*                                    {(page - 1) * entries + index + 1}*/}
-                {/*                                </td>*/}
-
-                {/*                                <td className="p-3 border border-gray-200">*/}
-                {/*                                    {item.name}*/}
-                {/*                                </td>*/}
-                {/*                                <td className="p-3 border border-gray-200">*/}
-                {/*                                    {item.GodownName}*/}
-                {/*                                </td>*/}
-                {/*                                <td className="p-3 border border-gray-200">*/}
-                {/*                                    {item.Company}*/}
-                {/*                                </td>*/}
-                {/*                                <td className="p-3 border border-gray-200 font-medium">*/}
-                {/*                                    {item.Category}*/}
-                {/*                                </td>*/}
-                {/*                                <td className="p-3 border border-gray-200">*/}
-                {/*                                    {item.Color}*/}
-                {/*                                </td>*/}
-                {/*                                <td className="p-3 border border-gray-200 text-center">*/}
-                {/*                                    {item.MRPRate}*/}
-                {/*                                </td>*/}
-                {/*                                <td className="p-3 border border-gray-200">*/}
-                {/*                                    {item.name}*/}
-                {/*                                </td>*/}
-                {/*                                <td className="p-3 border border-gray-200">*/}
-                {/*                                    {item.name}*/}
-                {/*                                </td>*/}
-                {/*                            </tr>*/}
-                {/*                        ))}*/}
-                {/*                        </tbody>*/}
-                {/*                    </table>*/}
-                {/*                </div>*/}
-
-                {/*                /!* Bottom Info + Pagination *!/*/}
-                {/*                <div className="flex flex-col md:flex-row justify-between items-center mt-4 gap-3">*/}
-
-                {/*                    /!* Info *!/*/}
-                {/*                    <p className="text-sm text-gray-600">*/}
-                {/*                        Showing {paginatedData.length} of {filteredData.length} entries*/}
-                {/*                    </p>*/}
-
-                {/*                    /!* Pagination *!/*/}
-                {/*                    <div className="flex gap-1">*/}
-
-                {/*                        <button*/}
-                {/*                            disabled={page === 1}*/}
-                {/*                            onClick={() => setPage(page - 1)}*/}
-                {/*                            className="px-3 py-1 border cursor-pointer border-gray-200 rounded disabled:opacity-40"*/}
-                {/*                        >*/}
-                {/*                            Previous*/}
-                {/*                        </button>*/}
-
-                {/*                        {[...Array(totalPages)].map((_, i) => (*/}
-                {/*                            <button*/}
-                {/*                                key={i}*/}
-                {/*                                onClick={() => setPage(i + 1)}*/}
-                {/*                                className={`px-3 py-1 border cursor-pointer border-gray-200 rounded ${*/}
-                {/*                                    page === i + 1*/}
-                {/*                                        ? "bg-green-500 text-white"*/}
-                {/*                                        : ""*/}
-                {/*                                }`}*/}
-                {/*                            >*/}
-                {/*                                {i + 1}*/}
-                {/*                            </button>*/}
-                {/*                        ))}*/}
-
-                {/*                        <button*/}
-                {/*                            disabled={page === totalPages}*/}
-                {/*                            onClick={() => setPage(page + 1)}*/}
-                {/*                            className="px-3 py-1 border border-gray-200 cursor-pointer rounded disabled:opacity-40"*/}
-                {/*                        >*/}
-                {/*                            Next*/}
-                {/*                        </button>*/}
-                {/*                    </div>*/}
-                {/*                </div>*/}
-                {/*            </div>*/}
-
-                {/*            <div className="flex justify-end gap-3 mt-4 text-[14px]">*/}
-                {/*                <button onClick={() => setOpenCustomerPickModal(false)}*/}
-                {/*                        className="px-4 py-2 cursor-pointer rounded bg-red-500 text-white hover:bg-red-700 transition">*/}
-                {/*                    Close*/}
-                {/*                </button>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*)}*/}
             </section>
         </>
     );

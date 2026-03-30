@@ -117,49 +117,49 @@ function Page() {
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
                         <h2>Edit Purchase Order</h2>
                     </div>
-                    <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[14px]">
+                    <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[12px]">
                         <div className="grid grid-cols-1">
                             <div className="col">
                                 <form className="border border-gray-300 rounded p-4">
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 Pur. Date
                                             </label>
                                             <input
                                                 type="date"
                                                 placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 Challan
                                             </label>
                                             <input
                                                 type="text"
                                                 placeholder="00001"
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 Invoice No
                                             </label>
                                             <input
                                                 type="text"
                                                 placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 DO
                                             </label>
                                             <input
                                                 type="text"
                                                 placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                     </div>
@@ -171,7 +171,7 @@ function Page() {
                                     <div className="input_box flex items-center gap-2">
                                         <div className="w-full flex items-center gap-2">
                                             <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
+                                                <label className="block mb-1 text-[12px] font-medium">
                                                     Product
                                                 </label>
 
@@ -186,7 +186,7 @@ function Page() {
                                                             value={selectedPickDropdownP}
                                                             readOnly
                                                             placeholder="Select product"
-                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
+                                                            className="w-full text-[12px] focus:outline-none bg-transparent cursor-pointer"
                                                         />
 
                                                         {/* Arrow */}
@@ -236,7 +236,7 @@ function Page() {
 
                                                                                 {/* Product Title */}
                                                                                 <div
-                                                                                    className="text-[14px] font-semibold text-gray-700">
+                                                                                    className="text-[12px] font-semibold text-gray-700">
                                                                                     {option.Quantity}
                                                                                 </div>
 
@@ -264,7 +264,7 @@ function Page() {
                                         </div>
                                         <div className="w-full flex items-center gap-2">
                                             <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
+                                                <label className="block mb-1 text-[12px] font-medium">
                                                     Supplier
                                                 </label>
 
@@ -279,7 +279,7 @@ function Page() {
                                                             value={selectedPickDropdown}
                                                             readOnly
                                                             placeholder="Select customer"
-                                                            className="w-full text-[14px] focus:outline-none bg-transparent cursor-pointer"
+                                                            className="w-full text-[12px] focus:outline-none bg-transparent cursor-pointer"
                                                         />
 
                                                         {/* Arrow */}
@@ -329,7 +329,7 @@ function Page() {
 
                                                                                 {/* Product Title */}
                                                                                 <div
-                                                                                    className="text-[14px] font-semibold text-gray-700">
+                                                                                    className="text-[12px] font-semibold text-gray-700">
                                                                                     {option.FullName} ({option.code})
                                                                                 </div>
 
@@ -355,13 +355,13 @@ function Page() {
                                             </div>
                                         </div>
                                         <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 Prv. Due
                                             </label>
                                             <input
                                                 type="text"
                                                 placeholder="00001"
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                     </div>
@@ -485,142 +485,142 @@ function Page() {
                         <div className="border border-gray-300 rounded p-4 mt-4">
                             <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Flat Dis. Per.
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Flat Dis. Amt.
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Total Dis.
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Pay Amount
                                     </label>
                                     <input
                                         type="text"
                                         placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                             </div>
 
                             <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Labour Cost Per
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Labour Cost
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Courier Cost Percent.
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Courier Cost
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                             </div>
 
                             <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Grand Total
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Adj. Amt
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Net Total
                                     </label>
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Payment Due
                                     </label>
                                     <input
                                         type="text"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                             </div>
 
                             <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full">
-                                    <label className="block mb-1 text-[14px] font-medium">
+                                    <label className="block mb-1 text-[12px] font-medium">
                                         Remarks
                                     </label>
                                     <input
                                         type="text"
                                         placeholder=""
-                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
@@ -628,17 +628,9 @@ function Page() {
                                         <button
                                             type="button"
                                             onClick={() => setShowPaymentDetails(!showPaymentDetails)}
-                                            className="cursor-pointer py-2 px-4 bg-primary text-white text-[14px] rounded"
+                                            className="cursor-pointer py-2 px-4 bg-primary text-white text-[12px] rounded"
                                         >
                                             {showPaymentDetails ? "Hide Payment Details" : "Add Payment Details"}
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <div className="flex items-center justify-end gap-4 mt-4">
-                                        <button
-                                            className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                            Save order
                                         </button>
                                     </div>
                                 </div>
@@ -695,7 +687,7 @@ function Page() {
                                                                 onChange={(e) =>
                                                                     changeType(row.id, e.target.value)
                                                                 }
-                                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                             >
                                                                 <option>Cash</option>
                                                                 <option>Rocket</option>
@@ -714,7 +706,7 @@ function Page() {
 
                                                             <select
                                                                 disabled={!isBank}
-                                                                className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                                className={`w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
                     ${!isBank ? 'bg-gray-100' : 'bg-white'}
                   `}
                                                             >
@@ -735,7 +727,7 @@ function Page() {
 
                                                             <input
                                                                 disabled={!isBank}
-                                                                className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                                className={`w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
                     ${!isBank ? 'bg-gray-100' : 'bg-white'}
                   `}
                                                             />
@@ -751,7 +743,7 @@ function Page() {
                                                             <input
                                                                 type="number"
                                                                 defaultValue={0}
-                                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                             />
                                                         </div>
 
@@ -803,7 +795,7 @@ function Page() {
                                                                     onChange={(e) =>
                                                                         changeType(row.id, e.target.value)
                                                                     }
-                                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                                 >
                                                                     <option>Cash</option>
                                                                     <option>Rocket</option>
@@ -818,7 +810,7 @@ function Page() {
 
                                                                 <select
                                                                     disabled={!isBank}
-                                                                    className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                                    className={`w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
                                                           ${!isBank ? 'bg-gray-100' : 'bg-white'}
                                                         `}
                                                                 >
@@ -835,7 +827,7 @@ function Page() {
                                                             <td className="border border-primary px-2 py-2">
                                                                 <input
                                                                     disabled={!isBank}
-                                                                    className={`w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
+                                                                    className={`w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary
                                                       ${!isBank ? 'bg-gray-100' : 'bg-white'}
                                                     `}
                                                                 />
@@ -849,7 +841,7 @@ function Page() {
                                                                 <input
                                                                     type="number"
                                                                     defaultValue={0}
-                                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                                 />
 
                                                             </td>
@@ -884,6 +876,15 @@ function Page() {
                                     </div>
                                 </div>
                             </div>
+
+                            <div className="w-full mt-4 md:mt-0">
+                                <div className="flex items-center justify-end gap-4 mt-4">
+                                    <button
+                                        className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
+                                        Save order
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -893,7 +894,7 @@ function Page() {
                     <div className="fixed inset-0 z-50 flex items-center justify-center">
                         <div className="absolute inset-0 bg-modal-opacity"
                              onClick={() => setOpenAddModal(false)}/>
-                        <div className="relative bg-white rounded shadow w-2xl mx-4 px-6 py-4 z-10 text-[14px]">
+                        <div className="relative bg-white rounded shadow w-2xl mx-4 px-6 py-4 z-10 text-[12px]">
                             <button className="absolute top-6 right-6 cursor-pointer text-gray-500 hover:text-red-500"
                                     onClick={() => setOpenAddModal(false)}>
                                 <RxCross1 size={18}/>
@@ -903,29 +904,74 @@ function Page() {
                                 <form action="" method="">
                                     <div className="input_box mt-4 block md:flex items-center gap-4">
                                         <div className="w-full">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 Name
                                             </label>
                                             <input
                                                 type="text"
                                                 placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                         <div className="w-full mt-4 md:mt-0">
-                                            <label className="block mb-1 text-[14px] font-medium">
+                                            <label className="block mb-1 text-[12px] font-medium">
                                                 IMEI
                                             </label>
                                             <input
                                                 type="text"
                                                 placeholder=""
-                                                className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[12px] font-medium">
+                                                Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[12px] font-medium">
+                                                IMEI
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="w-full">
+                                            <label className="block mb-1 text-[12px] font-medium">
+                                                Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                            />
+                                        </div>
+                                        <div className="w-full mt-4 md:mt-0">
+                                            <label className="block mb-1 text-[12px] font-medium">
+                                                IMEI
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                             />
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <div className="flex justify-end gap-3 mt-4 text-[14px]">
+                            <div className="flex justify-end gap-3 mt-4 text-[12px]">
                                 <button onClick={() => setOpenAddModal(false)}
                                         className="px-4 py-2 cursor-pointer rounded bg-red-500 text-white hover:bg-red-700 transition">
                                     Close
