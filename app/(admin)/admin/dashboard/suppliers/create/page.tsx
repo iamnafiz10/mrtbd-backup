@@ -85,6 +85,7 @@ function Page() {
                                             </div>
                                         </div>
                                     </div>
+
                                     <div className="col mt-6">
                                         <div className="bg-primary p-3 text-[14px] rounded">
                                             <h2 className="text-white font-semibold">
@@ -210,6 +211,7 @@ function Page() {
                                             </div>
                                         </div>
                                     </div>
+
                                     <div className="col mt-4">
                                         <button onClick={() => setOpenDealerMoreInfoModal(true)}
                                                 className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[12px] cursor-pointer">

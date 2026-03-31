@@ -718,84 +718,6 @@ function Page() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-4 mt-4">
-                            <div className="col border border-gray-300 rounded p-4">
-                                <div className="input_box mt-4 block md:flex items-center gap-4">
-                                    <div className="w-full">
-                                        <label className="block mb-1 text-[12px] font-medium">
-                                            Guar. Name
-                                        </label>
-                                        <input
-                                            type="number"
-                                            placeholder=""
-                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                        />
-                                    </div>
-                                    <div className="w-full mt-4 md:mt-0">
-                                        <label className="block mb-1 text-[12px] font-medium">
-                                            Contact No
-                                        </label>
-                                        <input
-                                            type="number"
-                                            placeholder=""
-                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                        />
-                                    </div>
-                                    <div className="w-full mt-4 md:mt-0">
-                                        <label className="block mb-1 text-[12px] font-medium">
-                                            Address
-                                        </label>
-                                        <input
-                                            type="number"
-                                            placeholder=""
-                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col border border-gray-300 rounded p-4">
-                                <div className="input_box mt-4 block md:flex items-center gap-4">
-                                    <div className="w-full">
-                                        <label className="block mb-1 text-[12px] font-medium">
-                                            Date
-                                        </label>
-                                        <input
-                                            type="date"
-                                            placeholder=""
-                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                        />
-                                    </div>
-                                    <div className="w-full mt-4">
-                                        <label className="block mb-1 text-[12px] font-medium">
-                                        </label>
-                                        <input
-                                            type="number"
-                                            placeholder=""
-                                            className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="flex items-center justify-end gap-4 mt-4">
-                                    <label className="flex items-center gap-2 cursor-pointer select-none">
-                                        <input type="checkbox" className="peer hidden"/>
-                                        <div
-                                            className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
-                                            <FaCheck className="text-white text-[10px]"/>
-                                        </div>
-                                        <span>All Paid</span>
-                                    </label>
-                                    <button
-                                        className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                        Remind Date
-                                    </button>
-                                    <button
-                                        className="px-4 py-2 cursor-pointer rounded bg-yellow-400 text-white transition">
-                                        Paid Installment
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
                         <div className="border border-gray-300 rounded p-4 mt-4">
                             <div className="input_box mt-4 block md:flex items-center gap-4">
                                 <div className="w-full">
@@ -1103,6 +1025,84 @@ function Page() {
                                         ))}
                                         </tbody>
                                     </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-4 mt-4">
+                            <div className="col border border-gray-300 rounded p-4">
+                                <div className="input_box mt-4 block md:flex items-center gap-4">
+                                    <div className="w-full">
+                                        <label className="block mb-1 text-[12px] font-medium">
+                                            Guar. Name
+                                        </label>
+                                        <input
+                                            type="number"
+                                            placeholder=""
+                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        />
+                                    </div>
+                                    <div className="w-full mt-4 md:mt-0">
+                                        <label className="block mb-1 text-[12px] font-medium">
+                                            Contact No
+                                        </label>
+                                        <input
+                                            type="number"
+                                            placeholder=""
+                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        />
+                                    </div>
+                                    <div className="w-full mt-4 md:mt-0">
+                                        <label className="block mb-1 text-[12px] font-medium">
+                                            Address
+                                        </label>
+                                        <input
+                                            type="number"
+                                            placeholder=""
+                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col border border-gray-300 rounded p-4">
+                                <div className="input_box mt-4 block md:flex items-center gap-4">
+                                    <div className="w-full">
+                                        <label className="block mb-1 text-[12px] font-medium">
+                                            Date
+                                        </label>
+                                        <input
+                                            type="date"
+                                            placeholder=""
+                                            className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        />
+                                    </div>
+                                    <div className="w-full mt-4">
+                                        <label className="block mb-1 text-[12px] font-medium">
+                                        </label>
+                                        <input
+                                            type="number"
+                                            placeholder=""
+                                            className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-end gap-4 mt-4">
+                                    <label className="flex items-center gap-2 cursor-pointer select-none">
+                                        <input type="checkbox" className="peer hidden"/>
+                                        <div
+                                            className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                            <FaCheck className="text-white text-[10px]"/>
+                                        </div>
+                                        <span>All Paid</span>
+                                    </label>
+                                    <button
+                                        className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
+                                        Remind Date
+                                    </button>
+                                    <button
+                                        className="px-4 py-2 cursor-pointer rounded bg-yellow-400 text-white transition">
+                                        Paid Installment
+                                    </button>
                                 </div>
                             </div>
                         </div>
