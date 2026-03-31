@@ -2,6 +2,8 @@
 import React, {useRef, useState} from 'react';
 import {IoImageOutline} from "react-icons/io5";
 import Image from "next/image";
+import {RxCross1} from "react-icons/rx";
+import {FaPlus} from "react-icons/fa";
 
 function Page() {
     // Image preview
@@ -19,6 +21,11 @@ function Page() {
             fileRef.current.value = "";
         }
     };
+
+    // Button Click To Showing Info //
+    const [showPaymentD, setShowPaymentD] = useState(false);
+
+    const [openDealerMoreInfoModal, setOpenDealerMoreInfoModal] = useState(false);
     return (
         <>
             <section id="category-section" className="mt-10">
@@ -32,11 +39,56 @@ function Page() {
                         <div className="tab_wrap">
                             {/* Tab Content */}
                             <div className="tab_content_wrap mt-4 border border-gray-200 p-4 rounded">
-                                <div className="hire-content grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    <div className="col">
+                                <div className="hire-content grid grid-cols-1">
+                                    <div className="flex justify-end">
+                                        <div className="col">
+                                            <div className="input_box flex items-center gap-4">
+                                                <div className="w-full">
+                                                    <div className="flex items-center gap-4 mb-2">
+                                                        {/* Image Preview Box */}
+                                                        <div
+                                                            className="border custom_img_size border-gray-200 rounded flex items-center justify-center overflow-hidden">
+                                                            {preview ? (
+                                                                <Image
+                                                                    width={100}
+                                                                    height={100}
+                                                                    src={preview}
+                                                                    alt="Logo Preview"
+                                                                    className="object-cover"
+                                                                />
+                                                            ) : (
+                                                                <IoImageOutline size={50}
+                                                                                className="text-gray-400"/>
+                                                            )}
+                                                        </div>
+
+                                                        {/* Remove Button */}
+                                                        {preview && (
+                                                            <button
+                                                                type="button"
+                                                                onClick={handleRemove}
+                                                                className="px-4 py-2 text-[12px] bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
+                                                            >
+                                                                Remove
+                                                            </button>
+                                                        )}
+                                                    </div>
+                                                    <input
+                                                        ref={fileRef}
+                                                        type="file"
+                                                        accept="image/*"
+                                                        onChange={handleImageChange}
+                                                        className="w-full text-[10px] border border-gray-300 rounded p-2
+                                                    focus:outline-none focus:border-primary"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col mt-6">
                                         <div className="bg-primary p-3 text-[14px] rounded">
                                             <h2 className="text-white font-semibold">
-                                                Company Infomation
+                                                Company Information
                                             </h2>
                                         </div>
                                         <div className="input_box mt-4 block md:flex items-center gap-4">
@@ -115,50 +167,8 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
-
-                                        <div className="input_box block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <div className="flex items-center gap-4 my-4">
-                                                    {/* Image Preview Box */}
-                                                    <div
-                                                        className="w-[120px] h-[120px] border border-gray-200 rounded flex items-center justify-center overflow-hidden">
-                                                        {preview ? (
-                                                            <Image
-                                                                width={100}
-                                                                height={100}
-                                                                src={preview}
-                                                                alt="Logo Preview"
-                                                                className="object-cover"
-                                                            />
-                                                        ) : (
-                                                            <IoImageOutline size={60} className="text-gray-400"/>
-                                                        )}
-                                                    </div>
-
-                                                    {/* Remove Button */}
-                                                    {preview && (
-                                                        <button
-                                                            type="button"
-                                                            onClick={handleRemove}
-                                                            className="px-4 py-2 text-[13px] bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
-                                                        >
-                                                            Remove
-                                                        </button>
-                                                    )}
-                                                </div>
-
-                                                <input
-                                                    ref={fileRef}
-                                                    type="file"
-                                                    accept="image/*"
-                                                    onChange={handleImageChange}
-                                                    className="w-1/2 text-[12px] border border-gray-300 rounded p-3 py-2
-                focus:outline-none focus:border-primary"
-                                                />
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div className="col">
+                                    <div className="col mt-6">
                                         <div className="bg-primary p-3 text-[14px] rounded">
                                             <h2 className="text-white font-semibold">
                                                 Service Provider Man
@@ -200,9 +210,50 @@ function Page() {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="col mt-4">
+                                        <button onClick={() => setOpenDealerMoreInfoModal(true)}
+                                                className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[12px] cursor-pointer">
+                                            <FaPlus/> Add More Info
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-end mt-4">
+                            <button
+                                className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
+                                Add Supplier
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                                    <div className="col mt-6">
-                                        <div className="bg-primary p-3 text-[14px] rounded">
+                {/* Dealer More Info Modal */}
+                {openDealerMoreInfoModal && (
+                    <div className="fixed inset-0 z-50 flex justify-center overflow-y-auto">
+                        <div className="absolute inset-0 bg-modal-opacity"
+                             onClick={() => setOpenDealerMoreInfoModal(false)}/>
+                        <div
+                            className="relative bg-white rounded shadow w-2xl mt-10 mb-10 max-h-[90vh] flex flex-col z-10 text-[12px]">
+                            {/* Modal Header - Fixed */}
+                            <div className="px-6 py-4 border-b border-gray-200 flex-shrink-0">
+                                <button
+                                    className="absolute top-6 right-6 cursor-pointer text-gray-500 hover:text-red-500"
+                                    onClick={() => setOpenDealerMoreInfoModal(false)}
+                                >
+                                    <RxCross1 size={18}/>
+                                </button>
+                                <h3 className="text-[16px] font-semibold">Add More Information</h3>
+                            </div>
+
+                            {/* Scrollable Content Area */}
+                            <div className="overflow-y-auto px-6 py-4 flex-grow">
+                                <form action="" method="">
+                                    <div className="col">
+                                        <h4 className="text-lg text-gray-700 font-semibold">
+                                            (1) Add Address/Product Info
+                                        </h4>
+                                        <div className="bg-primary p-3 text-[14px] rounded mt-4">
                                             <h2 className="text-white font-semibold">
                                                 Address Information
                                             </h2>
@@ -295,9 +346,44 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
+
+                                        <div className="col mt-6">
+                                            <div className="bg-primary p-3 text-[14px] rounded">
+                                                <h2 className="text-white font-semibold">
+                                                    Product Information
+                                                </h2>
+                                            </div>
+
+                                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                <div className="w-full">
+                                                    <label className="block mb-1 text-[14px] font-medium">
+                                                        Product Category
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div className="col mt-6">
+
+                                    <div className="col mt-4">
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowPaymentD(!showPaymentD)}
+                                            className="cursor-pointer text-lg">
+                                            (2) Add Payment/Delivery Info <span
+                                            className="ml-1">{showPaymentD ? "-" : "+"}</span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        className={`col transition-all duration-500 overflow-hidden ${
+                                            showPaymentD ? "max-h-[1200px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                                        }`}
+                                    >
                                         <div className="bg-primary p-3 text-[14px] rounded">
                                             <h2 className="text-white font-semibold">
                                                 Payment Information
@@ -325,7 +411,6 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
-
                                         <div className="input_box mt-4 block md:flex items-center gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[14px] font-medium">
@@ -348,7 +433,6 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
-
                                         <div className="input_box mt-4 block md:flex items-center gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[14px] font-medium">
@@ -361,72 +445,58 @@ function Page() {
                                                 />
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div className="col mt-6">
-                                        <div className="bg-primary p-3 text-[14px] rounded">
-                                            <h2 className="text-white font-semibold">
-                                                Product Information
-                                            </h2>
-                                        </div>
+                                        <div className="col mt-6">
+                                            <div className="bg-primary p-3 text-[14px] rounded">
+                                                <h2 className="text-white font-semibold">
+                                                    Delivery And Reciver Information
+                                                </h2>
+                                            </div>
 
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
-                                                    Product Category
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
+                                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                <div className="w-full">
+                                                    <label className="block mb-1 text-[14px] font-medium">
+                                                        Delivery Man
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                <div className="w-full">
+                                                    <label className="block mb-1 text-[14px] font-medium">
+                                                        Delivery Man Contact No
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div className="col mt-6">
-                                        <div className="bg-primary p-3 text-[14px] rounded">
-                                            <h2 className="text-white font-semibold">
-                                                Delivery And Reciver Information
-                                            </h2>
-                                        </div>
-
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
-                                                    Delivery Man
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[14px] font-medium">
-                                                    Delivery Man Contact No
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[14px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
+                                </form>
+                            </div>
+                            {/* Modal Footer - Fixed */}
+                            <div className="px-6 py-4 border-t border-gray-200 flex-shrink-0">
+                                <div className="flex justify-end gap-3 mt-4 text-[12px]">
+                                    <button onClick={() => setOpenDealerMoreInfoModal(false)}
+                                            className="px-4 py-2 cursor-pointer rounded bg-red-500 text-white hover:bg-red-700 transition">
+                                        Cancel
+                                    </button>
+                                    <button onClick={() => setOpenDealerMoreInfoModal(false)}
+                                            className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
+                                        Add
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full flex justify-end mt-4">
-                            <button
-                                className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                Update Supplier
-                            </button>
-                        </div>
                     </div>
-                </div>
+                )}
             </section>
         </>
     );

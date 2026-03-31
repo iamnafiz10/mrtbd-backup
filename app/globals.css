@@ -28,6 +28,11 @@
     }
 }
 
+.custom_img_size {
+    width: 80px;
+    height: 80px;
+}
+
 /*--------------------------- Print Setting -------------------------*/
 #print-area {
     display: none;
