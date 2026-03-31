@@ -52,6 +52,20 @@ const menuItems: MenuItemUI[] = [
         path: "/admin/dashboard",
     },
     {
+        id: 99,
+        title: "Setting",
+        icon: <FiSettings className="h-5 w-5"/>,
+        path: "/admin/basic",
+        subItems: [
+            {id: 991, title: "Users", path: "/admin/dashboard/users"},
+            {id: 992, title: "Roles", path: "/admin/dashboard/roles"},
+            {id: 993, title: "Menus", path: "/admin/dashboard/menus"},
+            {id: 994, title: "Sister Concerns", path: "/admin/dashboard/sister-concerns"},
+            {id: 995, title: "System Info", path: "/admin/dashboard/system-info"},
+            {id: 996, title: "VAT Report Percent Setup", path: "/admin/dashboard/vat-report"},
+        ],
+    },
+    {
         id: 2,
         title: "Basic Modules",
         icon: <FiSettings className="h-5 w-5"/>,
@@ -94,6 +108,16 @@ const menuItems: MenuItemUI[] = [
         icon: <CgCalculator className="h-5 w-5"/>,
         path: "/admin/basic",
         subItems: [
+            {
+                id: 50,
+                title: "Order Sheet",
+                children: [
+                    {id: 501, title: "Company Ordersheet", path: "/admin/dashboard/company-ordersheet"},
+                    {id: 502, title: "Customer Ordersheet", path: "/admin/dashboard/customer-ordersheet"},
+                    {id: 503, title: "Ordersheet Report", path: "/admin/dashboard/ordersheet-report"},
+                ],
+            },
+
             {id: 51, title: "Purchase Orders", path: "/admin/dashboard/purchase-orders"},
             {id: 52, title: "Retail Sales", path: "/admin/dashboard/retail-sales"},
             {id: 53, title: "Hire Sales", path: "/admin/dashboard/hire-sales"},
