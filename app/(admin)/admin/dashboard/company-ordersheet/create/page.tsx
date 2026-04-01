@@ -1,7 +1,6 @@
 "use client";
 import React, {useMemo, useState} from 'react';
-import {FiPlusSquare, FiTrash2} from "react-icons/fi";
-import {FaCheck, FaChevronDown} from "react-icons/fa";
+import {FaChevronDown} from "react-icons/fa";
 
 type Stock = {
     id: number;
@@ -27,11 +26,6 @@ const data: Stock[] = [
     },
 ];
 
-type PaymentRow = {
-    id: number;
-    paymentType: string;
-};
-
 function Page() {
     // ----------- Data Table ------------//
     const [search, setSearch] = useState("");
@@ -52,43 +46,6 @@ function Page() {
         (page - 1) * entries,
         page * entries
     );
-
-    // -------- AddCustomer Modal ---------- //
-    // const [openAddCustomerModal, setOpenAddCustomerModal] = useState(false);
-
-    // -------- Payment Details Enable Disable Logic ---------- //
-    const [paymentType, setPaymentType] = useState<string>('Cash');
-    const isBankSelected = paymentType === 'Bank';
-
-    // -------- Click + And Coming Table Logic ---------- //
-    const [rows, setRows] = useState<PaymentRow[]>([
-        {id: 1, paymentType: 'Cash'},
-    ]);
-    // Add New Row
-    const addRow = () => {
-        setRows((prev) => [
-            ...prev,
-            {
-                id: prev.length + 1,
-                paymentType: 'Cash',
-            },
-        ]);
-    };
-    // Remove Row
-    const removeRow = (id: number) => {
-        setRows((prev) => prev.filter((row) => row.id !== id));
-    };
-    // Change Payment Type
-    const changeType = (id: number, value: string) => {
-        setRows((prev) =>
-            prev.map((row) =>
-                row.id === id ? {...row, paymentType: value} : row
-            )
-        );
-    };
-
-    // Click to coming Payment Details Box
-    const [showPaymentDetails, setShowPaymentDetails] = useState(false);
 
     // ------------- PickDropdown -----------------//
     const [isOpenPickDropdown, setIsOpenPickDropdown] = useState(false);
@@ -388,8 +345,10 @@ function Page() {
                                             <tr className="border border-gray-200">
                                                 <th className="p-2 border border-gray-200 text-center">SI</th>
                                                 <th className="p-2 border border-gray-200 text-left">Product</th>
-                                                <th className="p-2 border border-gray-200 text-left">DDL.Price</th>
+                                                <th className="p-2 border border-gray-200 text-left">Color</th>
                                                 <th className="p-2 border border-gray-200 text-left">Order Qty</th>
+                                                <th className="p-2 border border-gray-200 text-left">DDL.Price</th>
+                                                <th className="p-2 border border-gray-200 text-left">MRP Rate</th>
                                                 <th className="p-2 border border-gray-200 text-left">Net Amt</th>
                                                 <th className="p-2 border border-gray-200 text-left">Action</th>
                                             </tr>
@@ -426,6 +385,12 @@ function Page() {
                                                     <td className="p-3 border border-gray-200">
                                                         {item.name}
                                                     </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
                                                 </tr>
                                             ))}
                                             </tbody>
@@ -437,29 +402,9 @@ function Page() {
 
                         <div className="border border-gray-300 rounded p-4 mt-4">
                             <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Color
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[12px] font-medium">
-                                        Prev. Stock
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Order Qty
+                                        Remarks
                                     </label>
                                     <input
                                         type="number"
@@ -469,35 +414,12 @@ function Page() {
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[12px] font-medium">
-                                        MRP Rate
+                                        Payment Due
                                     </label>
                                     <input
                                         type="text"
                                         placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        DDL.Price
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
                                         className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Net Amt
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
@@ -522,33 +444,10 @@ function Page() {
                                 </div>
                             </div>
 
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Remarks
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Payment Due
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
                             <div className="flex items-center justify-end gap-4 mt-4">
                                 <button
                                     className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                   Add Product
+                                    Add Product
                                 </button>
                                 <button
                                     className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">

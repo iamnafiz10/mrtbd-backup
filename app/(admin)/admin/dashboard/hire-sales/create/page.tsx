@@ -747,7 +747,7 @@ function Page() {
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
@@ -770,7 +770,7 @@ function Page() {
                                     <input
                                         type="text"
                                         placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
@@ -833,7 +833,7 @@ function Page() {
                                     <input
                                         type="number"
                                         placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">

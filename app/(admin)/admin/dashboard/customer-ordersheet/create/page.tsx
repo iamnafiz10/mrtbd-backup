@@ -108,7 +108,7 @@ function Page() {
                 <div className="container">
                     <div
                         className="page_header bg-gray-100 border border-gray-200 py-3 px-4 rounded font-semibold text-[16px]">
-                        <h2>Edit Company Purchase OSS.</h2>
+                        <h2>Customer Sales OS.</h2>
                     </div>
                     <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[12px]">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -118,7 +118,7 @@ function Page() {
                                         <div className="w-full flex items-center gap-2">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[12px] font-medium">
-                                                    Supplier
+                                                    Customer
                                                 </label>
 
                                                 <div className="relative">
@@ -345,8 +345,10 @@ function Page() {
                                             <tr className="border border-gray-200">
                                                 <th className="p-2 border border-gray-200 text-center">SI</th>
                                                 <th className="p-2 border border-gray-200 text-left">Product</th>
-                                                <th className="p-2 border border-gray-200 text-left">DDL.Price</th>
+                                                <th className="p-2 border border-gray-200 text-left">Color</th>
                                                 <th className="p-2 border border-gray-200 text-left">Order Qty</th>
+                                                <th className="p-2 border border-gray-200 text-left">DDL.Price</th>
+                                                <th className="p-2 border border-gray-200 text-left">MRP Rate</th>
                                                 <th className="p-2 border border-gray-200 text-left">Net Amt</th>
                                                 <th className="p-2 border border-gray-200 text-left">Action</th>
                                             </tr>
@@ -383,6 +385,12 @@ function Page() {
                                                     <td className="p-3 border border-gray-200">
                                                         {item.name}
                                                     </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
+                                                    <td className="p-3 border border-gray-200">
+                                                        {item.name}
+                                                    </td>
                                                 </tr>
                                             ))}
                                             </tbody>
@@ -394,29 +402,9 @@ function Page() {
 
                         <div className="border border-gray-300 rounded p-4 mt-4">
                             <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Color
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[12px] font-medium">
-                                        Prev. Stock
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Order Qty
+                                        Remarks
                                     </label>
                                     <input
                                         type="number"
@@ -426,35 +414,12 @@ function Page() {
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
                                     <label className="block mb-1 text-[12px] font-medium">
-                                        MRP Rate
+                                        Payment Due
                                     </label>
                                     <input
                                         type="text"
                                         placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        DDL.Price
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
                                         className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Net Amt
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
                                 </div>
                                 <div className="w-full mt-4 md:mt-0">
@@ -473,29 +438,6 @@ function Page() {
                                     </label>
                                     <input
                                         type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Remarks
-                                    </label>
-                                    <input
-                                        type="number"
-                                        placeholder=""
-                                        className="w-full text-[12px] bg-gray-100 border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                    />
-                                </div>
-                                <div className="w-full mt-4 md:mt-0">
-                                    <label className="block mb-1 text-[12px] font-medium">
-                                        Payment Due
-                                    </label>
-                                    <input
-                                        type="text"
                                         placeholder=""
                                         className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                     />
