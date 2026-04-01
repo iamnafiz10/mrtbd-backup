@@ -33,6 +33,10 @@
     height: 80px;
 }
 
+.custom_padding {
+    padding: 20px 100px;
+}
+
 /*--------------------------- Print Setting -------------------------*/
 #print-area {
     display: none;
@@ -56,5 +60,11 @@
         transform: translate(-50%, -50%);
         text-align: center;
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    .custom_padding {
+        padding: 20px !important;
     }
 }

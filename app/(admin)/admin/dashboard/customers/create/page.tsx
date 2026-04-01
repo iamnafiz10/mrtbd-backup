@@ -51,10 +51,10 @@ function Page() {
                         <h2>Create Customer</h2>
                     </div>
 
-                    <div className="w-full p-6 bg-white rounded border border-gray-200 mt-6 text-[12px]">
+                    <div className="w-full custom_padding bg-white rounded border border-gray-200 mt-6 text-[12px]">
                         <div className="tab_wrap">
                             {/* Tabs */}
-                            <div className="flex items-center gap-3 mx-4">
+                            <div className="flex items-center gap-3">
                                 <button
                                     type="button"
                                     className={tabBtnStyle('retail')}
@@ -88,61 +88,16 @@ function Page() {
                                 </button>
                             </div>
 
-                            <h5 className="text-[13px] mt-2 mx-4">
+                            <h5 className="text-[13px] mt-2">
                                 <b>Note:</b> Select <span className="text-primary font-bold">Customer Type</span> and
                                 create a customer
                             </h5>
 
                             {/* Tab Content */}
-                            <div className="tab_content_wrap mt-4 mx-4 border border-gray-200 p-4 rounded">
+                            <div className="tab_content_wrap mt-4 border border-gray-200 p-4 rounded">
                                 {activeTab === 'retail' && (
                                     <div className="retail-content grid grid-cols-1">
-                                        <div className="flex justify-end">
-                                            <div className="col">
-                                                <div className="input_box flex items-center gap-4">
-                                                    <div className="w-full">
-                                                        <div className="flex items-center gap-4 mb-2">
-                                                            {/* Image Preview Box */}
-                                                            <div
-                                                                className="border custom_img_size border-gray-200 rounded flex items-center justify-center overflow-hidden">
-                                                                {preview ? (
-                                                                    <Image
-                                                                        width={100}
-                                                                        height={100}
-                                                                        src={preview}
-                                                                        alt="Logo Preview"
-                                                                        className="object-cover"
-                                                                    />
-                                                                ) : (
-                                                                    <IoImageOutline size={50}
-                                                                                    className="text-gray-400"/>
-                                                                )}
-                                                            </div>
-
-                                                            {/* Remove Button */}
-                                                            {preview && (
-                                                                <button
-                                                                    type="button"
-                                                                    onClick={handleRemove}
-                                                                    className="px-4 py-2 text-[12px] bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
-                                                                >
-                                                                    Remove
-                                                                </button>
-                                                            )}
-                                                        </div>
-                                                        <input
-                                                            ref={fileRef}
-                                                            type="file"
-                                                            accept="image/*"
-                                                            onChange={handleImageChange}
-                                                            className="w-full text-[10px] border border-gray-300 rounded p-2
-                                                    focus:outline-none focus:border-primary"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col mt-6">
+                                        <div className="col">
                                             <div className="bg-primary p-3 text-[12px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Customer Information
@@ -161,12 +116,6 @@ function Page() {
                                                     />
                                                 </div>
                                                 <div className="w-full mt-4 md:mt-0">
-
-                                                </div>
-                                            </div>
-
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
                                                     <label className="block mb-1 text-[12px] font-medium">
                                                         Full Name
                                                     </label>
@@ -176,6 +125,9 @@ function Page() {
                                                         className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                     />
                                                 </div>
+                                            </div>
+
+                                            <div className="input_box mt-4 block md:flex items-center gap-4">
                                                 <div className="w-full mt-4 md:mt-0">
                                                     <label className="block mb-1 text-[12px] font-medium">
                                                         Father Name
@@ -186,10 +138,7 @@ function Page() {
                                                         className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                     />
                                                 </div>
-                                            </div>
-
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
+                                                <div className="w-full mt-4 md:mt-0">
                                                     <label className="block mb-1 text-[12px] font-medium">
                                                         Mobile No.
                                                     </label>
@@ -358,14 +307,9 @@ function Page() {
                                                 )}
                                             </div>
                                         </div>
-                                    </div>
-                                )}
 
-                                {activeTab === 'dealer' && (
-                                    <div className="dealer-content grid grid-cols-1">
-                                        <div className="flex justify-end">
+                                        <div className="flex justify-start mt-4">
                                             <div className="col">
-
                                                 <div className="input_box flex items-center gap-4">
                                                     <div className="w-full">
                                                         <div className="flex items-center gap-4 mb-2">
@@ -409,8 +353,12 @@ function Page() {
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                )}
 
-                                        <div className="col mt-6">
+                                {activeTab === 'dealer' && (
+                                    <div className="dealer-content grid grid-cols-1">
+                                        <div className="col">
                                             <div className="bg-primary p-3 text-[12px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Dealer Information
@@ -429,10 +377,6 @@ function Page() {
                                                     />
                                                 </div>
                                                 <div className="w-full mt-4 md:mt-0">
-                                                </div>
-                                            </div>
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
                                                     <label className="block mb-1 text-[12px] font-medium">
                                                         Full Name
                                                     </label>
@@ -440,6 +384,18 @@ function Page() {
                                                         type="text"
                                                         placeholder=""
                                                         className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="input_box mt-4 block md:flex items-center gap-4">
+                                                <div className="w-full">
+                                                    <label className="block mb-1 text-[12px] font-medium">
+                                                        Mobile No.
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[12px]  border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                     />
                                                 </div>
                                                 <div className="w-full mt-4 md:mt-0">
@@ -468,18 +424,6 @@ function Page() {
                                                 <div className="w-full mt-4 md:mt-0">
                                                     <label className="block mb-1 text-[12px] font-medium">
                                                         Tin No.
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[12px]  border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
-                                                    <label className="block mb-1 text-[12px] font-medium">
-                                                        Mobile No.
                                                     </label>
                                                     <input
                                                         type="text"
@@ -589,18 +533,7 @@ function Page() {
                                             </div>
                                         </div>
 
-                                        <div className="col mt-4">
-                                            <button onClick={() => setOpenDealerMoreInfoModal(true)}
-                                                    className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[12px] cursor-pointer">
-                                                <FaPlus/> Add More Info
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
-
-                                {activeTab === 'hire' && (
-                                    <div className="hire-content grid grid-cols-1">
-                                        <div className="flex justify-end">
+                                        <div className="flex justify-start mt-4">
                                             <div className="col">
 
                                                 <div className="input_box flex items-center gap-4">
@@ -646,7 +579,19 @@ function Page() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col mt-6">
+
+                                        <div className="col mt-4">
+                                            <button onClick={() => setOpenDealerMoreInfoModal(true)}
+                                                    className="flex items-center gap-1 py-2 px-4 bg-primary hover:bg-dark-primary text-white rounded text-[12px] cursor-pointer">
+                                                <FaPlus/> Add More Info
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {activeTab === 'hire' && (
+                                    <div className="hire-content grid grid-cols-1">
+                                        <div className="col">
                                             <div className="bg-primary p-3 text-[12px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Customer Information
@@ -665,14 +610,21 @@ function Page() {
                                                     />
                                                 </div>
                                                 <div className="w-full mt-4 md:mt-0">
-
+                                                    <label className="block mb-1 text-[12px] font-medium">
+                                                        Full Name
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
                                                 </div>
                                             </div>
 
                                             <div className="input_box mt-4 block md:flex items-center gap-4">
                                                 <div className="w-full">
                                                     <label className="block mb-1 text-[12px] font-medium">
-                                                        Full Name
+                                                        Mobile No.
                                                     </label>
                                                     <input
                                                         type="text"
@@ -748,19 +700,6 @@ function Page() {
                                                     </select>
                                                 </div>
                                             </div>
-
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
-                                                    <label className="block mb-1 text-[12px] font-medium">
-                                                        Mobile No.
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                            </div>
                                         </div>
                                         <div className="col mt-6">
                                             <div className="bg-primary p-3 text-[12px] rounded">
@@ -824,6 +763,53 @@ function Page() {
                                                         placeholder=""
                                                         className="w-full text-[12px]  border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                     />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex justify-start mt-4">
+                                            <div className="col">
+
+                                                <div className="input_box flex items-center gap-4">
+                                                    <div className="w-full">
+                                                        <div className="flex items-center gap-4 mb-2">
+                                                            {/* Image Preview Box */}
+                                                            <div
+                                                                className="border custom_img_size border-gray-200 rounded flex items-center justify-center overflow-hidden">
+                                                                {preview ? (
+                                                                    <Image
+                                                                        width={100}
+                                                                        height={100}
+                                                                        src={preview}
+                                                                        alt="Logo Preview"
+                                                                        className="object-cover"
+                                                                    />
+                                                                ) : (
+                                                                    <IoImageOutline size={50}
+                                                                                    className="text-gray-400"/>
+                                                                )}
+                                                            </div>
+
+                                                            {/* Remove Button */}
+                                                            {preview && (
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={handleRemove}
+                                                                    className="px-4 py-2 text-[12px] bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
+                                                                >
+                                                                    Remove
+                                                                </button>
+                                                            )}
+                                                        </div>
+                                                        <input
+                                                            ref={fileRef}
+                                                            type="file"
+                                                            accept="image/*"
+                                                            onChange={handleImageChange}
+                                                            className="w-full text-[10px] border border-gray-300 rounded p-2
+                                                    focus:outline-none focus:border-primary"
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -839,52 +825,7 @@ function Page() {
 
                                 {activeTab === 'branch' && (
                                     <div className="branch-content grid grid-cols-1">
-                                        <div className="flex justify-end">
-                                            <div className="col">
-                                                <div className="input_box flex items-center gap-4">
-                                                    <div className="w-full">
-                                                        <div className="flex items-center gap-4 mb-2">
-                                                            {/* Image Preview Box */}
-                                                            <div
-                                                                className="border custom_img_size border-gray-200 rounded flex items-center justify-center overflow-hidden">
-                                                                {preview ? (
-                                                                    <Image
-                                                                        width={100}
-                                                                        height={100}
-                                                                        src={preview}
-                                                                        alt="Logo Preview"
-                                                                        className="object-cover"
-                                                                    />
-                                                                ) : (
-                                                                    <IoImageOutline size={50}
-                                                                                    className="text-gray-400"/>
-                                                                )}
-                                                            </div>
-
-                                                            {/* Remove Button */}
-                                                            {preview && (
-                                                                <button
-                                                                    type="button"
-                                                                    onClick={handleRemove}
-                                                                    className="px-4 py-2 text-[12px] bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
-                                                                >
-                                                                    Remove
-                                                                </button>
-                                                            )}
-                                                        </div>
-                                                        <input
-                                                            ref={fileRef}
-                                                            type="file"
-                                                            accept="image/*"
-                                                            onChange={handleImageChange}
-                                                            className="w-full text-[10px] border border-gray-300 rounded p-2
-                                                    focus:outline-none focus:border-primary"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col mt-6">
+                                        <div className="col">
                                             <div className="bg-primary p-3 text-[12px] rounded">
                                                 <h2 className="text-white font-semibold">
                                                     Customer Information
@@ -903,14 +844,21 @@ function Page() {
                                                     />
                                                 </div>
                                                 <div className="w-full mt-4 md:mt-0">
-
+                                                    <label className="block mb-1 text-[12px] font-medium">
+                                                        Full Name
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        placeholder=""
+                                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                    />
                                                 </div>
                                             </div>
 
                                             <div className="input_box mt-4 block md:flex items-center gap-4">
                                                 <div className="w-full">
                                                     <label className="block mb-1 text-[12px] font-medium">
-                                                        Full Name
+                                                        Mobile No.
                                                     </label>
                                                     <input
                                                         type="text"
@@ -986,19 +934,6 @@ function Page() {
                                                     </select>
                                                 </div>
                                             </div>
-
-                                            <div className="input_box mt-4 block md:flex items-center gap-4">
-                                                <div className="w-full">
-                                                    <label className="block mb-1 text-[12px] font-medium">
-                                                        Mobile No.
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder=""
-                                                        className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                    />
-                                                </div>
-                                            </div>
                                         </div>
                                         <div className="col mt-6">
                                             <div className="bg-primary p-3 text-[12px] rounded">
@@ -1062,6 +997,53 @@ function Page() {
                                                         placeholder=""
                                                         className="w-full text-[12px]  border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                     />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex justify-start mt-4">
+                                            <div className="col">
+
+                                                <div className="input_box flex items-center gap-4">
+                                                    <div className="w-full">
+                                                        <div className="flex items-center gap-4 mb-2">
+                                                            {/* Image Preview Box */}
+                                                            <div
+                                                                className="border custom_img_size border-gray-200 rounded flex items-center justify-center overflow-hidden">
+                                                                {preview ? (
+                                                                    <Image
+                                                                        width={100}
+                                                                        height={100}
+                                                                        src={preview}
+                                                                        alt="Logo Preview"
+                                                                        className="object-cover"
+                                                                    />
+                                                                ) : (
+                                                                    <IoImageOutline size={50}
+                                                                                    className="text-gray-400"/>
+                                                                )}
+                                                            </div>
+
+                                                            {/* Remove Button */}
+                                                            {preview && (
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={handleRemove}
+                                                                    className="px-4 py-2 text-[12px] bg-red-500 text-white rounded cursor-pointer hover:bg-red-600"
+                                                                >
+                                                                    Remove
+                                                                </button>
+                                                            )}
+                                                        </div>
+                                                        <input
+                                                            ref={fileRef}
+                                                            type="file"
+                                                            accept="image/*"
+                                                            onChange={handleImageChange}
+                                                            className="w-full text-[10px] border border-gray-300 rounded p-2
+                                                    focus:outline-none focus:border-primary"
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
