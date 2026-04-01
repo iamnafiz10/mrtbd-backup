@@ -56,14 +56,14 @@ const menuItems: MenuItemUI[] = [
         title: "Setting",
         icon: <FiSettings className="h-5 w-5"/>,
         path: "/admin/basic",
-        // subItems: [
-        //     {id: 991, title: "Users", path: "/admin/dashboard/users"},
-        //     {id: 992, title: "Roles", path: "/admin/dashboard/roles"},
-        //     {id: 993, title: "Menus", path: "/admin/dashboard/menus"},
-        //     {id: 994, title: "Sister Concerns", path: "/admin/dashboard/sister-concerns"},
-        //     {id: 995, title: "System Info", path: "/admin/dashboard/system-info"},
-        //     {id: 996, title: "VAT Report Percent Setup", path: "/admin/dashboard/vat-report"},
-        // ],
+        subItems: [
+            {id: 991, title: "Users", path: "/admin/dashboard/users"},
+            {id: 992, title: "Roles", path: "/admin/dashboard/roles"},
+            {id: 993, title: "Menus", path: "/admin/dashboard/menus"},
+            {id: 994, title: "Sister Concerns", path: "/admin/dashboard/sister-concerns"},
+            {id: 995, title: "System Info", path: "/admin/dashboard/system-info"},
+            {id: 996, title: "VAT Report Percent Setup", path: "/admin/dashboard/vat-report"},
+        ],
     },
     {
         id: 2,

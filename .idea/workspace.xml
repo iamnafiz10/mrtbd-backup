@@ -5,29 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65cab406-5a62-43ed-b061-f76082749093" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-ordersheet/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-ordersheet/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-ordersheet/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/menus/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/menus/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/menus/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/ordersheet-report/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/roles/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/roles/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/roles/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sister-concerns/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sister-concerns/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/sister-concerns/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/system-info/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/users/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/users/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/users/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/components/AdminSidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/company-ordersheet/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/company-ordersheet/create/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/company-ordersheet/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/company-ordersheet/edit/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/hire-sales/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/hire-sales/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/hire-sales/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/hire-sales/edit/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-ordersheet/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-ordersheet/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-ordersheet/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/customer-ordersheet/edit/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/system-info/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/system-info/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/dashboard/vat-report/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/dashboard/vat-report/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +151,7 @@
       <workItem from="1774927945632" duration="7797000" />
       <workItem from="1774944953275" duration="8171000" />
       <workItem from="1774967244847" duration="2459000" />
-      <workItem from="1775010309937" duration="158000" />
+      <workItem from="1775010309937" duration="3818000" />
     </task>
     <servers />
   </component>

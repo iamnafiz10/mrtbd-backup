@@ -447,10 +447,6 @@ function Page() {
                             <div className="flex items-center justify-end gap-4 mt-4">
                                 <button
                                     className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                    Add Product
-                                </button>
-                                <button
-                                    className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
                                     Save DO
                                 </button>
                             </div>

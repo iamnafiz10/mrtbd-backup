@@ -2,6 +2,7 @@
 import React, {useRef, useState} from 'react';
 import Image from "next/image";
 import {IoImageOutline} from "react-icons/io5";
+import {FaCheck} from "react-icons/fa";
 
 function Page() {
 
@@ -80,7 +81,7 @@ function Page() {
                             <div className="tab_one_content grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="col">
                                     <form className="border border-gray-300 rounded p-4">
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="input_box block md:flex items-center gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[12px] font-medium">
                                                     Name
@@ -269,7 +270,7 @@ function Page() {
                                 </div>
                                 <div className="col">
                                     <form className="border border-gray-300 rounded p-4">
-                                        <div className="input_box w-full mt-4 block md:flex items-center gap-4">
+                                        <div className="input_box w-full block md:flex items-center gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[12px] font-medium">
                                                     APIKey
@@ -370,10 +371,60 @@ function Page() {
                             <div className="tab_two_content grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="col">
                                     <form className="border border-gray-300 rounded p-4">
+                                        <div className="input_box block md:flex items-start gap-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    SMS Provider
+                                                </label>
+                                                <div className="block md:flex items-center gap-2">
+                                                    <div className="relative w-full mt-4 md:mt-0">
+                                                        <select
+                                                            className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary">
+                                                            <option value="option1">--Select--</option>
+                                                            <option value="option2">PCS</option>
+                                                            <option value="option3">Carton</option>
+                                                            <option value="option4">Jar</option>
+                                                            <option value="option5">Litter</option>
+                                                        </select>
+                                                        <div
+                                                            className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                            <svg className="h-4 w-4 fill-current"
+                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 20 20">
+                                                                <path
+                                                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-center justify-between text-[12px] mt-4">
+                                                    <label
+                                                        className="flex items-center gap-2 cursor-pointer select-none">
+                                                        <input type="checkbox" className="peer hidden"/>
+                                                        <div
+                                                            className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                            <FaCheck className="text-white text-[10px]"/>
+                                                        </div>
+                                                        <span>Enable SMS Service</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div className="w-full mt-4 md:mt-0">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    DaysBeforeSendSMS
+                                                </label>
+                                                <input
+                                                    type="number"
+                                                    placeholder="0"
+                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+
                                         <div className="input_box mt-4 block md:flex items-center gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[12px] font-medium">
-                                                    Name
+                                                    SenderId
                                                 </label>
                                                 <input
                                                     type="text"
@@ -383,7 +434,7 @@ function Page() {
                                             </div>
                                             <div className="w-full mt-4 md:mt-0">
                                                 <label className="block mb-1 text-[12px] font-medium">
-                                                    Address
+                                                    URL Link
                                                 </label>
                                                 <input
                                                     type="text"
@@ -393,82 +444,150 @@ function Page() {
                                             </div>
                                         </div>
 
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="input_box mt-4 block md:flex items-start gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[12px] font-medium">
-                                                    TelephoneNo
+                                                    ConcernNameB
                                                 </label>
                                                 <input
                                                     type="text"
                                                     placeholder=""
                                                     className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                 />
+                                                <div className="flex items-center justify-between text-[12px] mt-4">
+                                                    <label
+                                                        className="flex items-center gap-2 cursor-pointer select-none">
+                                                        <input type="checkbox" className="peer hidden"/>
+                                                        <div
+                                                            className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                            <FaCheck className="text-white text-[10px]"/>
+                                                        </div>
+                                                        <span>SMS Send To Owner</span>
+                                                    </label>
+                                                </div>
                                             </div>
                                             <div className="w-full mt-4 md:mt-0">
                                                 <label className="block mb-1 text-[12px] font-medium">
-                                                    Device IP
+                                                    Owner Mobile
                                                 </label>
                                                 <input
                                                     type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[12px] font-medium">
-                                                    Device SN
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
-                                            </div>
-                                            <div className="w-full mt-4 md:mt-0">
-                                                <label className="block mb-1 text-[12px] font-medium">
-                                                    EmailAddress
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
-                                            <div className="w-full">
-                                                <label className="block mb-1 text-[12px] font-medium">
-                                                    WebAddress
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    placeholder=""
-                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
-                                                />
-                                            </div>
-                                            <div className="w-full mt-4 md:mt-0">
-                                                <label className="block mb-1 text-[12px] font-medium">
-                                                    SystemStartDate
-                                                </label>
-                                                <input
-                                                    type="date"
                                                     placeholder=""
                                                     className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                 />
                                             </div>
                                         </div>
                                     </form>
+
+                                    <form className="border border-gray-300 rounded p-4 mt-4 space-y-3">
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Is Customer Due Limit Applicable</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Is Employee Due Limit Applicable</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Enable Sales PP Discount</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Is Approval Enable</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>MRP Update Unable</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Enable Auto Credit Int. Per</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Employee Wise Transaction Enable</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Enable Expense Head SC</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Enable Color Enable For Sister Concern</span>
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[12px]">
+                                            <label className="flex items-center gap-2 cursor-pointer select-none">
+                                                <input type="checkbox" className="peer hidden"/>
+                                                <div
+                                                    className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                    <FaCheck className="text-white text-[10px]"/>
+                                                </div>
+                                                <span>Enable Bank Enable For Sister Concern</span>
+                                            </label>
+                                        </div>
+                                    </form>
                                 </div>
                                 <div className="col">
                                     <form className="border border-gray-300 rounded p-4">
-                                        <div className="input_box mt-4 block md:flex items-center gap-4">
+                                        <div className="input_box block md:flex items-center gap-4">
                                             <div className="w-full">
                                                 <label className="block mb-1 text-[12px] font-medium">
-                                                    From Date
+                                                    Expire Date
                                                 </label>
                                                 <input
                                                     type="date"
@@ -477,11 +596,163 @@ function Page() {
                                                 />
                                             </div>
                                             <div className="w-full mt-4 md:mt-0">
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
                                                 <label className="block mb-1 text-[12px] font-medium">
-                                                    To Date
+                                                    WarningMsg
+                                                </label>
+                                                <textarea rows={3}
+                                                          className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"></textarea>
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    Expire Message
+                                                </label>
+                                                <textarea rows={3}
+                                                          className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <form className="border border-gray-300 rounded p-4 mt-4">
+                                        <div className="input_box block md:flex items-center gap-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    BarcodeSize
+                                                </label>
+                                                <div className="block md:flex items-center gap-2">
+                                                    <div className="relative w-full mt-4 md:mt-0">
+                                                        <select
+                                                            className="block w-full appearance-none rounded border border-gray-300 bg-white px-4 py-2 pr-8 leading-tight text-gray-700 focus:outline-none focus:ring-0 focus:border-primary">
+                                                            <option value="option1">--Select--</option>
+                                                            <option value="option2">Size One</option>
+                                                            <option value="option3">Size Two(P.Rate)</option>
+                                                        </select>
+                                                        <div
+                                                            className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                                            <svg className="h-4 w-4 fill-current"
+                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                 viewBox="0 0 20 20">
+                                                                <path
+                                                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-center justify-between text-[12px] mt-4">
+                                                    <label
+                                                        className="flex items-center gap-2 cursor-pointer select-none">
+                                                        <input type="checkbox" className="peer hidden"/>
+                                                        <div
+                                                            className="w-4 h-4 border border-gray-300 rounded flex items-center justify-center peer-checked:bg-primary peer-checked:border-primary">
+                                                            <FaCheck className="text-white text-[10px]"/>
+                                                        </div>
+                                                        <span>Enable SMS Service</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <form className="border border-gray-300 rounded p-4 mt-4">
+                                        <h4 className="text-[12px] font-semibold">
+                                            VAT Setup
+                                        </h4>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    VATRegPerson
                                                 </label>
                                                 <input
-                                                    type="date"
+                                                    type="text"
+                                                    placeholder=""
+                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    VATBIN
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="e.g. xxxxxxxxxx-xxxxx"
+                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    VATCIssueAddress
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    placeholder=""
+                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    VatRegNo
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    placeholder=""
+                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    VATChallanBank
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    placeholder=""
+                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    VatCircleName
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    placeholder=""
+                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    VatCircleAddress
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    placeholder=""
+                                                    className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="input_box block md:flex items-center gap-4 mt-4">
+                                            <div className="w-full">
+                                                <label className="block mb-1 text-[12px] font-medium">
+                                                    VATChallanCode
+                                                </label>
+                                                <input
+                                                    type="text"
                                                     placeholder=""
                                                     className="w-full text-[12px] border border-gray-300 rounded p-3 py-2 focus:outline-none focus:border-primary"
                                                 />
@@ -493,10 +764,10 @@ function Page() {
                         )}
 
                         <div className="border border-gray-300 rounded p-4 mt-4">
-                            <div className="flex items-center justify-start gap-4">
+                            <div className="flex items-center justify-end gap-4">
                                 <button
                                     className="px-4 py-2 cursor-pointer rounded bg-primary text-white hover:bg-dark-primary transition">
-                                    Preview
+                                    Update Info
                                 </button>
                             </div>
                         </div>
